@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     
     rename = require('gulp-rename'),
     del = require('del'),
+    copy = require('gulp-copy'),
     path = require('path')
 ;
 
@@ -18,7 +19,6 @@ var paths = {
         uncompressed: 'dist/uncompressed',
         packaged: 'dist/packaged',
     },
-    
 };
 
 // 压缩js
@@ -34,6 +34,11 @@ gulp.task('minifyjs', function(){
 
 // 合并,压缩js
 gulp.task('packagejs', function(){
+    // jquery
+    gulp.src(paths.dist.minified + '/js/jquery-2.1.0.min.js')
+        .pipe(concat('jquery-2.min.js'))
+        .pipe(gulp.dest(paths.dist.packaged + '/js'));
+    
     // jquery plugins
     gulp.src(paths.dist.minified + '/js/jquery/*.js')
         .pipe(concat('jquery.plugins.js'))
@@ -106,9 +111,16 @@ gulp.task('packagecss', function(){
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
 });
 
+// Copy all static images
+gulp.task('images', function() {
+  return gulp.src(['src/images/*.*', 'src/images/**/*.*'])
+    // Pass in options to the task
+    .pipe(gulp.dest(paths.dist.packaged + '/images'));
+});
+
 // 批量命令
 gulp.task('comprass', ['minifycss', 'minifyjs'], function(){
-    gulp.start('packagecss', 'packagejs');
+    gulp.start('packagecss', 'packagejs', 'images');
 });
 
 // 清理旧文件
