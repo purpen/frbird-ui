@@ -22,7 +22,7 @@ Browser prefixes are present for Internet Explorer 9, but the browser is not off
 ### Dependencies Support
 
 ####第一步：安装Node
-首先，最基本也最重要的是，我们需要搭建node环境。访问http://nodejs.org(http://nodejs.org)，然后点击大大的绿色的install按钮，下载完成后直接运行程序，就一切准备就绪。npm(https://npmjs.org/)会随着安装包一起安装，稍后会用到它。
+首先，最基本也最重要的是，我们需要搭建node环境。访问[http://nodejs.org](http://nodejs.org)，然后点击大大的绿色的install按钮，下载完成后直接运行程序，就一切准备就绪。[npm](https://npmjs.org/)会随着安装包一起安装，稍后会用到它。
 
 ####第二步：安装gulp
 NPM是基于命令行的node包管理工具，它可以将node的程序模块安装到项目中，在它的官网中可以查看和搜索所有可用的程序模块。
