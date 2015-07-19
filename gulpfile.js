@@ -7,8 +7,6 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     
     rename = require('gulp-rename'),
-    jshint = require('gulp-jshint'),
-    
     del = require('del'),
     path = require('path')
 ;
