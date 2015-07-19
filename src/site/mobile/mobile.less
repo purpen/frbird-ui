@@ -1,0 +1,116 @@
+/*
+ * # Frbird UI - Mobile Site
+ * http://github.com/purpen/frbird-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@import "../base";
+
+/*******************************
+            Mobile
+*******************************/
+
+.ui {
+    &.responsive.grid {
+	    padding: 0 1.5%;
+	    max-width: 767px;
+        margin: 1rem auto;
+    }
+    &.hide {
+        display: none;
+    }
+    &.wap {
+    	border-bottom: @border-width @border-style @border-color;
+        line-height: 30px;
+    	margin: 0 auto;
+        
+        a {
+            &.ui.small.icon.gray.button {
+            	padding: 0.715em;
+            	width: 36px;
+            }
+        }
+    }
+    &.green.message {
+        border: @border-width @border-style @green;
+    }
+    
+}
+
+.ui.modal > .close, 
+.ui.modal > .cross {
+	right: 0;
+	top: -2em;
+}
+
+#mfrbird {
+    margin: 1.5em 0 3em;
+}
+#frslide {
+    margin-bottom: 0.5rem;
+	max-height: 300px;
+	position: relative;
+    
+    >.ui.slide {
+    	height: 100%;
+    	width: 100%;
+        
+        >.item {
+        	display: inline-block;
+        	max-width: 100%;
+        	float: left;
+            
+            >.ui.image {
+                margin: 0 auto;
+            }
+            >a {
+                >.ui.image {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    
+    .pages {
+    	bottom: 1em;
+        margin: 0 auto;
+        position: absolute;
+        width: 100%;
+    	text-align: center;
+        
+        @background-color: rgba(255,255,255,0.35);
+        @hover-color: rgba(255,255,255,0.75);
+        
+        >a {
+        	background-color: @background-color;
+            border-radius: @radius;
+            display: inline-block;
+            height: 0.65em;
+            margin-right: 0.65em;
+            text-indent: -999em;
+            width: 0.65em;
+            
+            &:hover {
+                background-color: @hover-color;
+            }
+            &.active {
+                background-color: @hover-color;
+            }
+        }
+        
+    }
+}
+
+
+#gritter-notice-wrapper {
+    padding-top: 80px;
+    position: fixed;
+    right: 4.5%;
+    top: 0;
+    width: 65%;
+}

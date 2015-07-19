@@ -1,0 +1,250 @@
+/*
+ * # Semantic - Phenix
+ * http://www.taihuoniao.com
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@import "base";
+
+/*******************************
+    Phenix Custom Stylesheet
+*******************************/
+
+.ui.responsive.grid {
+	margin: 0 auto;
+    min-width: 640px;
+	max-width: 1440px;
+}
+
+input {
+	background-color: #fff;
+}
+
+a,a:focus {
+	outline: 0;
+    
+    
+}
+
+a {
+    &.line,
+    &.line:visited {
+    	color: @a-link-color;
+    	border-bottom: 2px solid rgba(255, 255, 255, 0);
+    	text-decoration: none;
+        font-weight: 400;
+        .transition;
+    }
+    
+    &.line:hover,
+    &.line.active {
+    	color: @a-hover-color;
+    	text-decoration: none;
+    	padding-bottom: 3px;
+    	border-bottom: 2px solid rgba(255, 51, 102, 1);
+    }
+    
+    >img {
+    	text-decoration: none;
+    	border: 0;
+    }
+}
+
+.ui.breadcrumb a.section {
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.froala-element {
+    &.post,
+    &.product.content {
+    	overflow-y: hidden;
+    	min-height: 200px;
+    }
+    
+    &.post {
+        embed {
+            display: block;
+            margin: 2rem auto;
+        }
+    }
+}
+
+/* block title */
+.block.title {
+	font-size: 28px;
+	color: @text-color;
+	font-weight: normal;
+	margin: 0;
+    
+    > small {
+    	font-size: 0.875rem;
+    	color: rgba(0,0,0,0.5);
+    	margin-left: 0.6em;
+    }
+}
+
+#gritter-notice-wrapper {
+	position:fixed;
+	top:80px;
+	right:20px;
+	width:320px;
+	z-index:9999;
+    
+    &.top-left {
+        left: 20px;
+        right: auto;
+    }
+    
+    &.bottom-right {
+        top: auto;
+        left: auto;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    &.bottom-left {
+        top: auto;
+        right: auto;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+.gritter-image {
+	width:48px;
+	height:48px;
+	float:left;
+}
+.gritter-with-image,
+.gritter-without-image {
+	padding:0;
+}
+.gritter-with-image {
+	width:220px;
+	float:right;
+}
+
+/* for the light (white) version of the gritter notice */
+.gritter-light {
+    .gritter-item,
+    .gritter-bottom,
+    .gritter-top,
+    .gritter-close {
+        background-image: url(/images/gritter-light.png);
+        color: #222;
+    }
+}
+
+/* 活动 */
+.promo {
+    background-color: #ff3366;
+    color: #fff;
+	position: relative;
+    
+    .container {
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+    	overflow: hidden;
+    }
+    
+    .ui.link {
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 1440px;
+    }
+    
+    .close-promo {
+    	border: 1px solid #fff;
+        border-radius: 4em;
+        color: #fff;
+        height: 2em;
+        line-height: 2em;
+        position: absolute;
+        right: 1.5em;
+        top: 1.5em;
+        width: 2em;
+        z-index: 10;
+    	text-decoration: none;
+        
+        i.flat.icon {
+        	margin-right: 0;
+        }
+        
+        &:hover {
+        	background-color: #fff;
+        	color: #ff3366;
+        }
+        
+    }
+}
+
+.unsupported-browser {
+	background-color: #2d3538;
+	color: #ffffff;
+    
+    .ui.link {
+    	color: #ddd;
+    	text-decoration: underline;
+    }
+}
+
+#ajax-note > .ui.jbar.message {
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+}
+.ui.pagination.grid {
+	display: block;
+}
+.ui.fluid.dropdown > .down.icon {
+    float: right;
+}
+
+#bd {
+	margin-top: 2em;
+	min-height: 26em;
+}
+
+
+/* 发布评论 */
+.post.comment {
+	font-size: 1em;
+    line-height: 1.5;
+    margin-left: 5em;
+}
+.post.comment .ui.avatar {
+	margin-left: 5px;
+	margin-top: 10px;
+}
+#more-comments {
+    margin-top: 1em;
+}
+
+#login-info {
+	padding-top:5px;
+}
+#auth-menu {
+	padding-top:35px;
+}
+#auth-menu a {
+	color: #FFFFFF;
+    font-size: 22px;
+    text-decoration: none;
+}
+.text-white {
+	color: #FFFFFF;
+}
+.log-in .forgot {
+	display: block;
+	float: right;
+	font-size: 0.875em;
+}
+
+
+
+

@@ -1,0 +1,52 @@
+/*
+ * # Frbird UI - Base file
+ * http://github.com/purpen/frbird-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@border-color: rgba(0, 0, 0, 0.15);
+@border-width: 1px;
+@border-style: solid;
+
+@title-color: #333;
+@text-color: #666;
+@a-link-color: #444;
+@a-hover-color: #ff3366;
+@green: #52a954;
+
+@radius: 0.2875em;
+
+.transition (@name: all, @stime: 0.3s, @style: ease-in-out, @etime: 0s) {
+    -webkit-transition: @name @stime @style @etime;
+    -moz-transition: @name @stime @style @etime;
+    -o-transition: @name @stime @style @etime;
+    -ms-transition: @name @stime @style @etime;
+	transition: @name @stime @style @etime;
+}
+
+.border-radius () {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+
+.wrap () {
+    text-wrap: wrap;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    word-wrap: break-word;
+}
+
+.ui {
+    .hide {
+    	display:none;
+    }
+    .show {
+    	display:block;
+    }
+}
