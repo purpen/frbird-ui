@@ -1,49 +1,27 @@
 /*底部*/
+@import "base";
+
 #ft {
-	background: none repeat scroll 0 0 #FFFFFF;
+	background-color: #F1F1F1;
     border-top: 1px solid #E4E5E7;
-    padding: 0 0 2em;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    
-    .copyright {
-    	font-size: 0.875em;
-    	color: #999;
-    	line-height: 23px;
-    }
+    padding: 1.5rem 0;
     
     .ui.list {
-        h2.item {
-        	padding-top: 0;
-        	padding-bottom: 0;
-        	margin-bottom: 0.5em;
-        }
         .item {
-        	display: block;
-        	font-size: 1em;
-        	padding: 0.2em 0;
+            font-size: 14px;
+            padding: 0.25em 0;
         }
-        
-        a.ui.link.item {
-        	width: 65px;
-        	font-size: 0.96rem !important;
-        }
-        .computer.tablet.only.row,
-        .computer.tablet.only.row + .row {
-            padding-top: 0;
+        div.active.item {
+            font-size: 16px;
+            padding-bottom: 0.75em;
         }
     }
-    
-    .ui.circular.share.button {
-    	height: 3em;
-    	width: 3em; 
+    .copyright {
+    	font-size: 14px;
+    	line-height: 1.6;
+        padding-top: 1.5rem;
+        color: @descTextColor;
     }
-    
-    .ui.icon.button {
-    	padding:0.6em;
-    }
-    
-    
-    
 }
 
 .ui.circular.topup.button {

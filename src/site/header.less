@@ -2,21 +2,56 @@
 
 /* 头部导航 */
 .main {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 1);
+    background: @body-bg-white;
 	width: 100%;
 	padding: 0;
-	height: 73px !important;
+	height: 70px !important;
     .transition;
     
-    >.ui.grid {
-        >.column {
-            margin-bottom: 0rem;
-            margin-top: 0rem;
+    .ui.mainnav {
+    	margin: 0 auto;
+    	float: left;
+        
+        > .item {
+        	border-top: 2px solid transparent;
+            margin: 0;
+        	padding: 0.5rem 1rem;
+        	color: @magenta-color;
+            display: block;
+        	font-weight: bold;
+        	opacity: 0.9;
+        	vertical-align: top;
+            .transition;
+            
+            &.active,
+            &:active,
+            &:hover {
+            	border-top: 2px solid @magenta-color;
+                color: @magenta-color;
+            }
         }
     }
+    
+    .ui.labeled.icon.menu:not(.vertical) .item {
+        padding: 0.5rem 1rem;
+    }
+    
     .ui.pointing.icon.menu {
         float: left;
         margin: 0;
+    }
+}
+
+.header.main {
+    
+    .ui.grid > .row {
+        padding: 0rem 0;
+    }
+    
+    .ui.labeled.icon.menu > .item > .icon {
+        display: block;
+        font-size: 1.5em !important;
+        margin: 0 auto 0.3em !important;
     }
     
     .logo {
@@ -30,33 +65,6 @@
     	background: url("/images/frbird-logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     }
     
-    .ui.main-nav {
-    	margin: 0 auto;
-    	float: left;
-        
-        > .item {
-        	border-top: 2px solid transparent;
-            margin: 0;
-        	padding: 0.5rem 1.5rem;
-        	color: #ff3366;
-        	font-weight: bold;
-        	opacity: 0.9;
-        	vertical-align: top;
-            .transition;
-            
-            &.active,
-            &:active,
-            &:hover {
-            	border-top: 2px solid #ff3366;
-                padding: 0.5rem 1.5rem;
-            }
-        }
-    }
-    
-}
-
-/* 搜索框 */
-.header.main {
     .search.item {
         font-size: 1rem;
         margin-top: 1rem;
@@ -105,26 +113,25 @@
 /* 导航用户框 */
 .header.main {
     .ui.login.button {
-    	border: medium none;
+        background: transparent;
     	padding: 0.8em 0;
     	font-weight: 700;
     	margin-right: 0.8em;
         margin-bottom: 0.6em;
         
         &:hover {
-        	background: none;
-        	border-color: none;
         	color: #FF3366;
         }
     }
-    .ui.signup.button {
-        font-size: 0.925em;
-        font-weight: 700;
-        line-height: 1em;
-    	padding: 0.8em 2em;
-    	margin-bottom: 0.8em;
-        border-width: 2px;
+    
+    .right.floated {
+        float: right;
     }
+    
+    .auth {
+        margin-top: 1rem;
+    }
+    
     .ui.user-setting.button {
     	border: none;
     	background: #fff;
@@ -158,20 +165,12 @@
         }
     }
     .ui.basket.button {
-    	border: medium none;
-        line-height: 1;
-        margin-right: 0em;
-        padding: 0.2em 0 1.25em;
+    	background: transparent;
         position: relative;
         
-        .icon {
-            font-size: 2em;
-        }
         
         &:hover,
         &.active {
-        	background: none;
-        	border-color: none;
         	color: #FF3b6b;
         }
         
@@ -222,15 +221,12 @@
 /* 购物车icon */
 .ui.login-user {
     >.ui.basket.button {
-    	border: medium none;
-        padding: 0.5em;
+        background: transparent;
+        float: left;
+        font-size: 0.85em;
+        margin-right: 0.75em;
+        padding: 0.5em 0;
         position: relative;
-    	margin-right: 1em;
-        
-        >.icon {
-        	margin-right: 0.2em;
-        	font-size: 1.325em;
-        }
         
         &.active {
         	color: #FF3366;
@@ -327,50 +323,4 @@
     	background-color: #ff3b6b;
     	color: #fff;
     }    
-}
-
-/* Auth Login/Signup */
-.ui.log-in {
-	max-width: 505px;
-	margin: 70px auto 0;
-    
-    &.signup {
-    	max-width: 505px;
-    	margin: 40px auto 0;
-    }
-    >.ui.header.logo {
-    	background-color: #F2F2F2;
-        padding: 0;
-        text-align: center;
-    }
-    > .ui.segment {
-    	padding: 1em 2em;
-    }
-    .ui.checkbox {
-        font-size: 0.825em;
-    }
-    .field {
-    	margin: 0 0 1.5em;
-    }
-    .sign-up {
-    	color:rgba(255,255,255,0.5);
-    	font-size: 0.825em;
-    	text-align: center;
-        
-        a {
-        	color:rgba(255,255,255,0.6);
-            
-            &:hover {
-            	color:rgba(255,255,255,0.8);
-            }
-        }
-    }
-    .ui.qq.btn {
-        float: right;
-        width: 98%;
-    }
-    .ui.weibo.btn {
-        width: 98%;
-    }
-    
 }
