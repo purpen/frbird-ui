@@ -40,7 +40,30 @@ gulp.task('packagejs', function(){
         .pipe(gulp.dest(paths.dist.packaged + '/js'));
     
     // jquery plugins
-    gulp.src(paths.dist.minified + '/js/jquery/*.js')
+    gulp.src([
+		paths.dist.minified + '/js/jquery/jquery.taconite.min.js',
+		paths.dist.minified + '/js/jquery/jquery.livequery.min.js',
+		paths.dist.minified + '/js/jquery/jquery.form.min.js',
+		paths.dist.minified + '/js/jquery/jquery.imgareaselect.min.js',
+		paths.dist.minified + '/js/jquery/jquery.fineuploader-3.5.0.min.js',
+		paths.dist.minified + '/js/jquery/jquery.countdown.min.js',
+		paths.dist.minified + '/js/jquery/jquery.address.min.js',
+		paths.dist.minified + '/js/jquery/jquery.easing.1.3.min.js',
+		paths.dist.minified + '/js/jquery/sly.min.js',
+		paths.dist.minified + '/js/jquery/jquery.slides.min.js',
+		paths.dist.minified + '/js/jquery/jquery.scrollUp.min.js',
+		paths.dist.minified + '/js/jquery/jquery.smint.min.js',
+		paths.dist.minified + '/js/jquery/jquery.scrollify.min.js',
+		paths.dist.minified + '/js/jquery/jquery.qrcode.min.js',
+		paths.dist.minified + '/js/jquery/lightbox.min.js',
+		paths.dist.minified + '/js/jquery/skrollr.min.js',
+		paths.dist.minified + '/js/jquery/picker.min.js',
+		paths.dist.minified + '/js/jquery/picker.date.min.js',
+		paths.dist.minified + '/js/jquery/maxlength.min.js',
+		paths.dist.minified + '/js/jquery/jquery.arbitrary-anchor.min.js',
+		paths.dist.minified + '/js/jquery/jquery.gritter.min.js',
+        paths.dist.minified + '/js/jquery/mustache.min.js',
+        ])
         .pipe(concat('jquery.plugins.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/js'));
