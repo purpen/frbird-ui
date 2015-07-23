@@ -3,12 +3,6 @@
 # Frbird UI
 Site [taihuoniao.com](http://www.taihuoniao.com/)
 
-### Install
-####安装这些插件需要运行如下命令
-```bash
-$ npm install gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
-```
-
 #### Browser Support
 
 * Last 2 Versions FF, Chrome, IE 10+, Safari Mac
@@ -17,7 +11,7 @@ $ npm install gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-ugl
 
 Browser prefixes are present for Internet Explorer 9, but the browser is not officially supported.
 
-
+### Install
 
 ### Dependencies Support
 
@@ -29,7 +23,12 @@ NPM是基于命令行的node包管理工具，它可以将node的程序模块安
 
 在命令行中输入
 ```bash
-$ npm install -g gulp 
+$ npm install --save-dev gulp 
+```
+
+####安装这些插件需要运行如下命令
+```bash
+$ npm install gulp-less gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-copy gulp-livereload gulp-cache del --save-dev
 ```
 
 备注
