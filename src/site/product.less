@@ -440,6 +440,10 @@
         padding: 0;
         border: none;
 	}
+    .slidebox {
+        border-bottom: @border;
+    }
+    
     .product.overview {
         padding: 12px 31px;
         text-align: left;
@@ -584,6 +588,40 @@
     .ui.pagination {
         margin: 1rem 31px;
     }
+    
+    .product.evaluating {
+        .product.topics {
+            padding: 12px 31px;
+        }
+        .ui.table {
+            border: none;
+        }
+    }
+    
+    .ui.xrange.cards {
+        margin: 0 0 1rem;
+        
+        > .card {
+            text-align: left;
+            padding: 12px;
+            
+            > .actions > .button {
+                margin-bottom: 12px;
+            }
+            
+            > .price {
+                color: #ff3366;
+            }
+        }
+    }
+    
+	#product_guess_list {
+        > .ui.responsive.grid{
+    		padding: 0 !important;
+    		margin: 0 !important;
+    		min-width: 0 !important;
+    	}
+	} 
 }
 
 .post.comment {
