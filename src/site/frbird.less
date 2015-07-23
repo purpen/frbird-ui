@@ -1,6 +1,8 @@
 @import "base";
 
 .ui.label,
+.ui.table thead th,
+.ui.form .field > label,
 .ui.comments .comment .author {
     font-weight: 400;
 }
@@ -45,20 +47,48 @@
     color: @descTextColor;
 }
 
-/* icon.less*/
-i.icon {
-  font-family: 'FontIcons';
-}
-.ui.star.rating .icon:before,
-.ui.star.rating .active.icon:before {
-  font-family: 'FontIcons';
-}
-i.basic.icon {
-  font-family: 'FontBasicIcons';
-}
 .ui.dividing.header .icon {
 	display: inline-block;
 }
+
+/*--------------
+   Pagination
+---------------*/
+.ui.pagination {
+    margin: 1rem auto;
+    text-align: center;
+    
+    &.menu {
+      margin: 0em;
+      vertical-align: middle;
+      
+      .item {
+          min-width: 3em;
+          text-align: center;
+      }
+      
+      .icon.item i.icon {
+          vertical-align: top;
+      }
+      
+      &.active.item {
+          border-top: none;
+          padding-top: 0.78571em;
+          background-color: rgba(0, 0, 0, 0.03);
+          box-shadow: none;
+      }
+      
+      &.floated {
+        display: block;
+      }
+    }
+    
+    .page_count {
+    	margin-left: 1em;
+    	color: rgba(0, 0, 0, 0.4);
+    }
+}
+
 /*******************************
              Image
 *******************************/
@@ -621,42 +651,7 @@ i.basic.icon {
   font-weight: bold;
 }
 
-/*--------------
-   Pagination
----------------*/
-.ui.pagination {
-    margin: 1rem auto;
-    text-align: center;
-}
 
-.ui.pagination.menu {
-  margin: 0em;
-  display: inline-block;
-  vertical-align: middle;
-}
-.ui.pagination.menu .item {
-  min-width: 3em;
-  text-align: center;
-}
-.ui.pagination.menu .icon.item i.icon {
-  vertical-align: top;
-}
-.ui.pagination.menu.floated {
-  display: block;
-}
-
-/* Active */
-.ui.pagination.menu .active.item {
-  border-top: none;
-  padding-top: 0.78571em;
-  background-color: rgba(0, 0, 0, 0.03);
-  box-shadow: none;
-}
-
-.ui.pagination .page_count {
-	margin-left: 1em;
-	color: rgba(0, 0, 0, 0.4);
-}
 .ui.menu .magenta.active.item,
 .ui.magenta.menu .active.item {
   border-color: #FF3366 !important;
