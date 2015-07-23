@@ -21,32 +21,28 @@
 	max-width: 1440px;
 }
 
-input {
-	background-color: #fff;
+.ui.form .inline.field > input {
+    font-size: 1rem;
 }
 
 a,a:focus {
 	outline: 0;
-    
-    
 }
 
 a {
     &.line,
     &.line:visited {
-    	color: @a-link-color;
-    	border-bottom: 2px solid rgba(255, 255, 255, 0);
+    	color: @aLinkColor;
     	text-decoration: none;
-        font-weight: 400;
+        font-weight: bold;
         .transition;
     }
     
     &.line:hover,
     &.line.active {
-    	color: @a-hover-color;
+    	color: @aHoverColor;
     	text-decoration: none;
     	padding-bottom: 3px;
-    	border-bottom: 2px solid rgba(255, 51, 102, 1);
     }
     
     >img {
@@ -76,8 +72,7 @@ a {
 
 /* block title */
 .block.title {
-	font-size: 28px;
-	color: @text-color;
+	font-size: 1.5rem;
 	font-weight: normal;
 	margin: 0;
     
@@ -210,6 +205,218 @@ a {
 	min-height: 26em;
 }
 
+/* 二级菜单 */
+.submenu {
+	background-color: #f4f4f4;
+    
+    .ui.list {
+        > .item {
+        	margin-left: 1.5rem;
+            
+            &:first-child {
+            	margin-left: 0rem;
+            }
+            
+            > a {
+            	border-bottom: 2px solid transparent;
+            	font-size: 1.05em;
+                .transition;
+                
+                &:hover,
+                &.active {
+                	border-bottom: 2px solid #f36;
+                	padding-bottom: 5px;
+                	text-decoration: none;
+                } 
+            }
+        }
+    }
+    
+    .ui.quick.horizontal.list {
+        margin-left: 1rem;
+        
+        > .item {
+            line-height: 0.6em;
+            
+            &:first-child {
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    
+    .ui.horizontal.list:not(.celled) > .item:first-child {
+        margin-left: 0.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+}
+
+/* 推荐广告位 */
+.ui.adverts.cards {
+    > .card {
+        background: none;
+        box-shadow: none;
+        
+        .advblock {
+            position: relative;
+            width: auto;
+            
+            div {
+                .transition(all, 0.5s, ease, 0s);
+            }
+            
+            &:hover {
+                > .image {
+                    background-size: 109% auto;
+                }
+                
+                .link.wrap {
+                    display: block;
+                }
+            } 
+            
+            .image {
+                background-position: 50% center;
+                background-size: 100% auto;
+                border-radius: @radius;
+                display: block;
+                padding: 0 0 65%;
+                position: relative;
+                
+                > a {
+                    background-color: rgba(0, 0, 0, 0.1);
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    text-align: center;
+                    text-decoration: none;
+                    top: 0;
+                    border-radius: @radius;
+                }
+                
+                
+            }
+            .desc {
+                font-size: 13px;
+                line-height: 19px;
+                padding: 10px 16px;
+                bottom: 0;
+                color: #fff;
+                left: 0;
+                position: absolute;
+                right: 0;
+                z-index: 0;
+                
+                h2 {
+                   display: block;
+                   font-size: 18px;
+                   font-weight: bold;
+                   letter-spacing: -1px;
+                   line-height: 0.9;
+                   margin-bottom: 10px;
+                   text-align: left;
+               }
+               
+               p {
+                   color: #fff;
+                   height: 38px;
+                   letter-spacing: 0.15px;
+                   line-height: 1.5;
+                   overflow: hidden;
+                   text-align: left;
+               }
+            }
+            
+            .link.wrap {
+                background-color: rgba(0, 0, 0, 0.2);
+                bottom: 0;
+                display: none;
+                left: 0;
+                padding: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 99;
+                background-position: 50% center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: @radius;
+            }
+        }
+    }
+    
+    > *:only-child {
+        border-radius: @radius !important;
+    }
+} 
+
+/* 左右两栏布局 */
+.mainwrap {
+    position: relative;
+    display: block;
+    margin: 15px auto 0;
+    max-width: 1280px;
+    padding: 0 20px 0 35px;
+    width: auto;
+    
+    @border: 1px solid rgba(224, 224, 224, 0.46);
+    
+    &::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+    
+    .block.title {
+        background-color: #f8f8f8;
+        border-bottom: @border;
+        padding: 12px 31px;
+        text-align: left;
+    }
+    
+    .mainleftwrap {
+        float: left;
+        overflow: visible;
+        width: 100%;
+    }
+    
+    .mainleft {
+        margin-bottom: 20px;
+        margin-right: 380px;
+        min-height: 1080px;
+        padding: 20px 15px;
+        
+        .container {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            border-radius: 2px;
+            border-bottom: @border;
+            border-left: @border;
+            border-right: @border;
+            background-color: #fcfcfc;
+        }
+    }
+    
+    .mainright {
+        float: left;
+        font-size: 14px;
+        margin-left: -380px;
+        padding: 20px 20px 20px 0;
+        text-align: center;
+        width: 360px;
+        
+        .block.title {
+            margin-left: -12px;
+            margin-right: -12px;
+            padding-left: 12px;
+        }
+        
+        .ui.cards > .card {
+            margin: 0.875em 0 0;
+        }
+    }
+}
 
 /* 发布评论 */
 .post.comment {
@@ -1225,7 +1432,7 @@ ul.sidemenu li a:hover span {
 }
 @media only screen and (max-width: 1000px) {
 	.ui.responsive.grid {
-	    padding: 0 8%;
+	    padding: 0 5%;
 	}
 	#ajax-note {
 	    padding: 0 2%;
@@ -1233,7 +1440,7 @@ ul.sidemenu li a:hover span {
 }
 @media only screen and (min-width: 1000px) {
 	.ui.responsive.grid {
-	    padding: 0 8%;
+	    padding: 0 5%;
 	}
 	#ajax-note {
 	    padding: 0 2%;

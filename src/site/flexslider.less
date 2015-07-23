@@ -1,0 +1,389 @@
+/*
+ * jQuery FlexSlider v2.5.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ * 
+ */
+
+@import "base";
+
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.flex-container a:hover,
+.flex-slider a:hover,
+.flex-container a:focus,
+.flex-slider a:focus {
+    outline: none;
+}
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.flex-pauseplay span {
+    text-transform: capitalize;
+}
+
+/* ====================
+ * BASE STYLES
+ * ==================*/
+.flexslider {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    position: relative;
+    zoom: 1;
+    -webkit-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    
+    .slides {
+        height: 530px;
+        zoom: 1;
+        
+        
+        &::after {
+            clear: both;
+            content: " ";
+            display: block;
+            height: 0;
+            line-height: 0;
+            visibility: hidden;
+        }
+        
+        > li {
+            background-position: 50% 50%;
+            background-size: cover;
+            border-radius: @radius @radius 0 0;
+            display: none;
+            height: 530px;
+            -webkit-backface-visibility: hidden;
+            visibility: hidden;
+            
+            &.flex-active-slide {
+                visibility: visible;
+            }
+            
+            img {
+                width: 100%;
+                border-top-left-radius: @radius;
+                border-top-right-radius: @radius;
+                display: block;
+                height: auto;
+                
+                &.thumb {
+                  display: none;
+                }
+            }
+            
+            
+            
+        }
+    }
+    
+    &.flex-single {
+        border-top-left-radius: @radius;
+        border-top-right-radius: @radius;
+        
+        .slides > li > a {
+            display: block;
+            height: 530px;
+        }
+        
+        .flex-direction-nav {
+            display: none;
+            height: 0;
+        }
+        
+    }
+    
+    &.flex-single-carousel {
+        background-color: #f8f8f8;
+        border-left: 1px solid rgba(224, 224, 224, 0.46);
+        border-right: 1px solid rgba(224, 224, 224, 0.46);
+        padding: 12px 31px;
+        margin: 0;
+        overflow: hidden;
+        
+        .slides {
+            height: 100px;
+            
+            > li {
+               background-color: #fcfcfc;
+               border: 0 none;
+               border-radius: @radius;
+               box-shadow: 0 0 1px rgba(47, 47, 47, 0.082);
+               height: 100px;
+               margin-right: 15px;
+               visibility: visible;
+               background-position: 50% 50%;
+               background-size: cover;
+               width: 160px; 
+               float: left; 
+               display: block;
+               
+               > a {
+                   background-size: cover;
+                   display: block;
+                   height: 100px;
+               }
+               
+               &.viem {
+                   background-color: rgba(255, 255, 255, 0.5);
+                   
+                   &.thumbviem {
+                       background-color: transparent;
+                       background-image: url("{{ app_url_packaged }}/images/videoicon.png");
+                       background-position: 50% 50%;
+                       background-repeat: no-repeat;
+                       background-size: cover;
+                       cursor: pointer;
+                   }
+                   
+                   &::after {
+                       background-color: red;
+                       content: "";
+                   }
+                   
+               }
+               
+               &:hover {
+                   opacity: 0.7;
+               }
+           }
+        }
+        
+        
+    }
+    
+    .flex-viewport {
+        max-height: 2000px;
+        .transition(all,1s,ease);
+    }
+}
+
+.flex-direction-nav {
+    *height: 0;
+    
+    a {
+        text-decoration: none;
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin: -20px 0 0;
+        position: absolute;
+        top: 60%;
+        z-index: 10;
+        overflow: hidden;
+        opacity: 0;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.8);
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    a:before {
+        font-family: "FontIcons";
+        font-size: 30px;
+        display: inline-block;
+        content: '\f104';
+        color: rgba(0, 0, 0, 0.8);
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    a.flex-next:before {
+        content: '\f105';
+    }
+    
+    .flex-prev {
+        color: transparent;
+        left: -50px;
+    }
+    .flex-next {
+        color: transparent;
+        right: -50px;
+        text-align: right;
+    }
+    
+    .flex-disabled {
+        opacity: 0!important;
+        filter: alpha(opacity=0);
+        cursor: default;
+    }
+    
+} 
+
+html[xmlns] .flexslider .slides {
+    display: block;
+}
+* html .flexslider .slides {
+    height: 1%;
+}
+.no-js .flexslider .slides > li:first-child {
+    display: block;
+}
+/* ==================
+ * DEFAULT THEME
+ * ================*/
+.loading .flex-viewport {
+  max-height: 300px;
+}
+.carousel li {
+  margin-right: 5px;
+}
+
+.flexslider:hover {
+    .flex-direction-nav{
+        .flex-prev {
+            opacity: 0.7;
+            left: 10px;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
+        
+        .flex-next {
+            opacity: 0.7;
+            right: 10px;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
+        
+        
+    } 
+}
+
+.flex-pauseplay {
+    a {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+        opacity: 0.8;
+        z-index: 10;
+        overflow: hidden;
+        cursor: pointer;
+        color: #000;
+        
+        a:before {
+            font-family: "FontIcons";
+            font-size: 20px;
+            display: inline-block;
+            content: '\f004';
+        }
+        &:hover {
+            opacity: 1;
+        }
+        
+        &.flex-play:before {
+            content: '\f003';
+        }
+    }
+    
+    
+} 
+
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    text-align: center;
+    
+    li {
+        margin: 0 6px;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+    }
+}
+
+.flex-control-paging li a {
+    width: 11px;
+    height: 11px;
+    display: block;
+    background: #666;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+.flex-control-paging li a:hover {
+    background: #333;
+    background: rgba(0, 0, 0, 0.7);
+}
+.flex-control-paging li a.flex-active {
+    background: #000;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: default;
+}
+.flex-control-thumbs {
+    margin: 5px 0 0;
+    position: static;
+    overflow: hidden;
+    
+    li {
+        width: 25%;
+        float: left;
+        margin: 0;
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: .7;
+        cursor: pointer;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .flex-active {
+        opacity: 1;
+        cursor: default;
+    }
+}
+
+/* ====================
+ * RESPONSIVE
+ * ==================*/
+
+@media screen and (max-width: 860px) {
+    .flex-direction-nav .flex-prev {
+        opacity: 1;
+        left: 10px;
+    }
+    .flex-direction-nav .flex-next {
+        opacity: 1;
+        right: 10px;
+    }
+}

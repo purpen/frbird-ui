@@ -29,48 +29,75 @@ gulp.task('minifyjs', function(){
             //.pipe(jshint.reporter('default'))
             .pipe(uglify())
             .pipe(rename({suffix: '.min'}))
-            .pipe(gulp.dest(paths.dist.minified + '/js'));
+            .pipe(gulp.dest(paths.dist.minified + '/javascript'));
 });
 
 // 合并,压缩js
 gulp.task('packagejs', function(){
     // jquery
-    gulp.src(paths.dist.minified + '/js/jquery-2.1.0.min.js')
+    gulp.src(paths.dist.minified + '/javascript/jquery-2.1.0.min.js')
         .pipe(concat('jquery-2.min.js'))
-        .pipe(gulp.dest(paths.dist.packaged + '/js'));
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
     
     // jquery plugins
-    gulp.src(paths.dist.minified + '/js/jquery/*.js')
+    gulp.src([
+		paths.dist.minified + '/javascript/jquery/jquery.taconite.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.livequery.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.form.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.imgareaselect.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.fineuploader-3.5.0.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.countdown.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.address.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.easing.1.3.min.js',
+		paths.dist.minified + '/javascript/jquery/sly.min.js',
+        paths.dist.minified + '/javascript/jquery/jquery.flexslider.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.slides.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.scrollUp.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.smint.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.scrollify.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.qrcode.min.js',
+		paths.dist.minified + '/javascript/jquery/lightbox.min.js',
+		paths.dist.minified + '/javascript/jquery/skrollr.min.js',
+		paths.dist.minified + '/javascript/jquery/picker.min.js',
+		paths.dist.minified + '/javascript/jquery/picker.date.min.js',
+		paths.dist.minified + '/javascript/jquery/maxlength.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.arbitrary-anchor.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.gritter.min.js',
+        paths.dist.minified + '/javascript/jquery/mustache.min.js',
+        ])
         .pipe(concat('jquery.plugins.js'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(paths.dist.packaged + '/js'));
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
     
     // frbird
-    gulp.src(paths.dist.minified + '/js/phenix.min.js')
+    gulp.src(paths.dist.minified + '/javascript/phenix.min.js')
         .pipe(concat('frbird.js'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(paths.dist.packaged + '/js'));
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
     
     // froala editor
     gulp.src([
-        paths.dist.minified + '/js/froala_editor.v1.2.7.min.js', 
-        paths.dist.minified + '/js/plugins/*.js', 
-        paths.dist.minified + '/js/langs/*.js'])
+        paths.dist.minified + '/javascript/froala_editor.v1.2.7.min.js', 
+        paths.dist.minified + '/javascript/plugins/*.js', 
+        paths.dist.minified + '/javascript/langs/*.js'])
         .pipe(concat('froala_editor.js'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(paths.dist.packaged + '/js'));
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
         
     // calendar    
-    gulp.src(paths.dist.minified + '/js/calendar/*.js')
+    gulp.src([
+            paths.dist.minified + '/javascript/calendar/calendar.min.js',
+            paths.dist.minified + '/javascript/calendar/calendar-en.min.js'
+        ])
         .pipe(concat('calendar.js'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(paths.dist.packaged + '/js'));
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
         
     // gsap    
-    gulp.src(paths.dist.minified + '/js/gsap/*.js')
+    gulp.src(paths.dist.minified + '/javascript/gsap/*.js')
         .pipe(concat('jquery.gsap.js'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(paths.dist.packaged + '/js'));
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
 });
 
 // 预编译less,压缩css

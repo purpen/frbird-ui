@@ -13,15 +13,31 @@
 @border-width: 1px;
 @border-style: solid;
 
+@body-bg-white: #fff;
+@body-bg-color: #f5f5f5;
 @title-color: #333;
-@text-color: #666;
-@a-link-color: #444;
-@a-hover-color: #ff3366;
+@text-color: rgba(146, 147, 163, 0.9);
+@magenta-color: #ff3366;
+@a-link-color: rgba(112, 123, 135, 0.91);
+@a-hover-color: rgba(112, 123, 135, 0.91);
 @green: #52a954;
 
-@radius: 0.2875em;
 
-.transition (@name: all, @stime: 0.3s, @style: ease-in-out, @etime: 0s) {
+@aLinkColor: rgba(112, 123, 135, 0.85);
+@aHoverColor: rgba(112, 123, 135, 0.95);
+
+@descTextColor: rgba(146, 147, 163, 0.9);
+@invertedBorderSize: 2px;
+@lightMagenta: #ff3366;
+@magentaTextColor: #fff;
+@lightMagentaHover: #ff3366;
+@lightMagentaFocus: #ff3366;
+@lightMagentaActive: #ff3366;
+@lightMagentaDown: #ff3366;
+
+@radius: 4px;
+
+.transition(@name: all, @stime: 0.3s, @style: ease-in-out, @etime: 0s){
     -webkit-transition: @name @stime @style @etime;
     -moz-transition: @name @stime @style @etime;
     -o-transition: @name @stime @style @etime;
@@ -29,17 +45,23 @@
 	transition: @name @stime @style @etime;
 }
 
-.border-radius () {
+.border-radius(){
     border-radius: @radius;
     -moz-border-radius: @radius;
     -webkit-border-radius: @radius;
 }
 
-.wrap () {
+.wrap(){
     text-wrap: wrap;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     word-wrap: break-word;
+}
+
+.box-shadow(@x: 0, @y: 0, @blur: 0px, @color: #C7C7C7){
+  box-shadow: @arguments !important;
+  -moz-box-shadow: @arguments !important;
+  -webkit-box-shadow: @arguments !important;
 }
 
 .ui {
