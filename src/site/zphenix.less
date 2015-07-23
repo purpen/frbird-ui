@@ -72,8 +72,7 @@ a {
 
 /* block title */
 .block.title {
-	font-size: 28px;
-	color: @text-color;
+	font-size: 1.5rem;
 	font-weight: normal;
 	margin: 0;
     
@@ -351,6 +350,73 @@ a {
     }
 } 
 
+/* 左右两栏布局 */
+.mainwrap {
+    position: relative;
+    display: block;
+    margin: 15px auto 0;
+    max-width: 1280px;
+    padding: 0 20px 0 35px;
+    width: auto;
+    
+    @border: 1px solid rgba(224, 224, 224, 0.46);
+    
+    &::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+    
+    .block.title {
+        background-color: #f8f8f8;
+        border-bottom: @border;
+        padding: 12px 31px;
+        text-align: left;
+    }
+    
+    .mainleftwrap {
+        float: left;
+        overflow: visible;
+        width: 100%;
+    }
+    
+    .mainleft {
+        margin-bottom: 20px;
+        margin-right: 380px;
+        min-height: 1080px;
+        padding: 20px 15px;
+        
+        .container {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            border-radius: 2px;
+            border-bottom: @border;
+            border-left: @border;
+            border-right: @border;
+            background-color: #fcfcfc;
+        }
+    }
+    
+    .mainright {
+        float: left;
+        font-size: 14px;
+        margin-left: -380px;
+        padding: 20px 20px 20px 0;
+        text-align: center;
+        width: 360px;
+        
+        .block.title {
+            margin-left: -12px;
+            margin-right: -12px;
+            padding-left: 12px;
+        }
+        
+        .ui.cards > .card {
+            margin: 0.875em 0 0;
+        }
+    }
+}
 
 /* 发布评论 */
 .post.comment {
