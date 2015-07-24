@@ -92,6 +92,10 @@
                 > p {
                     margin: 12px 0;
                 }
+                
+                .count {
+                    margin-right: 1rem;
+                }
             }
             
             > .cats {
@@ -337,6 +341,23 @@
         .ribbon.presale {
             background-color: #fbbd08;
         }
+        
+        .ribbon.apply {
+            background-color: rgb(255,51,102);
+        }
+        .ribbon.callback {
+            background-color: rgb(0,111,188);
+        }
+        .ribbon.recoe {
+            background-color: rgb(0,188,156);
+        }
+        .ribbon.end {
+            background-color: rgb(102,102,102);
+        }
+        
+        .ribbon.season {
+            background-color: rgb(0, 0, 0);
+        }
     }
     
     > *:only-child,
@@ -444,43 +465,12 @@
         border-bottom: @border;
     }
     
-    .product.overview {
-        padding: 12px 31px;
-        text-align: left;
-    }
-    .ui.tabox .tab {
-        padding-left: 31px;
-    }
-    .bar {
-		background: #f1f1f1;
-	    height: 12px;
-        border-bottom: @border;
-        border-top: @border;
-	}
-    
-	.product.evaluating,
-    .product.reviews {
-		padding: 0 0 1rem;
-	}
-    .product.evaluating .resultbox {
-        padding-top: 20px;
-    }
-    
-    .sellwrap {
-    	background: #fff;
-        margin: 0 0 12px;
-        border: @border;
-        border-radius: 4px;
-        text-align: left;
-        padding: 0 12px 12px;
-        
+    .sellwrap {        
         .buy.box {
         	margin-top: 12px;
         }
     }
-    .brand.products {
-        margin: 12px auto 0;
-        
+    .brand.products {        
         .author {
             text-align: center;
             h4 {
@@ -489,28 +479,6 @@
             p {
                 padding: 0 0 12px;
             }
-        }
-        
-        .ui.small.images {
-            text-align: center;
-            
-            .image {
-                overflow: hidden;
-                margin-bottom: 0;
-                
-                img {
-                    width: 100%;
-                    margin: 0;
-                }
-            }
-        }
-        
-        .more {
-            border-top: @border;
-            margin-left: -12px;
-            margin-right: -12px;
-            padding: 12px 0 0;
-            text-align: center;
         }
     }
     
@@ -544,10 +512,6 @@
         }
     } 
     
-    .ui.tabox {
-        margin: 0 auto 1.5em;
-        padding-top: 2.5em;
-    }
     .product.overview {
         .ui.zanl {
         	padding: 20px 0;

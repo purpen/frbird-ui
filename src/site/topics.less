@@ -1,6 +1,134 @@
 @import "base";
 
 /* 社区 */
+.mainwrap {
+    .mainright {
+        .sellwrap.usersign {
+            margin-top: 0.5rem;
+            
+            .reg-border {
+                margin: 0 auto;
+                padding: 12px 0;
+                position: relative;
+                
+                .adreg {
+                    width: 70px;
+                	color: #222;
+                	padding: 0.2em;
+                	display: inline-block;
+                	font-size: 14px;
+                }
+            }
+        }
+        
+        .ui.labeled.icon.menu .item {
+            > .icon {
+                font-size: 1.82857em !important;
+            }
+        }
+        
+        .ui.menu,
+        .ui.vertical.menu {
+            box-shadow: none;
+        }
+        .ui.category.menu {
+            font-size: 1rem;
+            
+            > .item {
+                line-height: 1.5rem;
+            }
+        }
+        
+        .ui.articles.list {
+            padding-bottom: 12px;
+            margin-left: 12px;
+            
+            .item {
+                font-size: 16px;
+                letter-spacing: 0.2px;
+                text-decoration: none;
+                padding: 0.5em 12px;
+                line-height: 20px;
+                color: rgba(112, 123, 135, 0.85);
+                
+                &:hover {
+                    color: #ff3366;
+                }
+            }
+        }
+        
+        .mentors {
+            margin: 12px auto 0;
+            text-align: center;
+            
+            .popup {
+                text-align: left;
+            }
+            
+            .ui.avatar.images .image {
+                margin: 0 12px 0 0;
+                width: 50px;
+                
+                a {
+                    display: inline-block;
+                }
+                
+                img {
+                    width: 50px;
+                }
+            }   
+        }
+    }
+    
+}
+
+.reply.box {
+    border-top: 1px solid rgba(224, 224, 224, 0.46);
+    text-align: left;
+}
+#comment-list {
+    padding: 1.5rem 31px;
+    
+    .ui.comments {
+        max-width: 100%;
+    }    
+}
+#postpage .post.comment {
+    padding: 1.5rem 31px 3rem;
+    margin-left: 0;
+}
+.topics.masthead {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-height: 200px;
+    padding: 31px 0;
+    margin-top: 0.5rem;
+    
+    .ui.horizontal.bulleted.list > .item::before {
+        color: #fff;
+    }
+}
+
+#topiclist {
+    .sortby {
+        .ui.item.menu {
+            border: medium none;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            box-shadow: none;
+            
+            .item:first-child {
+                border-top-left-radius: 0px !important;
+            }
+            
+            .item:last-child {
+                border-bottom-left-radius: 0px !important;
+            }
+        }
+    }
+}
+
+
 #topics .ui.grid .container.column {
 	margin-top: 0;
 }
@@ -230,7 +358,8 @@
 }
 
 #postpage .ui.big.segment {
-	padding: 2.5em;
+    margin-top: 0.5rem;
+    padding: 1em 31px;
 }
 #postpage .ui.big.segment .ui.header .content {
     font-size: 1.125em;

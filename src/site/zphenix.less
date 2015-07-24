@@ -354,7 +354,7 @@ a {
     position: relative;
     display: block;
     margin: 15px auto 0;
-    max-width: 1280px;
+    max-width: 1240px;
     padding: 0 20px 0 35px;
     width: auto;
     
@@ -381,9 +381,9 @@ a {
     
     .mainleft {
         margin-bottom: 20px;
-        margin-right: 380px;
+        margin-right: 340px;
         min-height: 1080px;
-        padding: 20px 15px;
+        padding: 20px 1.5em;
         
         .container {
             position: relative;
@@ -394,16 +394,46 @@ a {
             border-left: @border;
             border-right: @border;
             background-color: #fcfcfc;
+            
+            .ui.tabox {
+                margin: 0 auto 1.5em;
+                padding-top: 2.5em;
+                
+                .tab {
+                    padding-left: 31px;
+                }
+            }
+            
+            .product.overview {
+                padding: 12px 31px;
+                text-align: left;
+            }
+            
+            .bar {
+        		background: #f1f1f1;
+        	    height: 12px;
+                border-bottom: @border;
+                border-top: @border;
+        	}
+        }
+        
+    	.product.evaluating,
+        .product.reviews,
+        .product.people {
+    		padding: 0 0 1rem;
+    	}
+        .product .resultbox {
+            padding-top: 20px;
         }
     }
     
     .mainright {
         float: left;
         font-size: 14px;
-        margin-left: -380px;
+        margin-left: -340px;
         padding: 20px 20px 20px 0;
         text-align: center;
-        width: 360px;
+        width: 320px;
         
         .block.title {
             margin-left: -12px;
@@ -413,6 +443,66 @@ a {
         
         .ui.cards > .card {
             margin: 0.875em 0 0;
+        }
+        
+        .sellwrap {
+        	background: #fff;
+            margin: 0 0 1.5rem;
+            border: @border;
+            border-radius: 4px;
+            text-align: left;
+            padding: 0 12px 12px;
+            
+            &.userinfo {
+                .button {
+                    padding: 12px;
+                    margin: 12px 0;
+                }
+                
+                p {
+                    color: rgba(112, 123, 135, 0.85);
+                }
+            }
+        }
+        
+        .adstickwrap {
+            margin: 0 0 2.25rem;
+        }
+        
+        .brand.products {
+            margin: 12px auto 0;
+        
+            .ui.small.images {
+                text-align: center;
+            
+                .image {
+                    overflow: hidden;
+                    margin-bottom: 0;
+                    width: 130px;
+                
+                    img {
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+        
+            .more {
+                border-top: @border;
+                margin-left: -12px;
+                margin-right: -12px;
+                padding: 12px 0 0;
+                text-align: center;
+            }
+        }
+        .mentors {
+            .more {
+                border-top: @border;
+                margin-left: -12px;
+                margin-right: -12px;
+                padding: 12px 0 0;
+                text-align: center;
+            }
         }
     }
 }
