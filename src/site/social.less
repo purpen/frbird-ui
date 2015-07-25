@@ -656,7 +656,7 @@
 	text-align: center;
 }
 .submit-banner .ui.basic.table td {
-	padding: 0.8em 0.5em 0;
+	padding: 0.8em 0.5em;
 }
 .submit-banner .submitbtn {
 	margin-bottom: 6em;
@@ -765,6 +765,9 @@
 	border-radius: 0.125em;
 	padding-left: 2.25em;
 }
+#submit-content .border h3.ui.header{
+	color:#fff;
+}
 #submit-content .ui.header .content {
 	font-size: 1rem;
     font-weight: normal;
@@ -784,6 +787,9 @@
 	color: #ff9800;
 	padding: 180px 10%;
 }
+#right-brain h2.ui.header{
+	color: #ff9800;
+}
 #right-brain .sub.header {
 	font-size: 1.2rem;
 	line-height: 2;
@@ -798,8 +804,8 @@
 #reference {
 	padding: 100px 8% 80px;
 }
-#reference .content{
-	font-size: 4rem;
+#reference h2.ui.header{
+	color:#fff;
 }
 #reference .ui.header .sub.header{
 	color: #fff;
@@ -833,6 +839,9 @@
 	border-style: dashed solid dashed dashed;
 	border-width: 14px;
 }
+#reference .box p,#reference .box-2 p{
+	margin:27px 0;
+}
 #reference .box-2 s > i {
 	position: absolute;
 	top: -9px;
@@ -856,12 +865,26 @@ section.oldbird {
 	padding: 80px 0 60px;
 	color: #fff;
 }
-#experts .content{
-	font-size:4rem;
-}
 #experts .content > .sub.header{
 	color: #fff;
 	font-size: 1.2rem;
+}
+#experts h2.ui.header{
+	color:#fff;
+}
+#experts h2.ui.header .content .sub.header{
+	margin-top:1em;
+}
+#submitpage .succase .ui.three.items > .item {
+	width: 31.333%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+#submitpage .succase .ui.three.items > .item > .image:not(.ui){
+	width:100%;
+}
+#submitpage .succase .ui.three.items > .item .ui.header{
+	margin-bottom:5px;
 }
 .userstory {
 	height: 276px;
@@ -1016,9 +1039,6 @@ section.log-banner{
 .ui.partners {
 	padding: 60px 8%;
 	background: #f4f4f4;
-}
-.ui.partners .content{
-	font-size:4rem;
 }
 .partner {
 	height: 100px;
