@@ -59,12 +59,22 @@ a {
     &.product.content {
     	overflow-y: hidden;
     	min-height: 200px;
+        
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
     }
     
     &.post {
         embed {
             display: block;
             margin: 2rem auto;
+        }
+        
+        img {
+            max-width: 100%;
+            width: 100%;
         }
     }
 }
@@ -1146,8 +1156,18 @@ ul.sidemenu li a:hover span {
 
 /* 首页 关于我们 案例 */
 #homepage {
+    margin-bottom: 2.5rem;
+    
+    .resultbox {
+        margin-top: 2.5rem;
+    }
+    
     .block.title {
         font-size: 2rem;
+    }
+    
+    .ui.socialstick.blocks {
+        margin-top: 0.75rem;
     }
 }
 

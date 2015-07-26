@@ -181,6 +181,14 @@
     }
 }
 
+.ui.topics.cards {
+    > .card {
+        > .problock > .counter > i {
+            margin-left: 0.5rem;
+        }
+    }
+} 
+
 
 #topics .ui.grid .container.column {
 	margin-top: 0;
@@ -384,7 +392,6 @@
 	text-align: center;
 }
 .topic.guess {
-    margin-left: 5rem;
     padding: 2.5rem 0 0;
 }
 .auto.loading {
@@ -416,12 +423,13 @@
 }
 #postpage .ui.big.segment .ui.header .content {
     font-size: 1.125em;
-    line-height: 1.5;
+    line-height: 1.2;
     margin-left: 0.5em;
 	margin-top: 0.5em;
+    width: 85%;
 }
 #postpage .ui.big.segment .ui.header .content .attribute {
-	margin: 0 0 0.75em;
+	margin: 0.75rem 0;
 	font-size: 0.925rem;
 	color: rgba(0, 0, 0, 0.4);
 }
@@ -435,7 +443,6 @@
 #postpage .post, #postpage .tags {
     font-size: 1em;
     line-height: 1.5;
-    margin-left: 5em;
 }
 #postpage .tags  {
 	margin-top: 2.5em;
