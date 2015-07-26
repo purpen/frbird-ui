@@ -17,7 +17,7 @@
 
 .ui {
     &.responsive.grid {
-	    padding: 0 0%;
+	    padding: 0;
 	    max-width: 767px;
         margin: 0rem auto;
     }
@@ -36,11 +36,47 @@
             	width: 36px;
             }
         }
+        .ui.small.icon i.icon {
+            font-size: 1.6rem !important;
+            color: #f36 !important;
+            vertical-align: middle;
+            height:1.4em !important;
+        }
+        .ui.small.icon cart.icon{
+            margin-right: 8px;
+        }
+        #wap-user-sign-box .ui.small.avatar.button {
+            border: 0 none;
+            border-radius: .25em;
+            overflow: hidden;
+            padding: 0;
+            width: 36px;
+            vertical-align: bottom;
+        }
     }
     &.green.message {
         border: @border-width @border-style @green;
     }
     
+}
+.left.pushed{
+	margin-left:260px;
+}
+.ui.sidebar {
+    width: 260px!important;
+    margin-left: -260px!important;
+}
+.ui.active.sidebar {
+    margin-left: 0!important;
+}
+.ui.sidebar.vertical.menu .item {
+    display: block;
+    height: auto!important;
+    border-top: 0;
+    border-left: 0 solid rgba(0,0,0,0);
+    border-right: 0;
+    color:rgba(255,255,255,0.9) !important;
+    padding:0.8em 1.33333333em;
 }
 
 .ui.modal > .close, 
@@ -210,7 +246,7 @@
                 letter-spacing: 0.15px;
                 overflow: hidden;
                 text-align: left;
-                padding: 18px 20px 0;
+                padding: 8px 20px 0;
                 margin: 0;
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -226,7 +262,7 @@
             > .excerpt {
                 color: rgba(146, 147, 163, 0.9);
                 font-size: 13px;
-                height: 51px;
+                height: 31px;
                 letter-spacing: 0.1px;
                 line-height: 1.6;
                 overflow: hidden;
@@ -477,6 +513,26 @@
         .ribbon.presale {
             background-color: #fbbd08;
         }
+        
+        .ribbon.season {
+          background-color: #000;
+        }
+        
+        .ribbon.new{
+            background-color: rgba(0,0,0,0.25);
+        }
+        
+        .ribbon.callback{
+            background-color:#006fbc
+        }
+        
+        .ribbon.end{
+            background-color:#666
+        }
+        
+        .ribbon.apply {
+          background-color: #f36;
+        }
     }
     
     > *:only-child,
@@ -498,6 +554,21 @@
 
 #mpresale{
     width:100%;
+}
+/* 活动 */
+.ui.activity.cards > .card > .content > .i-stats > .love > .apply {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0.75rem;
+    z-index: 9;
+}
+.ui.activity.cards > .card > .content > .i-stats > .love > .apply > a {
+    color: rgba(255, 51, 102, 0.9);
+}
+.ui.activity.cards > .card > .image > .presell {
+    border-radius: 0 0.25em 0 0;
+    padding: 0.5rem 0.8rem;
 }
 
 
