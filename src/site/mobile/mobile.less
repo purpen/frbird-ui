@@ -17,7 +17,7 @@
 
 .ui {
     &.responsive.grid {
-	    padding: 0 0%;
+	    padding: 0;
 	    max-width: 767px;
         margin: 0rem auto;
     }
@@ -40,15 +40,43 @@
             font-size: 1.6rem !important;
             color: #f36 !important;
             vertical-align: middle;
+            height:1.4em !important;
         }
         .ui.small.icon cart.icon{
             margin-right: 8px;
+        }
+        #wap-user-sign-box .ui.small.avatar.button {
+            border: 0 none;
+            border-radius: .25em;
+            overflow: hidden;
+            padding: 0;
+            width: 36px;
+            vertical-align: bottom;
         }
     }
     &.green.message {
         border: @border-width @border-style @green;
     }
     
+}
+.left.pushed{
+	margin-left:260px;
+}
+.ui.sidebar {
+    width: 260px!important;
+    margin-left: -260px!important;
+}
+.ui.active.sidebar {
+    margin-left: 0!important;
+}
+.ui.sidebar.vertical.menu .item {
+    display: block;
+    height: auto!important;
+    border-top: 0;
+    border-left: 0 solid rgba(0,0,0,0);
+    border-right: 0;
+    color:rgba(255,255,255,0.9) !important;
+    padding:0.8em 1.33333333em;
 }
 
 .ui.modal > .close, 
