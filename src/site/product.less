@@ -19,27 +19,32 @@
 
 .nav-categories {
     height: auto;
-    margin-top: 30px;
+    margin: 30px -0.75em 0px;
     padding-left: 35px;
     padding-right: 35px;
     position: static;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
     
     .category {
-        display: inline-block;
+        display: flex;
+        float: none;
+        flex-direction: column;
+        max-width: 100%;
         font-size: 10px;
         letter-spacing: 1.2px;
         position: relative;
         text-align: center;
         text-transform: uppercase;
-        margin-bottom: 30px;
-        width: 96px;
+        margin: 0px 0.75em 30px;
+        padding: 0 10px;
+        width: ~"calc(7.692307% - 1.5em)";
         
         a {
             color: #929292;
             display: block;
             outline: 0 none;
-            font-size: 16px;
+            font-size: 14px;
         }
         
         i {
@@ -70,7 +75,7 @@
     }
     
     i.icons .icon:first-child {
-        font-size: 3rem;
+        font-size: 36px;
     }
     .icons .icon + .sidebar.icon {
         font-size: 1.5rem;
@@ -78,15 +83,15 @@
     }
 }
 .sorts {
-    padding: 0 35px;
+    padding: 0 65px;
     
     .container {
         padding: 0 1rem;
-        font-size: 16px;
+        font-size: 14px;
         
         .ui.list > .item {
             color: #929292;
-            font-size: 16px;
+            font-size: 14px;
             &:hover,
             &.active {
                 color: #ff3366;
