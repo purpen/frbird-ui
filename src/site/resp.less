@@ -99,10 +99,13 @@
 	.ui.grid > .row > .four.column {
 		margin-top: 2em;
 	}
-	.ui.four.items > .item,.ui.four.cards > .card {
+	.ui.four.items > .item {
 		margin-left: 0.5%;
 	    margin-right: 0.5%;
 	    width: 49% !important;
+	}
+    .ui.four.cards > .card {
+	    width: ~"calc( 50%  -  1.5em )" !important;
 	}
     .ui.adverts.grid {
         padding: 0px 35px;
@@ -126,6 +129,13 @@
 	.ui.responsive.grid {
 		padding: 0 2.5%;
 	}
+    .ui.wideping.grid {
+        padding: 0px 35px !important;
+    }
+    .computer.only {
+        display: none;
+    }
+    
 	.header.main .ui.main-nav > .item {
 		padding-left: 1em;
 		padding-right: 1em;
@@ -170,6 +180,10 @@
 
 /* Mobile Only */
 @media only screen and (max-width: 767px) {
+    .computer.only {
+        display: none;
+    }
+    
 	.ui.grid{
 		margin:0;
 	}
