@@ -357,9 +357,7 @@ section.ui.block {
     display: block;
     margin: 15px auto 0;
     min-width: 660px;
-    max-width: 1140px;
-    padding: 0 20px;
-    width: auto;
+    width: 1200px;
     
     @border: 1px solid rgba(224, 224, 224, 0.46);
     
@@ -372,8 +370,9 @@ section.ui.block {
     .block.title {
         background-color: #f8f8f8;
         border-bottom: @border;
-        padding: 12px 31px;
+        padding: 18px 30px 12px;
         text-align: left;
+        font-size: 18px;
     }
     
     .mainleftwrap {
@@ -386,7 +385,7 @@ section.ui.block {
         margin-bottom: 20px;
         margin-right: 320px;
         min-height: 1080px;
-        padding: 20px;
+        padding: 20px 20px 20px 0;
         
         .container {
             position: relative;
@@ -439,9 +438,10 @@ section.ui.block {
         width: 320px;
         
         .block.title {
-            margin-left: -12px;
-            margin-right: -12px;
-            padding-left: 12px;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            font-size: 18px;
         }
         
         .ui.cards > .card {
@@ -454,7 +454,7 @@ section.ui.block {
             border: @border;
             border-radius: 4px;
             text-align: left;
-            padding: 0 12px 12px;
+            padding: 0 20px 12px;
             
             &.userinfo {
                 .button {
@@ -1510,26 +1510,12 @@ ul.sidemenu li a:hover span {
 }
 
 
-@media only screen and (min-width: 2000px) {
-	.ui.responsive.grid {
-	    padding: 0 23%;
-	}
-	#ajax-note {
-	    padding: 0 23%;
-	}
-}
 @media only screen and (min-width: 1750px) {
-	.ui.responsive.grid {
-	    padding: 0 18%;
-	}
 	#ajax-note {
 	    padding: 0 18%;
 	}
 }
 @media only screen and (min-width: 1500px) {
-	.ui.responsive.grid {
-	    padding: 0 13%;
-	}
 	#ajax-note {
 	    padding: 0 13%;
 	}
@@ -1539,23 +1525,6 @@ ul.sidemenu li a:hover span {
 		display: none !important;
 	}
 }
-@media only screen and (max-width: 1000px) {
-	.ui.responsive.grid {
-	    padding: 0 5%;
-	}
-	#ajax-note {
-	    padding: 0 2%;
-	}
-}
-@media only screen and (min-width: 1000px) {
-	.ui.responsive.grid {
-	    padding: 0 5%;
-	}
-	#ajax-note {
-	    padding: 0 2%;
-	}
-}
-
 @media only screen and (min-width : 992px) and (max-width : 1500px) {
 	.header.main .ui.main-nav > .item {
 		padding-left: 1rem;
