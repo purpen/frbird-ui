@@ -27,6 +27,36 @@
     width: ~"calc(50% - 1.5em)";
 }
 
+.ui.top.right.pointing.dropdown > .menu {
+    top: 150%;
+}
+.ui.dropdown .menu > .item {
+    padding: 0.85rem 4.5rem 0.85rem 1.5rem !important;
+}
+
+// 下拉菜单子项
+.menu {
+    > .container {
+        > .item {
+            color: rgba(0, 0, 0, 0.87);
+            cursor: pointer;
+            display: block;
+            font-size: 1rem;
+            font-weight: 400;
+            height: auto;
+            line-height: 1em;
+            padding: 0.85rem 4.5rem 0.85rem 1.5rem !important;
+            position: relative;
+            text-align: left;
+            text-transform: none;
+            
+            &:hover {
+                background: rgba(0, 0, 0, 0.05) !important;
+                color: rgba(0, 0, 0, 0.95) !important;
+            }
+        }
+    }
+}
 
 .ui.inverted.button:hover,
 .ui.inverted.active.button,
