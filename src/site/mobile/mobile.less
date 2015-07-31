@@ -233,7 +233,7 @@
             color: #fff;
             display: inline-block;
             font-size: 10px;
-            margin: 0px;
+            margin: 5px;
             opacity: 0.8;
             padding: 4px 6px;
             text-transform: uppercase;
@@ -717,20 +717,20 @@
 #wap-user-sign-box .add{
 	color:rgba(0,0,0,0);
 	position: absolute;
-  text-align: center;
-  font-size: 16px;
-  opacity: 1;
+    text-align: center;
+    font-size: 16px;
+    opacity: 1;
 	z-index:3;
-  left: -20px;
-  line-height: 20px;
-  margin-right: -15px;
+    left: -20px;
+    line-height: 20px;
+    margin-right: -15px;
 	top:40px;
 }
 #wap-user-sign-box .add-active{
 	top:-60px;
 	z-index:3;
 	color:#222;
-  transition-delay: .3s;
+    transition-delay: .3s;
 	transition: color 2s ease, top 4s ease;
 	-webkit-transition: color 2s ease, top 4s ease;
 	-moz-transition: color 2s ease, top 4s ease;
@@ -741,6 +741,19 @@
     background:@lightMagenta;
     color:#fff;
 }
-
+.ui.pointing.menu .header.item {
+    background-color: rgba(0,0,0,.04);
+    margin: 0;
+}
+/****  订单  ****/
+@media only screen and (max-width: 320px){
+    .ui.list>.item>.image{
+        width: 42px;
+        vertical-align: middle;
+    }
+    .ui.list>.item>.image+.content{
+        vertical-align: middle;
+    }
+}
 
 
