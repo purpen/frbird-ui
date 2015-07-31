@@ -295,7 +295,6 @@
                     text-decoration: none;
                     text-overflow: ellipsis;
                     text-shadow: 0 0 4px rgba(69, 69, 69, 0.38);
-                    text-transform: uppercase;
                     top: 50%;
                     white-space: nowrap;
                 }
@@ -406,6 +405,21 @@
             }
         }
         
+        &.widepin {
+            margin-left: 0.75em;
+            margin-right: 0.75em;
+            width: ~"calc(50% - 1.5em)";
+            
+            > .problock {
+                margin: 0px;
+                position: relative;
+                
+                > a.thumb {
+                    padding-top: 38.5%;
+                }
+            }
+        }
+        
         .ribbon.newest {
             background-color: #1bbb9d;
         }
@@ -448,6 +462,26 @@
         border-radius: 8px !important;
     }
     
+}
+
+.ui.topics.cards {
+    > .card {
+        
+        &.group {
+            width: ~"calc(75% - 1.5em)";
+            
+            > .problock {
+                > a.thumb {
+                    padding-top: 25%;
+                }
+                
+                &:hover {
+                    margin-top: 0px;
+                }
+            }
+        }
+        
+    }
 }
 
 .ui.brands.grid {
