@@ -10,12 +10,13 @@
 }
 
 .nav-categories {
+    box-sizing: border-box;
     height: auto;
     margin: 20px auto 0px;
     padding-left: 0;
     position: static;
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
+    font-size: 0;
     
     &.list {
         background-color: #fff;
@@ -24,9 +25,8 @@
     }
     
     .category {
-        display: flex;
+        display: inline-block;
         float: none;
-        flex-direction: column;
         min-width: 82px;
         font-size: 10px;
         letter-spacing: 1.2px;
@@ -342,9 +342,9 @@
         }
         
         &.special {
-            margin-left: 0.75em;
-            margin-right: 0.75em;
-            width: ~"calc(50% - 1.5em)";
+            margin-left: 10px;
+            margin-right: 10px;
+            width: ~"calc(50% - 20px)";
             
             > .problock {
                 margin: 0 20px;
@@ -396,7 +396,7 @@
         }
         
         &.special.cat {
-            width: 100%;
+            width: ~"calc(100% - 20px)";
             
             > .problock {
                 > a.thumb {
@@ -406,9 +406,9 @@
         }
         
         &.widepin {
-            margin-left: 0.75em;
-            margin-right: 0.75em;
-            width: ~"calc(50% - 1.5em)";
+            margin-left: 10px;
+            margin-right: 10px;
+            width: ~"calc(50% - 20px)";
             
             > .problock {
                 margin: 0px;
@@ -468,7 +468,9 @@
     > .card {
         
         &.group {
-            width: ~"calc(75% - 1.5em)";
+            margin-left: 10px;
+            margin-right: 10px;
+            width: ~"calc(75% - 20px)";
             
             > .problock {
                 > a.thumb {
