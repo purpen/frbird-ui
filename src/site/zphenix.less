@@ -1164,7 +1164,81 @@ ul.sidemenu li a:hover span {
     .ui.socialstick.blocks {
         margin-top: 0.75rem;
     }
+    
+    .ui.topics.cards > .card > .thumb.adv:first-child,
+    .ui.topics.cards > .card > .thumb.adv:last-child {
+        border-radius: 4px !important;
+    }
+    
+    .topicbox {
+        display: inline-block;
+        padding: 20px;
+        position: relative;
+        width: calc(50% - 2px);
+        border-bottom: 1px solid rgba(224, 224, 224, 0.46);
+        
+        .cover {
+            width: 120px;
+            display: inline-block;
+            float: left;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            line-height: 1rem;
+            margin-bottom: 0.75rem;
+            margin-top: 0rem;
+            
+            > a {
+                color: rgba(112, 123, 135, 0.91);
+                font-size: 16px;
+                letter-spacing: 0.2px;
+                text-decoration: none;
+                
+                &:hover {
+                    color: #ff3366;
+                }
+            }
+        }
+        
+        .description {
+            color: rgba(146, 147, 163, 0.9);
+            font-size: 14px;
+            letter-spacing: 0.1px;
+            line-height: 1.4;
+            overflow: hidden;
+            text-align: left;
+            height: 40px;
+            margin-bottom: 0.5em;
+        }
+        
+        .author {
+            font-size: 0.875em;
+            color: rgba(146, 147, 163, 0.9);
+            
+            span {
+                margin-right: 15px;
+            }
+        }
+    }
+    
+    .thumb.adv {
+        margin-bottom: 20px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        padding-top: 47.5%;
+    }
+    
+    .resultbox {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
 }
+
 
 #homepage .ui.social > .item {
 	margin-bottom: 1em;
@@ -1728,124 +1802,161 @@ ul.sidemenu li a:hover span {
 	background-position: left top;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size:cover;
+	background-size: cover;
+    
+    .ui.grid {
+    	padding: 0 15%;
+        
+        p {
+        	line-height: 1.5;
+        }
+    }
+    
+    .buttons {
+    	margin-top: 5rem;
+    }
 }
-.incubator.masthead .ui.grid {
-	padding: 0 15%;
-}
-.incubator.masthead .ui.grid p {
-	line-height: 1.5;
-}
-.incubator.masthead .buttons {
-	margin-top: 5rem;
-}
+
 .incubator.service {
 	color: white;
 	padding: 3% 8%;
 	background-color: #d82545;
+    
+    .ui.blocks {
+    	margin-top: 5%;
+        
+        > .block {
+        	background: transparent;
+            margin-bottom: 2rem;
+            
+            > .wtitle {
+            	border-radius: 500%;
+            	margin-right: 2.5rem;
+                height: 200px;
+                width: 200px;
+                
+                > a {
+                	display: inline-block;
+                	font-size: 28px;
+                    font-weight: 500;
+                    margin-top: 80px;
+                }
+            }
+            
+            &:hover > .wtitle > a {
+            	color: #ff3366;
+            	padding-bottom: 3px;
+            	border-bottom: 2px solid #ff3366;
+            }
+        }
+    }
 }
-.incubator.service .ui.blocks {
-	margin-top: 5%;
-}
-.incubator.service .ui.blocks > .block {
-	background: transparent;
-    margin-bottom: 2rem;
-}
-.incubator.service .ui.blocks > .block > .wtitle {
-	border-radius: 500%;
-	margin-right: 2.5rem;
-    height: 200px;
-    width: 200px;
-}
-.incubator.service .ui.blocks > .block > .wtitle > a {
-	display: inline-block;
-	font-size: 28px;
-    font-weight: 500;
-    margin-top: 80px;
-}
-.incubator.service .ui.blocks > .block:hover > .wtitle > a {
-	color: #ff3366;
-	padding-bottom: 3px;
-	border-bottom: 2px solid #ff3366;
+
+.incubator.platform {
+    background-image: url("/images/topicbg/fuhua.jpg");
+    
+    .block.title {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+    
+    p {
+        margin-bottom: 0.35rem;
+    }
 }
 
 .incubator.cases {
 	padding: 3% 8%;
 	background-color: #eee;
-}
-.incubator.cases .container {
-	position: relative;
-	min-height: 500px;
-}
-.incubator.cases .container > .think {
-	background-color: #fff;
-    border-radius: 500%;
-    bottom: 5%;
-	color: #ff3366;
-    height: 200px;
-    left: 38%;
-    padding: 15px;
-    position: absolute;
-    width: 200px;
-}
-.incubator.cases .container > .think > h3 {
-	font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    margin-top: 50px;
-}
-
-.incubator.cases .container > .product {
-	height: 135px;
-    padding: 15px;
-    position: absolute;
-    width: 135px;
-}
-.incubator.cases .container > .product > .summary {
-	left: -230px;
-    line-height: 1.5;
-    position: absolute;
-    text-align: left;
-    top: 35px;
-    width: 240px;
-    z-index: 100;
-}
-.incubator.cases .container > .product:hover > .summary {
-	color: #333;
-}
-.incubator.cases .container > .product > img {
-	border-radius: 500px;
-	width: 80%;
-}
-.incubator.cases .container > .miaoxing {
-	bottom: 0;
-    left: 18%;
-}
-.incubator.cases .container > .yunma {
-	bottom: 35%;
-    left: 22%;
-}
-.incubator.cases .container > .peinaiji {
-	bottom: 54%;
-    left: 42%;
-}
-.incubator.cases .container > .peinaiji > .summary {
-	left: 160px;
-	top: 25px;
-}
-.incubator.cases .container > .shiguangji {
-	bottom: 35%;
-    left: 62%;
-}
-.incubator.cases .container > .shiguangji > .summary {
-	left: 160px;
-}
-.incubator.cases .container > .sleep {
-	bottom: 0%;
-	left: 67%;
-}
-.incubator.cases .container > .sleep > .summary {
-	left: 160px;
+    
+    .container {
+    	position: relative;
+    	min-height: 500px;
+        
+        > .think {
+        	background-color: #fff;
+            border-radius: 500%;
+            bottom: 5%;
+        	color: #ff3366;
+            height: 200px;
+            left: 38%;
+            padding: 15px;
+            position: absolute;
+            width: 200px;
+            
+            > h3 {
+            	font-size: 28px;
+                font-weight: 500;
+                margin-bottom: 10px;
+                margin-top: 50px;
+            }
+        }
+        
+        > .product {
+        	height: 135px;
+            padding: 15px;
+            position: absolute;
+            width: 135px;
+            
+            > .summary {
+            	left: -230px;
+                line-height: 1.5;
+                position: absolute;
+                text-align: left;
+                top: 35px;
+                width: 240px;
+                z-index: 100;
+            }
+            
+            &:hover > .summary {
+            	color: #333;
+            }
+            
+            > img {
+            	border-radius: 500px;
+            	width: 80%;
+            }
+            
+        }
+        
+        > .miaoxing {
+        	bottom: 0;
+            left: 18%;
+        }
+        
+        > .yunma {
+        	bottom: 35%;
+            left: 22%;
+        }
+        
+        > .peinaiji {
+        	bottom: 54%;
+            left: 42%;
+            
+            > .summary {
+            	left: 160px;
+            	top: 25px;
+            }
+        }
+        
+        > .shiguangji {
+       	    bottom: 35%;
+            left: 62%;
+            
+            > .summary {
+            	left: 160px;
+            }
+        }
+        
+        > .sleep {
+        	bottom: 0%;
+        	left: 67%;
+            
+            > .summary {
+            	left: 160px;
+            }
+        }
+    }
 }
 
 .incubator.design {

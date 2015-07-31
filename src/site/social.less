@@ -443,11 +443,19 @@
     -ms-transition: all 0.3s ease 0.1s;
 	transition: all 0.3s ease 0.1s;
 }
+.ui.socialstick.blocks > .block > .image > .transparent > .sub.title > h3 {
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .ui.socialstick.blocks > .block > .image:hover > .transparent {
 	background-color: rgba(0,0,0,0.7);
 }
 .ui.socialstick.blocks > .block > .image:hover > .transparent > .sub.title {
-	bottom: 2rem;
+	bottom: 1.5rem;
     color: rgba(255,255,255,1.0);
 }
 
@@ -1183,8 +1191,9 @@ section.log-banner{
 
 /* 孵化资源 */
 .cooperate.masthead {
-	color: white;
-	background: url("/images/topicbg/features_banner.jpg") no-repeat scroll center center / cover rgba(56, 67, 77, 0.9);
+	color: #fff;
+	background: url("/images/topicbg/bg_signin.jpg") no-repeat scroll center center / cover rgba(56, 67, 77, 0.9);
+    height: 450px;
 }
 .cooperate.masthead > .masthead-cover {
     background-color: rgba(0, 0, 0, 0.4);
@@ -1198,7 +1207,6 @@ section.log-banner{
 .cooperate.submenu {
     background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem 0 0;
 }
 .cooperate.submenu .ui.list > .item {
     border-bottom: 2px solid transparent;
@@ -1218,12 +1226,22 @@ section.log-banner{
     color: #f36;
     transition: all 0.3s ease-in-out 0s;
 }
+.cooperate.submenu .ui.horizontal.list > .item:first-child {
+    padding-left: 0rem !important;
+}
 .cooperate.topstick .ui.socialstick.blocks {
     margin-top: 1rem;
 }
 
 .cooperate.mainlist {
 	padding: 2rem 0;
+    
+    h2.block.title {
+        margin-bottom: 1rem;
+    }
+}
+.ui.cooperate.cards > .card {
+    box-shadow: 0 1px 1px 0 rgba(224, 224, 224, 0.46);
 }
 .ui.cooperate.cards > .card > .container {
     padding: 1rem;
@@ -1254,10 +1272,10 @@ section.log-banner{
 .ui.cooperate.cards > .card > .container > .ui.list .content {
     margin-left: 0;
     margin-top: 1rem;
+    display: inline-block;
 }
 .ui.cooperate.cards > .card > .container > .ui.list .name {
     font-size: 1.2rem;
-    font-weight: 700;
 }
 .ui.cooperate.cards > .card > .container > .ui.list .description {
     margin-top: 0.25rem;
