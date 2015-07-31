@@ -7,7 +7,7 @@
             
             .reg-border {
                 margin: 0 auto;
-                padding: 12px 0;
+                padding: 20px 0;
                 position: relative;
                 
                 .adreg {
@@ -46,7 +46,7 @@
                 font-size: 16px;
                 letter-spacing: 0.2px;
                 text-decoration: none;
-                padding: 0.5em 12px;
+                padding: 0.5em 20px;
                 line-height: 20px;
                 color: rgba(112, 123, 135, 0.85);
                 
@@ -57,7 +57,7 @@
         }
         
         .mentors {
-            margin: 12px auto 0;
+            margin: 20px auto 0;
             text-align: center;
             
             .popup {
@@ -65,7 +65,7 @@
             }
             
             .ui.avatar.images .image {
-                margin: 0 12px 0 0;
+                margin: 0 10px 0 0;
                 width: 50px;
                 
                 a {
@@ -261,9 +261,6 @@
 	text-align: center;
 }
 
-#topics {
-    padding: 0rem 0 3rem;
-}
 #topics .ui.three.items {
 	margin-left: 0;
 	margin-right: 0;
@@ -338,9 +335,6 @@
 #topics .ui.table tr:hover {
 	background-color: rgba(0, 0, 50, 0.02);
 }
-#topics .ui.table tr:hover a {
-	color: #ff3366;
-}
 #topics .ui.table tr:hover .dot-irecommend,
 #topics .ui.table .dot-irecommend:hover {
 	background-color: #f42156;
@@ -352,24 +346,12 @@
 .ui.basic.table tbody tr:last-child {
 	border-bottom: 0px solid transparent;
 }
-.ui.table a.line {
-	border-bottom: 2px solid rgba(255, 255, 255, 0);
-}
-.ui.table a.line:hover {
-	text-decoration: none;
-	padding-bottom: 5px;
-	border-bottom: 2px solid rgba(255, 51, 102, 1);
-}
 .topic.table .title {
-	margin: 0.5em 0;
+	margin: 5px 0;
 }
 .topic.table .content .attribute {
 	margin: 0 0 0.75em;
-	font-size: 0.925em;
-	color: rgba(0, 0, 0, 0.4);
-}
-.topic.table .content .attribute a {
-	color: rgba(0, 0, 0, 0.6);
+	font-size: @smallFontSize;
 }
 .topic.table .content .attribute a:hover {
 	text-decoration: none;
@@ -379,7 +361,7 @@
 	color: #f36;
 }
 .topic.table .content .description {
-	color: rgba(0, 0, 0, 0.65);
+	color: @descTextColor;
     margin-bottom: 0.5rem;
 }
 .topic .ui.table .center.aligned,
