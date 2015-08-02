@@ -2,10 +2,10 @@
 
 /* Social Page */
 .ui.social {
-	padding: 1rem 0 0rem;
+	padding: @padding 0 0rem;
 }
 .fever.content {
-	margin-top: 1em;
+	margin-top: @margin;
 }
 .category.image {
     background-color: rgba(56, 67, 77, 0.9);
@@ -143,7 +143,7 @@
 
 .social.slide {
 	background-color: rgba(255,255,255, 1);
-	padding: 1rem 0 0;
+	padding: @padding 0 0;
     
     .ui.advert {
     	margin-bottom: 20px;
@@ -166,13 +166,13 @@
 .social.topstick {
     margin-top: 1.5rem;
     padding: 0 20px 0 0;
-}
-
-.social.topstick.top {
-    padding-top: 1.5rem;
-}
-.social.topstick.bottom {
-    padding-bottom: 1.5rem;
+    
+    &.top {
+        padding-top: 1.5rem;
+    }
+    &.bottom {
+        padding-bottom: 1.5rem;
+    }
 }
 
 .social.people {
@@ -377,15 +377,15 @@
     border-radius: 20px;
     color: rgb(255, 255, 255);
     display: inline-block;
-    font-size: 15px;
+    font-size: @smallFontSize;
     height: 40px;
     line-height: 40px;
+    width: 40px;
     margin-bottom: 0;
     padding: 0;
     text-align: center;
     text-decoration: none;
-    transition: color 0.25s linear 0s;
-    width: 40px;
+    .transition(color, 0.25s, linear, 0s);
 }
 .social .dot-irecommend.active {
     background-color: #F42156;

@@ -22,6 +22,7 @@
 @bodyBgWhite: #fff;
 @bodyBgColor: #f5f5f5;
 
+@defaultColor: #5d6266;
 @titleColor: rgba(112, 123, 135, 0.92);
 @textColor: rgba(146, 147, 163, 0.9);
 @magentaColor: #ff3366;
@@ -48,6 +49,7 @@
 /*-------------------
        FontSize
 --------------------*/
+@hugeFontSize: 28px;
 @bigFontSize: 22px;
 @titleFontSize: 16px;
 @textFontSize: 14px;
@@ -57,11 +59,15 @@
        Padding
 --------------------*/
 @padding: 10px;
+@halfPadding: 5px;
+@twoPadding: 20px;
 
 /*-------------------
        Margin
 --------------------*/
 @margin: 10px;
+@halfMargin: 5px;
+@twoMargin: 20px;
 
 
 
@@ -83,6 +89,17 @@
     border-radius: @radius;
     -moz-border-radius: @radius;
     -webkit-border-radius: @radius;
+}
+
+/*------------------
+     Box-sizing
+-------------------*/
+.boxsizing() {
+    box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;    
 }
 
 .wrap(){
