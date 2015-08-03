@@ -2,7 +2,7 @@
 
 /* 头部导航 */
 .main {
-    background: @body-bg-white;
+    background: @bodyBgWhite;
 	width: 100%;
 	padding: 0;
 	height: 70px !important;
@@ -16,7 +16,7 @@
         	border-top: 2px solid transparent;
             margin: 0;
         	padding: 0.5rem 1rem;
-        	color: @magenta-color;
+        	color: @magentaColor;
             display: block;
         	font-weight: bold;
         	opacity: 0.9;
@@ -26,8 +26,8 @@
             &.active,
             &:active,
             &:hover {
-            	border-top: 2px solid @magenta-color;
-                color: @magenta-color;
+            	border-top: 2px solid @magentaColor;
+                color: @magentaColor;
             }
         }
     }
@@ -312,23 +312,4 @@
 
 .ui.secondary.menu .ui.dropdown .menu .item {
     padding: 0.85em 2.5em 0.85em 1em !important;
-}
-
-/* Scroll to Top */
-#scrollUp {
-	border-color: #E4E5E7;
-	color: #5d6266;
-	background-color: rgba(255,255,255,0.15);
-    bottom: 5%;
-    right: 3%;
-    
-    > i.icon {
-    	margin-left: -0.5em;
-    }
-    
-    &:hover {
-    	border-color: #ff3b6b;
-    	background-color: #ff3b6b;
-    	color: #fff;
-    }    
 }

@@ -4,16 +4,30 @@
 #ft {
 	background-color: #F1F1F1;
     border-top: 1px solid #E4E5E7;
-    padding: 1.5rem 0;
+    padding: 20px 0;
     
     .ui.list {
         .item {
-            font-size: 14px;
-            padding: 0.25em 0;
+            font-size: @textFontSize;
+            color: @aLinkColor;
+            padding: 5px 0;
+        }
+        .cte.item {
+            
+            .ui.button {
+                width: 2.5em;
+                height: 2.5em;
+                
+                > i.icon {
+                   line-height: 1em;
+                   font-size: 1em
+               }
+            }
         }
         div.active.item {
-            font-size: 16px;
+            font-size: @titleFontSize;
             padding-bottom: 0.75em;
+            color: @titleColor;
         }
     }
     .ui.rg.grid {
@@ -28,12 +42,32 @@
     }
 }
 
+/* Scroll to Top */
+#scrollUp {
+	border-color: #E4E5E7;
+	color: #5d6266;
+	background-color: rgba(255,255,255,0.15);
+    bottom: 5%;
+    right: 3%;
+    
+    > i.icon {
+    	margin-left: -0.15em;
+    }
+    
+    &:hover {
+    	border-color: #ff3b6b;
+    	background-color: #ff3b6b;
+    	color: #fff;
+    }    
+}
+
 .ui.circular.topup.button {
     height: 3.5em;
     width: 3.5em;
+    border: 1px solid #E4E5E7;
     
-    >i.icon {
-        font-size: 1.15em;
+    > i.icon {
+        font-size: 1.25em;
         height: 1.25em;
         line-height: 1.5em;
         width: 1.25em;
