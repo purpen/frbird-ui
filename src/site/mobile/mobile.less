@@ -63,9 +63,14 @@
     }
     
 }
-
+.ui.menu{
+    font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
 .ui.sidebar {
     width: 16rem !important;
+    top:0 !important;
+    position: fixed !important;
+    font-size: @textFontSize !important;
 }
 .ui.vertical.inverted.menu .item:before {
     background: -webkit-linear-gradient(left,rgba(255,255,255,.03) 0,rgba(255,255,255,.1) 50%,rgba(255,255,255,.03) 100%);
@@ -1156,8 +1161,56 @@
                 }
             }
         }
+        .flex-direction-nav{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            a{
+                position: absolute;
+                font-size: @bigFontSize;
+                top: 50%;
+                display: inline-block;
+                opacity: 1;
+                margin: 0 .25rem 0 0;
+                width: 1.18em;
+                padding: 11px 0;
+                margin-top: -21px;
+                font-family: Icons;
+                font-style: normal;
+                vertical-align: middle;
+                font-weight: 400;
+                text-decoration: inherit;
+                text-align: center;
+                speak: none;
+                font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                &.flex-prev{
+                    -webkit-animation: arrowUp 1.5s linear infinite;
+            		-moz-animation: arrowUp 1.5s linear infinite;
+            		animation: arrowUp 1.5s linear infinite;
+            		left:0;
+            		&:before{
+            		    content: "\f104";
+            		    color: @aLinkColor;
+            		}
+                }
+                &.flex-next{
+                    -webkit-animation: arrowRt 1.5s linear infinite;
+            	    -moz-animation: arrowRt 1.5s linear infinite;
+            	    animation: arrowRt 1.5s linear infinite;
+            	    right:0;
+            	    &:before{
+            	        content: "\f105";
+            	        color: @aLinkColor;
+            	    }
+                }
+            }
+        }
     }
-
 }
 
 
