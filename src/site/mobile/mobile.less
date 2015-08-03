@@ -19,6 +19,7 @@
     &.responsive.grid {
 	    padding: 0;
 	    max-width: 767px;
+	    min-width: initial !important;
         margin: 0rem auto;
         >.row.pt-0{
             padding-top: 0 !important;
@@ -1005,5 +1006,160 @@
 .ui.dividing.header .icon {
     margin-bottom: 0.2em;
 }
+/**** 首页轮播 ****/
+#slider{
+    height:210px;
+    margin-bottom: 0.5rem !important;
+    &.flexslider {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        position: relative;
+        zoom: 1;
+        .flex-viewport {
+            max-height: 2000px;
+            -webkit-transition: all 1s ease 0s;
+            -moz-transition: all 1s ease 0s;
+            -o-transition: all 1s ease 0s;
+            -ms-transition: all 1s ease 0s;
+            transition: all 1s ease 0s;
+        }
+        .slides::after {
+            clear: both;
+            content: " ";
+            display: block;
+            height: 0;
+            line-height: 0;
+            visibility: hidden;
+        }
+        .slides {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 210px;
+            zoom: 1;
+            li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                background-position: 50% 50%;
+                background-size: cover;
+                display: none;
+                height: 210px;
+                -webkit-backface-visibility: hidden;
+                a {
+                    display: block;
+                    height: 210px;
+                    img {
+                        width: 100%;
+                        display: block;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+    .flex-control-nav{
+        padding: 0;
+        list-style: none;
+        bottom: 1em;
+        margin: 0 auto;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        li{
+            display:inline-block;
+        }
+        a{
+            background-color: rgba(255,255,255,.35);
+            border-radius: 2em;
+            display: inline-block;
+            height: .65em;
+            margin-right: .65em;
+            text-indent: -999em;
+            width: .65em;
+            &.flex-active,&:hover{
+                background-color: rgba(255,255,255,.75);
+            }
+        }
+    }
+}
+#mchildmenu{
+    height:42px;
+    overflow:hidden;
+    &.flexslider {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        position: relative;
+        zoom: 1;
+        .flex-viewport {
+            max-height: 2000px;
+            -webkit-transition: all 1s ease 0s;
+            -moz-transition: all 1s ease 0s;
+            -o-transition: all 1s ease 0s;
+            -ms-transition: all 1s ease 0s;
+            transition: all 1s ease 0s;
+        }
+        .slides {
+            height: auto;
+            zoom: 1;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align:center;
+            &::after {
+                clear: both;
+                content: " ";
+                display: block;
+                height: 0;
+                line-height: 0;
+                visibility: hidden;
+            }
+            >li{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-align:center;
+                position:relative;
+                min-width:80px;
+                &:before{
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 1px;
+                    height: 100%;
+                    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.05)),color-stop(50%,rgba(0,0,0,.1)),to(rgba(0,0,0,.05)));
+                    background-image: -webkit-linear-gradient(rgba(0,0,0,.05) 0,rgba(0,0,0,.1) 50%,rgba(0,0,0,.05) 100%);
+                    background-image: linear-gradient(rgba(0,0,0,.05) 0,rgba(0,0,0,.1) 50%,rgba(0,0,0,.05) 100%);
+                }
+                &.none:before{
+                    content: none;
+                }
+                .item{
+                    position: relative;
+                    display: inline-block;
+                    padding: .83em 0;
+                    border-top: 0 solid rgba(0,0,0,0);
+                    -webkit-tap-highlight-color: rgba(0,0,0,0);
+                    -moz-user-select: -moz-none;
+                    -khtml-user-select: none;
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    width: 100%;
+                    color: @aLinkColor;
+                    &:hover{
+                        color: @aHoverColor;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
 
 
