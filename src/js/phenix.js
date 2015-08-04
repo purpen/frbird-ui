@@ -601,20 +601,21 @@ phenix.hook_product_topic = function(){
 // hook 评论行为
 phenix.hook_comment_page = function(){	
 	$('#comment-form').form({
-		content: {
-			identifier  : 'content',
-			rules: [
-				{
-					type   : 'empty',
-					prompt : '评论内容不能为空'
-				},
-				{
-					type   : 'maxLength[140]',
-					prompt : '评论内容不超过140字符'
-				}
-			]
-		}
-	}, {
+    fields:{
+      content: {
+        identifier  : 'content',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : '评论内容不能为空'
+          },
+          {
+            type   : 'maxLength[140]',
+            prompt : '评论内容不超过140字符'
+          }
+        ]
+      }
+    },
 		inline : true,
 		onSuccess: function(event){
 			event.preventDefault();
@@ -629,6 +630,7 @@ phenix.hook_comment_page = function(){
 		$('.ui.submit.button').removeClass('loading');
 	});
 	
+  /**
   $('.ui.reply.form').livequery(function(){
     $(this).form({
       content: {
@@ -652,7 +654,9 @@ phenix.hook_comment_page = function(){
       }
     });
   });
+**/
 };
+
 
 // 处理批量附件
 phenix.rebuild_batch_assets = function(id){
