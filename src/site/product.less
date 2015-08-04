@@ -587,6 +587,9 @@
         padding: 0;
         border: none;
 	}
+    .ui.topics.segment {
+        padding: 0px 30px;
+    }
     .slidebox {
         border-bottom: @border;
     }
@@ -666,11 +669,11 @@
         .comment {
             border-bottom: @border;
             margin: 0;
-            padding: 20px 31px;
+            padding: 20px 30px;
             
             .avatar {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 
                 img {
                     border-radius: 500px;
@@ -727,6 +730,37 @@
 
 .post.comment {
 	margin-left:0;
+}
+
+.ui.miniproducts.two.blocks {
+    margin-bottom: 20px;
+    
+    > .block {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: calc(50% - 10px);
+        margin-bottom: 0px;
+        
+        > .image {
+            background-color: rgba(56, 67, 77, 0.9);
+            background-image: linear-gradient(to top, rgba(255, 94, 58, 0.8) 0px, rgb(255, 51, 102) 100%);
+            overflow: hidden;
+            min-height: 90px;
+            position: relative;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            a {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 11;
+            }
+        }
+    }
 }
 
 /* 产品详情页 */
@@ -1256,9 +1290,6 @@
 #shoppage .ui.comments .comment .comment {
 	margin-right: 1em;
 }
-#shoppage .ui.comments .comment:hover {
-	background-color: rgba(0,0,0,0.02);
-}
 #shoppage .post.comment {
 	margin-top: 1em;
 }
@@ -1399,9 +1430,8 @@
 #shopping-basket .right.aligned {
  	text-align: right;
 }
-#shopping-basket .close.button .icon {
-    font-size: 0.875em;
-    padding: 0.4em;
+#shopping-basket .close.button:hover .icon {
+    color: #ff3366;
 }
 #shopping-basket .cart-items-count,
 #shopping-basket .cart-total-money {
@@ -1558,7 +1588,7 @@
 	text-align: center;
 }
 #create-new-address .button {
-	margin: 40% auto;
+	margin: 25% auto;
 }
 #checkout .bill {
 	margin-top: 1em !important;

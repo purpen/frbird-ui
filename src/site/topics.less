@@ -20,6 +20,28 @@
                     }
                 }
             }
+            
+    		.add {
+    	        position: absolute;
+    			top: 20px;
+    			text-align: center;
+    			left: 0;
+    			color: rgba(0,0,0,0);
+    			width: 128px;
+    			font-size: 14px;
+    			opacity: 1;
+    			z-index: -1;
+                .transition(all, 1.5s, ease, 0s);
+    		}
+    		.add-active{
+    		    top: -10px;
+    			z-index: 3;
+    			color: #222;
+    			transition-delay: 0.3s;
+    			-webkit-animation: arrow 1.5s ease both;
+    			-moz-animation: arrow 1.5s ease both;
+    			animation: arrow 1.5s ease both;
+    		}
         }
         
         .ui.labeled.icon.menu .item {
@@ -250,6 +272,18 @@
     
 }
 
+.topics.sortby {
+    margin-bottom: 20px;
+}
+.ui.topics.segment {    
+    .ui.block {
+        margin: 0;
+    }
+    .ui.table {
+        border: none;
+    }
+}
+
 .ui.topic.table {
     td {
     	padding: 10px 10px 0px;
@@ -258,18 +292,10 @@
     	vertical-align: top;
     	text-align: center;
     }
-    td.extra {
-        border-top: none; 
-        padding-top: 0em;
-        padding-bottom: 10px;
-    }
     tr:hover .dot-irecommend,
     .dot-irecommend:hover {
     	background-color: #f42156;
     	color: #fff;
-    }
-    tbody tr:last-child {
-    	border-bottom: 0px solid transparent;
     }
     .title {
     	margin: 0px 0 5px;
@@ -280,6 +306,8 @@
     }
     
     .content {
+        position: relative;
+        
         .attribute {
         	margin: 0 0 0.75em;
         	font-size: @smallFontSize;
@@ -290,13 +318,29 @@
             }
         }
         
+        .ui.mini.images {
+            display: inline-block;
+            width: 65%;
+        }
+        
         .description {
         	color: @descTextColor;
-            margin-bottom: 0.5rem;
+            margin-bottom: @margin;
+            display: inline-block;
+            width: 65%;
+            min-height: 45px;
         }
-    } 
-    .center.aligned {
-    	text-align: center;
+        
+        .last.reply {
+            font-size: @smallFontSize;
+        }
+        
+        .dot-irecommend {
+            position: absolute;
+            right: 0;
+            top: 10%;
+            z-index: 99;
+        }
     }
 }
 
@@ -319,17 +363,9 @@
 
 .topic-title-color-red > a{
     color:#ff002b !important;
-    
-    &:hover{
-        border-bottom: 2px solid #ff002b !important;
-    }
 }
 .topic-title-color-blue > a{
     color:#245dc1 !important;
-    
-    &:hover{
-        border-bottom: 2px solid #245dc1 !important;
-    }
 }
 
 #postpage {

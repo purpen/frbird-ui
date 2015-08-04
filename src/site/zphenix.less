@@ -396,11 +396,11 @@ section.ui.block {
             border-bottom: @border;
             border-left: @border;
             border-right: @border;
-            background-color: #fcfcfc;
+            background-color: #fff;
             
             .ui.tabox {
-                margin: 0 auto 1.5em;
-                padding-top: 2.5em;
+                margin: 0 auto @padding;
+                padding-top: @twoPadding;
                 
                 .tab {
                     padding-left: 31px;
@@ -423,7 +423,7 @@ section.ui.block {
     	.product.evaluating,
         .product.reviews,
         .product.people {
-    		padding: 0 0 1rem;
+    		padding: 0 0 20px;
     	}
         .product .resultbox {
             padding-top: 20px;
@@ -519,10 +519,15 @@ section.ui.block {
 }
 
 /* 发布评论 */
+.ui.reply.segment {
+    border: medium none;
+    text-align: left;
+}
 .post.comment {
 	font-size: 1em;
     line-height: 1.5;
     margin-left: 5em;
+    text-align: left;
     
     .ui.avatar {
     	margin-left: 5px;
@@ -2462,26 +2467,16 @@ position: relative;
 	-moz-animation: arrow 1.2s ease both;
 	animation: arrow 1.2s ease both;
 }
-
-@-webkit-keyframes arrow {
-	0%{opacity:1}
-	95%{opacity:1}
-	100%{opacity:0}
-}
-@-moz-keyframes arrow {
-	0%{opacity:1}
-	95%{opacity:1}
-	100%{opacity:0}
-}
-@keyframes arrow {
-	0%{opacity:1}
-	95%{opacity:1}
-	100%{opacity:0}
-}
 /*****  头像加V  ****/
 table.topic .author a.avatar.image {
 	padding-right: 5px;
+    width: 40px;
+    height: 40px;
 	background: none repeat scroll 0 0 rgba(0,0,0,0) !important;
+}
+table.topic .author a.avatar.image img {
+    width: 40px;
+    height: 40px;
 }
 table.topic .author a.avatar.image img.image-V{
 	position: absolute;

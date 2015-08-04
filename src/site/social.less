@@ -371,7 +371,7 @@
     top: 0em;
     z-index: 9;
 }
-.social .dot-irecommend {
+.dot-irecommend {
     background-color: rgb(255,51,102);
     border: 0 none !important;
     border-radius: 20px;
@@ -386,16 +386,17 @@
     text-align: center;
     text-decoration: none;
     .transition(color, 0.25s, linear, 0s);
+    
+    &.active {
+        background-color: #F42156;
+        color: rgb(255, 255, 255) !important;
+    }
+    &:hover {
+        background-color: #F42156;
+        color: rgb(246, 246, 246) !important;
+    }
 }
-.social .dot-irecommend.active {
-    background-color: #F42156;
-    color: rgb(255, 255, 255) !important;
-}
-.social .dot-irecommend:hover {
-    background-color: #F42156;
-    color: rgb(246, 246, 246) !important;
-}
-.social .ui.big.segment .dot-irecommend {
+.ui.big.segment .dot-irecommend {
 	position: absolute;
     right: 31px;
     top: 1.5em;

@@ -673,6 +673,23 @@ phenix.rebuild_batch_assets = function(id){
 	}
 };
 
+// 每日签到点击
+phenix.signin = function(){
+    $.get('/user/ajax_fetch_user_sign', {type: 1});
+    
+    $('#sign-in-btn').livequery(function(){
+        $(this).click(function(){
+            // 所有ajax请求，验证是否登录
+            if (!phenix.visitor.is_login){
+                phenix.show_login_box();
+                return false;
+            }
+            // ajax加载签到事件
+            $.post('/user/ajax_sign_in', {type: 1});
+        });
+    });
+};
+
 // 社会化分享
 phenix.bind_share_list = function(pic_url) {
 	// 链接，标题，网站名称，子窗口别称，网站链接

@@ -44,7 +44,7 @@
 /*-------------------
        Radius
 --------------------*/
-@radius: 4px;
+@radius: 0.285714rem;
 
 /*-------------------
        FontSize
@@ -85,7 +85,7 @@
   -webkit-box-shadow: @arguments !important;
 }
 
-.border-radius(@radius: 4px){
+.border-radius(@radius: 0.285714rem){
     border-radius: @radius;
     -moz-border-radius: @radius;
     -webkit-border-radius: @radius;
@@ -121,4 +121,20 @@
 .ui.responsive.grid {
 	margin: 0 auto;
     min-width: 660px;
+}
+
+@-webkit-keyframes arrow {
+	0%{ opacity: 1 }
+	95%{ opacity: 0.6 }
+	100%{ opacity: 0 }
+}
+@-moz-keyframes arrow {
+	0%{ opacity: 1 }
+	95%{ opacity: 0.6 }
+	100%{ opacity: 0 }
+}
+@keyframes arrow {
+	0%{ opacity: 1 }
+	95%{ opacity: 0.6 }
+	100%{ opacity: 0 }
 }
