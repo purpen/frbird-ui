@@ -1825,8 +1825,12 @@ h4.ui.header .sub.header {
             
             &.check.circle.outline::before {
                 font-size: 1.25rem;
-                padding-top: 60%;
                 vertical-align: middle;
+		        position: absolute;
+  		        top: 50%;
+  		        margin-top: -9.5px;
+  		        left: 50%;
+  		        margin-left: -7.5px;
             }
         }
     }
@@ -1865,6 +1869,8 @@ h4.ui.header .sub.header {
             right: -6px;
             top: 50%;
             transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
             width: 10px;
         }
     }   
