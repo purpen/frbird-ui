@@ -224,8 +224,8 @@
 *******************************/
 
 .ui.link {
-        color: @aLinkColor;
-        text-decoration: none;
+	color: @aLinkColor;
+	text-decoration: none;
 }
 
 /*--------------
@@ -233,19 +233,30 @@
 ---------------*/
 .ui.link:hover,
 .ui.link:active {
-      color: @aHoverColor;
-      text-decoration: none;
+	text-decoration: none;
+	color: @lightMagentaHover;
 }
-
 .ui.icon.link:hover,
 .ui.icon.link:active {
-      text-decoration: none;
-}
-.ui.links .active.link,
-.ui.active.link {
-      color: @aHoverColor;
+	text-decoration: none;
+	color: @lightMagentaHover;
 }
 
+/*--------------
+     Active
+---------------*/
+.ui.links .active.link,
+.ui.active.link {
+    color: @lightMagentaHover;
+}
+/*-------------------
+      Color
+--------------------*/
+.ui.links .magenta.link,
+.ui.magenta.link {
+    color: #FF3366;
+	text-decoration: none;
+}
 .mmfoot{
     .ui.grid{
         .row.bot {
@@ -1415,6 +1426,10 @@
 }
 .ui.active.green.option .icon:after {
 	border-color: #19b698 #19b698 -moz-use-text-color -moz-use-text-color;
+}
+
+.qq-drop-processing{
+    display:none;
 }
 
 
