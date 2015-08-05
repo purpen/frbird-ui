@@ -1,26 +1,48 @@
 /* 个人中心 */
+@import "base";
+
 .user.masthead {
 	color: white;
     background-color: rgba(56, 67, 77, 0.9);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.user.masthead .container {
-    padding: 100px 0 60px;
-    text-align: center;
-}
-.user.masthead .container .summary {
-	font-size: 0.875rem;
-}
-.user.masthead .container .avatar {
-    background: none repeat scroll 0 0 #fff;
-	border: 3px solid #FFFFFF;
+    height: 450px;
+    
+    .container {
+        padding: 80px 0 60px;
+        text-align: center;
+        
+        h2.ui.header {
+            color: #fff;
+            font-size: @bigFontSize;
+        }
+        
+        .summary {
+        	font-size: @smallFontSize;
+        }
+        
+        .avatar {
+            background: none repeat scroll 0 0 #fff;
+        	border: 3px solid #FFFFFF;
+        }
+    }
 }
 .user.submenu {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1rem 0 0;
     background-color: #fff;
+    
+    .ui.grid {
+        > .row {
+            padding: 0px;
+        }
+    }
+    .ui.horizontal.list:not(.celled) {
+        .item:first-child {
+            padding-left: 0px !important;
+        }
+    }
 }
 .user.submenu .ui.list > .item {
     border-bottom: 2px solid transparent;
@@ -38,11 +60,25 @@
 .user.submenu .ui.list > .item.active {
     border-bottom: 2px solid #f36;
     color: #f36;
-    transition: all 0.3s ease-in-out 0s;
+    .transition;
 }
+
 .user.center {
     padding: 1.5rem 0;
     margin-bottom: 1.5rem;
+    
+    .ui.bird.text {
+        margin-right: 10px;
+    }
+    .ui.horizontal.bulleted.list {
+        > .item {
+            color: @aLinkColor;
+            
+            &.active {
+                color: @magentaColor;
+            }
+        }
+    } 
 }
 .user.center h3 a.ui.small{
 	float: right;
@@ -68,7 +104,8 @@
     padding: 0 0.25rem 0.25rem 0;
 }
 .ui.timeline.list > .item {
-    padding-top: 0.75rem;
+    padding-bottom: @twoPadding;
+    padding-top: @twoPadding;
 }
 .ui.timeline.list > .item > .content {
     margin-left: 0;
@@ -151,6 +188,7 @@
 }
 .user.center .ui.list .description {
 	margin-top: 0.5em;
+    color: @descTextColor;
 }
 
 .ui.bonus.items {
