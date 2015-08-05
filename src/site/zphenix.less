@@ -893,10 +893,15 @@ ul.sidemenu li a:hover span {
     margin-bottom: 1rem;
 }
 #searchpage {
-	padding-top: 1rem;
 	padding-bottom: 2rem;
 	background-color: #fff;
 	min-height: 350px;
+    
+    .ui.tabox > .ui.grid {
+        > .row {
+            padding: 0px;
+        }
+    } 
 }
 #searchpage .ui.tabox {
 	margin: 0em auto 0.8em;
@@ -905,6 +910,7 @@ ul.sidemenu li a:hover span {
 	width: 8%;
 	font-size: 1.15rem;
 	text-align: center;
+    margin-bottom: -1px;
 }
 .ui.search.list > .item {
     margin-bottom: 1rem;
