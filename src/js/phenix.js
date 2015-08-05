@@ -12,7 +12,7 @@ var phenix = {
 			},delay);
 	    },
 	    show_error_note: function(msg,delay) {
-			msg = '<div class="content"><i class="remove sign icon"></i>'+ msg +'</div>';
+			msg = '<div class="content"><i class="remove icon"></i>'+ msg +'</div>';
 	    	phenix.show_notify_bar(msg,'error',delay);
 	    },
 	    show_ok_note:function(msg,delay) {
@@ -35,8 +35,8 @@ var phenix = {
 				time: delay,
 				class_name: class_name,
 			});
-      //让显示框可以显示在弹出层之上
-      $('#gritter-notice-wrapper').css({'z-index':1000});
+            // 让显示框可以显示在弹出层之上
+            $('#gritter-notice-wrapper').css({'z-index':1000});
 	    }
 };
 
@@ -76,20 +76,6 @@ phenix.after_submit = function() {
  * 初始化,设置常用的ajax hook
  */
 phenix.initial = function(){
-	/*
-	var shrink_header = 50;
-	var get_current_scroll = function(){
-		return window.pageYOffset || document.documentElement.scrollTop;
-	}
-	
-	$(window).scroll(function(){
-		var scroll = get_current_scroll();
-		if (scroll >= shrink_header) {
-			$('header.main').addClass('shrink');
-		} else {
-			$('header.main').removeClass('shrink');
-		}
-	});*/
 	
 	/* 此类为确认后执行的ajax操作 */
 	$('a.confirm-request').livequery(function(){
@@ -170,7 +156,7 @@ phenix.initial = function(){
 	
 	$.scrollUp({
         scrollText: '<i class="angle up icon"></i>',
-		className: 'ui circular topup button',
+		className: 'ui circular topup icon button',
         scrollTitle: false
     });
 	
