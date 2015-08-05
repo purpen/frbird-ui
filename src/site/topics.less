@@ -308,8 +308,10 @@
     .title {
     	margin: 0px 0 5px;
         
-        .icon {
-            color: #ff3366;
+        a {
+            span.ui.label:first-child {
+                margin-left: 10px;
+            }
         }
     }
     
@@ -378,7 +380,7 @@
 
 #postpage {
     .ui.big.segment {
-        padding: @padding 30px;
+        padding: @padding 30px @twoPadding;
         
         .ui.header {
             .content {
