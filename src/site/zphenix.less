@@ -509,6 +509,24 @@ section.ui.block {
     }
 }
 
+.dot.count {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 99;
+    
+    .statistic {
+        font-size: @smallFontSize;
+        margin: 5px auto;
+        color: @titleColor;
+        text-align: right;
+        
+        .value {
+            font-size: 10px;
+        }
+    }   
+}
+
 /* 发布评论 */
 .ui.reply.segment {
     border: medium none;
