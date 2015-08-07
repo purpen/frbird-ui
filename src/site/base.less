@@ -109,6 +109,14 @@
     word-wrap: break-word;
 }
 
+.roundo {
+	-webkit-animation: rotation360 5s linear infinite;
+	-moz-animation: rotation360 5s linear infinite;
+	-o-animation: rotation360 5s linear infinite;
+	-ms-animation: rotation360 5s linear infinite;
+	animation: rotation360 5s linear infinite;
+}
+
 .ui {
     .hide {
     	display:none;
@@ -137,4 +145,37 @@
 	0%{ opacity: 1 }
 	95%{ opacity: 0.6 }
 	100%{ opacity: 0 }
+}
+
+
+@-webkit-keyframes rotation360 {
+  from {
+	    -moz-transform: rotate(0deg);
+	    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation360 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
