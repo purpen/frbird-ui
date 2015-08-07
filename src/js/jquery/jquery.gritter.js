@@ -78,7 +78,7 @@
 		_custom_timer: 0,
 		_item_count: 0,
 		_is_setup: 0,
-		_tpl_close: '<i class="flat close icon"></i>',
+		_tpl_close: '<i class="close icon"></i>',
 		_tpl_title: '<span class="gritter-title">[[title]]</span>',
 		_tpl_item: '<div id="gritter-item-[[number]]" class="ui message [[item_class]]" style="display:none" role="alert">[[close]]<div class="gritter-item content">[[image]]<div class="[[class_name]]">[[text]]</div></div></div>',
 		_tpl_wrap: '<div id="gritter-notice-wrapper"></div>',

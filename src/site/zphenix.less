@@ -53,22 +53,12 @@ a {
     &.product.content {
     	overflow-y: hidden;
     	min-height: 200px;
-        
-        img {
-            max-width: 100%;
-            width: 100%;
-        }
     }
     
     &.post {
         embed {
             display: block;
             margin: 2rem auto;
-        }
-        
-        img {
-            max-width: 100%;
-            width: 100%;
         }
     }
 }
@@ -285,7 +275,7 @@ section.ui.block {
                 position: relative;
                 
                 > a {
-                    background-color: rgba(0, 0, 0, 0.1);
+                    background-color: rgba(0, 0, 0, 0.05);
                     bottom: 0;
                     left: 0;
                     position: absolute;
@@ -312,7 +302,7 @@ section.ui.block {
                 h2 {
                    display: block;
                    font-size: 18px;
-                   font-weight: bold;
+                   font-weight: 400;
                    letter-spacing: -1px;
                    line-height: 0.9;
                    margin-bottom: 10px;
@@ -321,11 +311,12 @@ section.ui.block {
                
                p {
                    color: #fff;
-                   height: 38px;
+                   height: 25px;
                    letter-spacing: 0.15px;
                    line-height: 1.5;
                    overflow: hidden;
                    text-align: left;
+                   font-size: @smallFontSize;
                }
             }
             
@@ -393,10 +384,9 @@ section.ui.block {
             text-align: center;
             z-index: 1;
             border-radius: 2px;
-            border-bottom: @border;
-            border-left: @border;
-            border-right: @border;
+            border: @border;
             background-color: #fff;
+            margin-top: 20px;
             
             .ui.tabox {
                 margin: 0 auto @padding;
@@ -471,6 +461,7 @@ section.ui.block {
             
             .ui.adverts.cards {
                 margin-top: -20px;
+                margin-bottom: 20px;
                 
                 > .card {
                     margin: 20px 0 0;
@@ -526,8 +517,9 @@ section.ui.block {
 .post.comment {
 	font-size: 1em;
     line-height: 1.5;
-    margin-left: 5em;
+    margin-left: 0em;
     text-align: left;
+    padding: 1.5rem 30px 3rem;
     
     .ui.avatar {
     	margin-left: 5px;
@@ -683,6 +675,10 @@ section.ui.block {
       line-height: 500px;
       width: 80px;
       .transition(all, 0.3s, ease-in-out, 0s);
+      
+      .icon {
+          display: inline;
+      }
     }
     .prev {
       left: -80px;
@@ -888,10 +884,15 @@ ul.sidemenu li a:hover span {
     margin-bottom: 1rem;
 }
 #searchpage {
-	padding-top: 1rem;
 	padding-bottom: 2rem;
 	background-color: #fff;
 	min-height: 350px;
+    
+    .ui.tabox > .ui.grid {
+        > .row {
+            padding: 0px;
+        }
+    } 
 }
 #searchpage .ui.tabox {
 	margin: 0em auto 0.8em;
@@ -900,6 +901,7 @@ ul.sidemenu li a:hover span {
 	width: 8%;
 	font-size: 1.15rem;
 	text-align: center;
+    margin-bottom: -1px;
 }
 .ui.search.list > .item {
     margin-bottom: 1rem;
@@ -913,7 +915,7 @@ ul.sidemenu li a:hover span {
 }
 .ui.search.list > .item > .content > .header {
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.33em;
     margin-bottom: 0.5rem;
 }
@@ -955,7 +957,7 @@ ul.sidemenu li a:hover span {
     float: left;
     font-size: 1rem;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 1;
     margin-bottom: -1px;
     margin-right: -1px;
@@ -993,7 +995,7 @@ ul.sidemenu li a:hover span {
 .goccia.page .ui.features .item small {
 	display: inline-block;
     font-size: 0.8em;
-    font-weight: bold;
+    font-weight: 400;
     text-align: center;
 	margin-top: 0.5em;
 }
@@ -1015,7 +1017,7 @@ ul.sidemenu li a:hover span {
 }
 .goccia.page .subheader {
 	font-size: 1.2em;
-	font-weight: bold;
+	font-weight: 400;
 }
 .goccia.page .ui.vantage > .ui.title.btn {
 	margin-bottom: -1px;
@@ -1218,7 +1220,7 @@ ul.sidemenu li a:hover span {
         h2 {
             height: 24px;
             line-height: 24px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             margin-top: 0;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -1239,10 +1241,10 @@ ul.sidemenu li a:hover span {
             color: rgba(146, 147, 163, 0.9);
             font-size: 14px;
             letter-spacing: 0.1px;
-            line-height: 1.4;
+            line-height: 1.25;
             overflow: hidden;
             text-align: left;
-            height: 40px;
+            height: 35px;
             margin-bottom: 0.5em;
         }
         
@@ -1921,7 +1923,7 @@ ul.sidemenu li a:hover span {
             
             > h3 {
             	font-size: 28px;
-                font-weight: 500;
+                font-weight: 400;
                 margin-bottom: 10px;
                 margin-top: 50px;
             }
@@ -2014,7 +2016,7 @@ ul.sidemenu li a:hover span {
             
             > h3 {
                 font-size: @titleFontSize;
-                font-weight: 500;
+                font-weight: 400;
                 margin: 0;
                 padding: @halfPadding 0;
             }
@@ -2480,7 +2482,7 @@ table.topic .author a.avatar.image img {
 }
 table.topic .author a.avatar.image img.image-V{
 	position: absolute;
-	top: 34px;
+	top: 23px;
   right: -0.4rem;
   background: #f36;
   z-index: 99;

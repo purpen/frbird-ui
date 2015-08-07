@@ -12,7 +12,7 @@
 .nav-categories {
     box-sizing: border-box;
     height: auto;
-    margin: 20px auto 0px;
+    margin: 30px auto 0px;
     padding-left: 0;
     position: static;
     display: block;
@@ -95,6 +95,10 @@
     }
 }
 
+.adstick.shop.list {
+    margin-top: 0px;
+}
+
 .ui.products.cards {
     .thumb(){
         background-position: 50% 50%;
@@ -143,7 +147,7 @@
             > h2 {
                 bottom: 0;
                 color: #797979;
-                font-weight: bold;
+                font-weight: 400;
                 letter-spacing: 0.15px;
                 overflow: hidden;
                 text-align: left;
@@ -183,7 +187,7 @@
             > .cats {
                 color: rgba(146, 147, 163, 0.71);
                 font-size: 12px;
-                font-weight: bold;
+                font-weight: 400;
                 height: 15px;
                 overflow: hidden;
                 padding: 12px 54px 36px 20px;
@@ -241,7 +245,7 @@
                 > h2 {
                     color: #fff;
                     font-size: 26px;
-                    font-weight: bold;
+                    font-weight: 400;
                     height: auto;
                     margin-top: 10px;
                     max-height: 24%;
@@ -285,7 +289,7 @@
                     color: #fff;
                     display: block;
                     font-size: 45px;
-                    font-weight: 800;
+                    font-weight: 400;
                     height: 70px;
                     left: 10px;
                     line-height: 1;
@@ -578,7 +582,8 @@
     .product.overview p {
         margin: 19px 0 !important;
     }
-    .product.overview .froala-element.post img, .product.overview .froala-element.product.content img {
+    .product.overview .froala-element.post img, 
+    .product.overview .froala-element.product.content img {
         margin: -13px 0 !important;
     }
 	.ui.segment {
@@ -596,7 +601,7 @@
     
     .sellwrap {        
         .buy.box {
-        	margin-top: 12px;
+        	margin-top: @twoMargin;
         }
     }
     .ui.editable.buttons {
@@ -700,9 +705,11 @@
     }
     
     .ui.xrange.cards {
-        margin: 0 0 1rem;
+        margin: 0px;
         
         > .card {
+            box-shadow: 0 0 1px 0 rgb(212, 212, 213);
+            margin-bottom: @twoPadding;
             text-align: left;
             padding: 12px;
             
@@ -738,7 +745,7 @@
     > .block {
         margin-left: 5px;
         margin-right: 5px;
-        width: calc(50% - 10px);
+        width: ~"calc(50% - 10px)";
         margin-bottom: 0px;
         
         > .image {
@@ -1062,7 +1069,7 @@
 }
 #shoppage .buy.box .count {
 	margin-right: 0.2em;
-	font-weight: bold;
+	font-weight: 400;
 }
 #shoppage .buy.box .ui.grid > .row > .column {
 	padding-top: 1.5%;
@@ -1221,7 +1228,7 @@
 	margin:0;
 	opacity:0.6;
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: 400;
 }
 .schedule.p-sell{
 	margin-bottom:0 !important;
@@ -1312,7 +1319,7 @@
 }
 .comment .filter .wordscount {
   font-size: 1.1em;
-    font-weight: 700;
+    font-weight: 400;
     margin: 0 3px;
 }
 #shoplist .ui.sticklink.list {
