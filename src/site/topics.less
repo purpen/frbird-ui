@@ -426,7 +426,6 @@
                 color: @defaultColor;
                 font-size: @bigFontSize;
                 line-height: 1.2;
-                margin-left: 0.5em;
             	margin-top: 0.5em;
                 width: 85%;
                 
@@ -434,6 +433,14 @@
                 	margin: @margin 0;
                 	font-size: @smallFontSize;
                 	color: @textColor;
+                    
+                    span {
+                        margin: 0 3px;
+                        
+                        &:first-child {
+                            margin-left: 0px;
+                        }
+                    }
                 }
             }
         }

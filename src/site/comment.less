@@ -1,3 +1,5 @@
+@import "base";
+
 .ui.threaded.comments .comment .comments{
     box-shadow:none;
 }
@@ -64,4 +66,51 @@
 .ui.comments .onecomment .target {
     margin: 0 0 1rem;
     color: rgba(0, 0, 0, 0.5);
+}
+
+
+.ui.alarm.segment {
+    padding: 20px 30px;
+    text-align: center;
+    
+    .comment-show {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    
+    .mes-text {
+    	border-bottom: 1px solid rgba(0,0,0,0.05);
+    	width:100%;
+        text-align: left;
+    	padding: 20px 0;
+        position: relative;
+        
+        .date {
+            font-size: 12px;
+            margin-left: 10px;
+            color: @descTextColor;
+        }
+        .news{
+        	font-size: 14px;
+        	font-weight: 400;
+            
+            .sub_header {
+            	padding-top: 10px;
+            	line-height: 20px;
+            }
+        }
+        
+        a.ui.photo {
+        	float: left; 
+        	width: 40px; 
+        	height: 40px; 
+        	margin-right: 10px;
+            
+            img {
+            	height:40px;
+            	width:40px;
+            	border-radius: 25px;
+            }
+        }
+    }
 }
