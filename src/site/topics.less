@@ -135,27 +135,31 @@
     
     .ui.comments {
         max-width: 100%;
-        
-        .ui.ribbon.label {
-            left: ~"calc(-1rem - 1.4em)";
+        .comment:first-child{
+            margin-top: 0.5em;
+            padding-top: 0.5em;
         }
-        
-        hr {
-            background-color: rgba(224, 224, 224, 0.8);
-            border: medium none;
-            height: 1px;
-            margin: 20px auto;
-        }
-            
-        .comment {
+        .comment{
+            height: 2.5em;
             .content {
                 .replytips {
-                    margin: 10px 0 0;
-                    
+                margin: 10px 0 0;
+
                     .ui.cancel-reply-btn {
                         margin-left: 10px;
                     }
                 }
+            }
+        
+            .ui.ribbon.label {
+                left: ~"calc(-1rem - 1.4em)";
+            }
+        
+            hr {
+                background-color: rgba(224, 224, 224, 0.8);
+                border: medium none;
+                height: 1px;
+                margin: 20px auto;
             }
         }
     }    

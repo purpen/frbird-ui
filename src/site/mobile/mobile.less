@@ -210,8 +210,6 @@
         
     }
 }
-
-
 #gritter-notice-wrapper {
     padding-top: 80px;
     position: fixed;
@@ -1149,7 +1147,7 @@
     height:42px;
     overflow:hidden;
     &.flexslider {
-        margin: 0;
+        margin: 0 0 @padding 0;
         padding: 0;
         background: #fff;
         position: relative;
@@ -1309,7 +1307,17 @@
 }
 /**** 评论 ****/
 .ui.comments .comment{
+    .avatar{
+        height:2.5em !important;
+    }
     >.content{
+        .author{
+            color:@aLinkColor;
+            font-weight:400;
+            &:hover{
+                color:@lightMagentaHover;
+            }
+        }
         >.laud {
             float: right;
         }
