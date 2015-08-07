@@ -1307,7 +1307,17 @@
 }
 /**** 评论 ****/
 .ui.comments .comment{
+    .avatar{
+        height:2.5em !important;
+    }
     >.content{
+        .author{
+            color:@aLinkColor;
+            font-weight:400;
+            &:hover{
+                color:@lightMagentaHover;
+            }
+        }
         >.laud {
             float: right;
         }
