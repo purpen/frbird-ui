@@ -166,6 +166,10 @@ phenix.initial = function(){
 		$('.promo').slideUp('slow');
 		return false;
 	});
+    
+	$('textarea.comment-textarea').maxlength({
+      'feedback' : '.wordscount'
+    });
 };
 
 // 显示登录弹出框

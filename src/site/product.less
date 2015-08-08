@@ -117,6 +117,7 @@
         text-align: left;
         top: 10px;
         z-index: 1;
+        cursor: pointer;
     }
     
     .ribspan(){
@@ -196,6 +197,11 @@
                 text-transform: uppercase;
                 white-space: nowrap;
                 color: #ff3366;
+                
+                i.yen.icon {
+                    font-size: 10px;
+                    margin-right: 0;
+                }
             }
             
             > .counter {
@@ -209,7 +215,7 @@
             > .ribbons {
                 .ribbon;
                 
-                > span {
+                > a {
                     .ribspan;
                 }
             }
@@ -441,6 +447,12 @@
         .ribbon.presale {
             background-color: #fbbd08;
         }
+        .ribbon.exchange {
+            background-color: #a5673f;
+        }
+        .ribbon.featured {
+            background-color: #21ba45;
+        }
         
         .ribbon.apply {
             background-color: rgb(255,51,102);
@@ -612,11 +624,53 @@
             margin-top: 20px;
             text-align: center;
             h4 {
-                margin: 12px auto;
+                margin: 10px auto;
             }
-            p {
-                padding: 0 0 12px;
+            p.info {
+                padding: 0px;
+                margin-bottom: 10px;
             }
+            p.desc {
+                padding: 0 0 10px;
+            }
+        }
+    }
+    
+    .user.action {
+        margin-top: 20px;
+        
+        p {
+            margin-bottom: 10px;
+        }
+        .zanl {
+            float: right;
+            text-align: right;
+        }
+    }
+    .user.avatars {
+        border-top: 1px solid rgba(224, 224, 224, 0.46);
+        margin-top: 10px;
+        padding-top: 10px;
+        
+        .ui.images {
+            font-size: 1rem;
+            
+            .image {
+                width: 30px;
+                height: 30px;
+                margin: 0;
+                
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 100px;
+                    margin: 0;
+                }
+            }
+        }
+        p {
+            margin-top: 5px;
+            font-size: @smallFontSize;
         }
     }
     
@@ -666,27 +720,28 @@
     
     .ui.reply.segment {
         text-align: left;
-    }
-    
-    .ui.comments {
-        max-width: 100%;
         
-        .comment {
-            border-bottom: @border;
-            margin: 0;
-            padding: 20px 30px;
+        .ui.comments {
+            max-width: 100%;
+        
+            .comment {
+                border-bottom: @border;
+                margin: 0;
+                padding: 20px 30px;
+                height: auto;
             
-            .avatar {
-                width: 40px;
-                height: 40px;
+                .avatar {
+                    width: 40px;
+                    height: 40px;
                 
-                img {
-                    border-radius: 500px;
+                    img {
+                        border-radius: 500px;
+                    }
                 }
-            }
-            > .avatar ~ .content {
-                margin-top: 0.35rem;
-                margin-left: 65px;
+                > .avatar ~ .content {
+                    margin-top: 0.35rem;
+                    margin-left: 60px;
+                }
             }
         }
     }
