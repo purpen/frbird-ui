@@ -34,13 +34,20 @@
 .ui.popup {
     color: @defaultColor;
 }
+.ui.header {
+    font-family: inherit;
+}
+h3.ui.header,
+h4.ui.header {
+    margin-bottom: 10px;
+}
 h3.ui.header .sub.header, 
 h4.ui.header .sub.header {
     margin-top: @halfMargin;
-    color: @defaultColor;
+    color: @descTextColor;
 }
 .ui.top.right.pointing.dropdown > .menu {
-    top: 150%;
+    top: 140%;
 }
 .ui.dropdown .menu > .item {
     padding: 0.85rem 4.5rem 0.85rem 1.5rem !important;
@@ -75,6 +82,10 @@ h4.ui.header .sub.header {
 .ui.list > a.active.item,
 .ui.list > a.item:hover {
     color: @magentaColor;
+}
+
+.ui.rating .active.icon {
+    color: rgb(255, 81, 68);
 }
 
 // 下拉菜单子项
@@ -1409,32 +1420,6 @@ h4.ui.header .sub.header {
 }
 .ui.login-modal {
 	position: relative;
-}
-
-/*----rating.less-----*/
-.ui.rating .icon:before {
-  content: "\2605";
-
-  -webkit-transition:
-    color 0.3s ease,
-    opacity 0.3s ease
-  ;
-  -moz-transition:
-    color 0.3s ease,
-    opacity 0.3s ease
-  ;
-  -ms-transition:
-    color 0.3s ease,
-    opacity 0.3s ease
-  ;
-  -o-transition:
-    color 0.3s ease,
-    opacity 0.3s ease
-  ;
-  transition:
-    color 0.3s ease,
-    opacity 0.3s ease
-  ;
 }
 
 /*-------video.less--------*/

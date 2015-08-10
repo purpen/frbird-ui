@@ -125,7 +125,7 @@
     
 }
 #comment-list {
-    padding: 1.5rem 31px;
+    padding: @padding 30px;
     
     .morepages {
         text-align: center;
@@ -500,6 +500,35 @@
             
             &:hover {
                 color: #ff3366;
+            }
+        }
+    }
+    
+    
+    
+    
+    .topic.author {
+        text-align: left;
+        margin-bottom: 10px;
+        
+        .ui.header {
+            padding: 20px 30px;
+            margin-top: 0px;
+            
+            .content {
+                width: 90%;
+                font-size: 14px;
+                
+                .sub.header {
+                    margin-top: 10px;
+                }
+                
+                .ui.button {
+                    margin-left: 20px;
+                }  
+            }
+            a.ui.avatar.image {
+                margin-top: 0px;
             }
         }
     }
