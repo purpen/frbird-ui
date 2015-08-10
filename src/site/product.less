@@ -322,7 +322,7 @@
                 }
                 
                 p {
-                    color: #eaefeb;
+                    color: rgba(255, 255, 255, 0.9);
                     display: block;
                     font-size: 16px;
                     height: 20px;
@@ -334,30 +334,31 @@
                     right: 10px;
                     text-align: center;
                     text-overflow: ellipsis;
-                    text-shadow: 0 0 4px rgba(69, 69, 69, 0.38);
+                    text-shadow: 0 0 3px rgba(69, 69, 69, 0.38);
                     top: 50%;
                     white-space: nowrap;
                 }
                 
                 .more {
-                    background-color: transparent;
-                    border: 2px solid #eaefeb;
-                    border-radius: 4px;
-                    color: #eaefeb;
+                    border: 2px solid #fff;
+                    border-radius: @radius;
+                    color: rgba(255, 255, 255, 0.95);
                     display: inline-block;
                     height: auto;
                     left: 50%;
-                    margin-left: -123px;
-                    margin-top: 31px;
-                    padding: 15px 0;
+                    margin-left: -124px;
+                    margin-top: 30px;
+                    padding: 0.8em 0em;
                     position: absolute;
                     text-align: center;
                     top: 49.5%;
-                    width: 246px;
+                    width: 245px;
+                    font-size: @titleFontSize;
+                    .transition;
                     
                     &:hover {
-                        background-color: #eaefeb;
-                        color: rgba(81, 82, 84, 1);
+                        background-color: #fff;
+                        color: rgba(0,0,0,0.8);
                     }
                 }
             }
