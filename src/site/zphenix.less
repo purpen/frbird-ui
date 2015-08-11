@@ -343,6 +343,21 @@ section.ui.block {
     }
 } 
 
+.adblock.fixed {
+    max-width: 100%;
+    overflow: hidden;
+    margin: @twoMargin auto;
+    
+    > a {
+        display: block;
+        
+        img {
+            border-radius: @radius;
+            width: 100%;
+        }
+    }
+}
+
 /* 左右两栏布局 */
 .mainwrap {
     position: relative;
