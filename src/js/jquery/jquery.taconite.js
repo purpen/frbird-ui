@@ -167,7 +167,7 @@ function processDoc(xml) {
 
         var root = xml.documentElement.tagName;
         log('XML document root: ', root);
-
+        log('XML: '+ xml);
         var taconiteDoc = $('taconite', xml)[0];
 
         if (!taconiteDoc) {
@@ -216,6 +216,7 @@ function go(xml) {
     try {
         var t = new Date().getTime();
         // process the document
+        log('xml child nodes' + xml.childNodes);
         process(xml.childNodes);
         $.taconite.lastTime = (new Date().getTime()) - t;
         log('time to process response: ' + $.taconite.lastTime + 'ms');
@@ -239,6 +240,7 @@ function process(commands) {
         if (commands[i].nodeType != 1)
             continue; // commands are elements
         var cmdNode = commands[i], cmd = cmdNode.tagName;
+        log('cmdNode: '+ cmdNode + 'cmd: '+ cmd);
         if (cmd == 'eval') {
             js = (cmdNode.firstChild ? cmdNode.firstChild.nodeValue : null);
             log('invoking "eval" command: ', js);
@@ -273,7 +275,7 @@ function process(commands) {
             continue;
         }
         cdataWrap = cmdNode.getAttribute('cdataWrap') || $.taconite.defaults.cdataWrap;
-
+        log('cdatawrap: ' + cdatawrap);
         a = [];
         if (cmdNode.childNodes.length > 0) {
             doPostProcess = 1;
