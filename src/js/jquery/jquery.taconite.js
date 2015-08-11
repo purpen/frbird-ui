@@ -216,7 +216,7 @@ function go(xml) {
     try {
         var t = new Date().getTime();
         // process the document
-        log('xml child nodes' + xml.childNodes);
+        log('xml:' + xml);
         process(xml.childNodes);
         $.taconite.lastTime = (new Date().getTime()) - t;
         log('time to process response: ' + $.taconite.lastTime + 'ms');
@@ -275,7 +275,7 @@ function process(commands) {
             continue;
         }
         cdataWrap = cmdNode.getAttribute('cdataWrap') || $.taconite.defaults.cdataWrap;
-        log('cdatawrap: ' + cdatawrap);
+        log('cdatawrap: ' + cdataWrap);
         a = [];
         if (cmdNode.childNodes.length > 0) {
             doPostProcess = 1;
