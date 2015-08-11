@@ -14,7 +14,9 @@
 /*******************************
             Mobile
 *******************************/
-
+.ui.header{
+    color:@defaultColor !important;
+}
 .ui {
     &.responsive.grid {
 	    padding: 0;
@@ -326,9 +328,9 @@
                     overflow: hidden;
                     text-align: left;
                     padding: 2px 10px 0;
-                    margin: 0;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
+                    margin: 0 0 5px;
+		    line-height:18px;
+		    height:48px;
 
                     > a {
                         color: rgba(112, 123, 135, 0.91);
