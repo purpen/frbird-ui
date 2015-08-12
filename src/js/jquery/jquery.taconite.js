@@ -97,6 +97,18 @@ function getResponse(xhr, type, s) {
     return xhr.responseXML || xhr.responseText;
 }
 
+function xml_to_string(xml_node) {
+    if (xml_node.xml){
+        return xml_node.xml;
+    } else if (XMLSerializer) {
+        var xml_serializer = new XMLSerializer();
+        return xml_serializer.serializeToString(xml_node);
+    } else {
+        alert("ERROR: Extremely old browser");
+        return "";
+    }
+}
+
 function detect(xhr, type, s) {
     var ct = xhr.getResponseHeader('content-type');
     if ($.taconite.debug) {
@@ -216,6 +228,7 @@ function go(xml) {
     try {
         var t = new Date().getTime();
         // process the document
+        log('xml: ' + xml_to_string(xml));
         process(xml.childNodes);
         $.taconite.lastTime = (new Date().getTime()) - t;
         log('time to process response: ' + $.taconite.lastTime + 'ms');
