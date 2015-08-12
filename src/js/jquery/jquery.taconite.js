@@ -380,8 +380,12 @@ function cleanse(els) {
 
 function createNode(node, cdataWrap) {
     var type = node.nodeType;
+    log('create node type: '+ type);
+    log('node xml: '+ xml_to_string(node));
     if (type == 1) return createElement(node, cdataWrap);
-    if (type == 3) return fixTextNode(node.nodeValue);
+    if (type == 3) {
+        return fixTextNode(node.nodeValue);
+    }
     if (type == 4) return handleCDATA(node.nodeValue, cdataWrap);
     return null;
 }
