@@ -239,6 +239,7 @@ function process(commands) {
         if (commands[i].nodeType != 1)
             continue; // commands are elements
         var cmdNode = commands[i], cmd = cmdNode.tagName;
+        log('cmd: '+ cmd);
         if (cmd == 'eval') {
             js = (cmdNode.firstChild ? cmdNode.firstChild.nodeValue : null);
             log('invoking "eval" command: ', js);
@@ -272,13 +273,16 @@ function process(commands) {
             log('No matching targets for selector: ', q);
             continue;
         }
+        log('cmd node: '+ cmdNode.getAttribute('cdataWrap'));
         cdataWrap = cmdNode.getAttribute('cdataWrap') || $.taconite.defaults.cdataWrap;
-
+        
         a = [];
         if (cmdNode.childNodes.length > 0) {
             doPostProcess = 1;
-            for (j=0,els=[]; j < cmdNode.childNodes.length; j++)
+            for (j=0,els=[]; j < cmdNode.childNodes.length; j++) {
                 els[j] = createNode(cmdNode.childNodes[j], cdataWrap);
+                log('cdataWrap: '+ cdataWrap +' j: ' + j + ' nodeType: '+ cmdNode.childNodes[j].nodeType);
+            }
             a.push(trimHash[cmd] ? cleanse(els) : els);
         }
 
@@ -408,6 +412,7 @@ function createElement(node, cdataWrap) {
 
     // IE fix; script tag not allowed to have children
     if(browser.msie && !e.canHaveChildren) {
+        log('ie have children: '+ e.canHaveChildren);
         if(node.childNodes.length > 0)
             e.text = node.text;
     }
