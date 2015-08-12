@@ -247,8 +247,9 @@ function process(commands) {
     var trimHash = { wrap: 1 };
     var doPostProcess = 0;
     var a, n, v, i, j, js, els, raw, type, q, jq, cdataWrap, tmp;
-
+    
     for(i=0; i < commands.length; i++) {
+        log('commands node type: ' + commands[i].nodeType);
         if (commands[i].nodeType != 1)
             continue; // commands are elements
         var cmdNode = commands[i], cmd = cmdNode.tagName;
@@ -289,6 +290,7 @@ function process(commands) {
         log('cmd node: '+ cmdNode.getAttribute('cdataWrap'));
         cdataWrap = cmdNode.getAttribute('cdataWrap') || $.taconite.defaults.cdataWrap;
         
+        log('cmdnode xml: '+ xml_to_string(cmdNode));
         a = [];
         if (cmdNode.childNodes.length > 0) {
             doPostProcess = 1;
