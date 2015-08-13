@@ -600,8 +600,12 @@ phenix.hook_comment_page = function(){
             prompt : '评论内容不能为空'
           },
           {
-            type   : 'maxLength[140]',
-            prompt : '评论内容不超过140字符'
+            type   : 'length[5]',
+            prompt : '评论内容不能少于5个字符'
+          },
+          {
+            type   : 'maxLength[1000]',
+            prompt : '评论内容不超过1000个字符'
           }
         ]
       }
