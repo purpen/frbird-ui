@@ -16,14 +16,19 @@
 (function($) {
 var version = '3.66';
 
-var browser = $.browser;
+var browser = null;
 if ( ! browser ) {
    var ua = navigator.userAgent.toLowerCase();
    var m = /(msie) ([\w.]+)/.exec( ua ) || ! /compatible/.test(ua) && /(mozilla)/.exec( ua ) || [];
    browser = { version: m[2] };
    browser[ m[1] ] = true;
+   // 再次判断是否为IE（ie11下也适合） 
+   if( window.ActiveXObject || "ActiveXObject" in window) {
+       browser['msie'] = true;
+   } else {
+       browser['msie'] = false;
+   }
 }
-
 
 $.taconite = function(xml) {
     processDoc(xml);
@@ -290,46 +295,50 @@ function process(commands) {
         log('cmd node: '+ cmdNode.getAttribute('cdataWrap'));
         cdataWrap = cmdNode.getAttribute('cdataWrap') || $.taconite.defaults.cdataWrap;
         
-        log('cmdnode xml: '+ xml_to_string(cmdNode));
         a = [];
-        if (cmdNode.childNodes.length > 0) {
-            doPostProcess = 1;
-            for (j=0,els=[]; j < cmdNode.childNodes.length; j++) {
-                els[j] = createNode(cmdNode.childNodes[j], cdataWrap);
-                log('cdataWrap: '+ cdataWrap +' j: ' + j + ' nodeType: '+ cmdNode.childNodes[j].nodeType);
+        log('cmdnode xml: '+ $(cmdNode).text());
+        if (browser.msie) {
+            jq[cmd].apply(jq, createNode(cmdNode, cdataWrap));
+        } else {
+            if (cmdNode.childNodes.length > 0) {
+                doPostProcess = 1;
+                for (j=0,els=[]; j < cmdNode.childNodes.length; j++) {
+                    els[j] = createNode(cmdNode.childNodes[j], cdataWrap);
+                    log('cdataWrap: '+ cdataWrap +' j: ' + j + ' nodeType: '+ cmdNode.childNodes[j].nodeType);
+                }
+                a.push(trimHash[cmd] ? cleanse(els) : els);
             }
-            a.push(trimHash[cmd] ? cleanse(els) : els);
-        }
 
-        // remain backward compat with pre 2.0.9 versions
-        n = cmdNode.getAttribute('name');
-        v = cmdNode.getAttribute('value');
-        if (n !== null) 
-            a.push(n);
-        if (v !== null) {
-            tmp = Number(v);
-            if (v == tmp)
-                v = tmp;
-            a.push(v);
-        }
-
-        // @since: 2.0.9: support arg1, arg2, arg3...
-        for (j=1; true; j++) {
-            v = cmdNode.getAttribute('arg'+j);
-            if (v === null)
-                break;
-            // support numeric primitives
-            if (v.length) {
+            // remain backward compat with pre 2.0.9 versions
+            n = cmdNode.getAttribute('name');
+            v = cmdNode.getAttribute('value');
+            if (n !== null) 
+                a.push(n);
+            if (v !== null) {
                 tmp = Number(v);
                 if (v == tmp)
                     v = tmp;
+                a.push(v);
             }
-            a.push(v);
-        }
 
-        if ($.taconite.debug)
-            logCommand(q, cmd, a, els);
-        jq[cmd].apply(jq,a);
+            // @since: 2.0.9: support arg1, arg2, arg3...
+            for (j=1; true; j++) {
+                v = cmdNode.getAttribute('arg'+j);
+                if (v === null)
+                    break;
+                // support numeric primitives
+                if (v.length) {
+                    tmp = Number(v);
+                    if (v == tmp)
+                        v = tmp;
+                }
+                a.push(v);
+            }
+
+            if ($.taconite.debug)
+                logCommand(q, cmd, a, els);
+            jq[cmd].apply(jq,a);
+        }
     }
 
     // apply dynamic fixes
