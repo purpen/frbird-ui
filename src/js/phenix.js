@@ -667,9 +667,19 @@ phenix.rebuild_batch_assets = function(id){
 	}
 };
 
+// Mustache render result
+phenix.ajax_render_result = function(eid, data){
+    var template = $(eid).html(), rendered = Mustache.render(template, data);
+    //console.log(template);
+    return rendered;
+};
+
 // 每日签到点击
 phenix.signin = function(){
-    $.get('/user/ajax_fetch_user_sign', {type: 1});
+    $.get('/user/ajax_fetch_user_sign', {type: 1}, function(result){
+        var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
+        $('#user-sign-box').html(html);
+    }, 'json');
     
     $('#sign-in-btn').livequery(function(){
         $(this).click(function(){
@@ -679,7 +689,10 @@ phenix.signin = function(){
                 return false;
             }
             // ajax加载签到事件
-            $.post('/user/ajax_sign_in', {type: 1});
+            $.post('/user/ajax_sign_in', {type: 1}, function(result){
+                var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
+                $('#user-sign-box').html(html);
+            }, 'json');
         });
     });
 };

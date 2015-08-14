@@ -16,19 +16,14 @@
 (function($) {
 var version = '3.66';
 
-var browser = null;
+var browser = $.browser;
 if ( ! browser ) {
    var ua = navigator.userAgent.toLowerCase();
    var m = /(msie) ([\w.]+)/.exec( ua ) || ! /compatible/.test(ua) && /(mozilla)/.exec( ua ) || [];
    browser = { version: m[2] };
    browser[ m[1] ] = true;
-   // 再次判断是否为IE（ie11下也适合） 
-   if( window.ActiveXObject || "ActiveXObject" in window) {
-       browser['msie'] = true;
-   } else {
-       browser['msie'] = false;
-   }
 }
+
 
 $.taconite = function(xml) {
     processDoc(xml);
@@ -100,18 +95,6 @@ function getResponse(xhr, type, s) {
     if (origHttpData)
         return origHttpData(xhr, type, s);
     return xhr.responseXML || xhr.responseText;
-}
-
-function xml_to_string(xml_node) {
-    if (xml_node.xml){
-        return xml_node.xml;
-    } else if (XMLSerializer) {
-        var xml_serializer = new XMLSerializer();
-        return xml_serializer.serializeToString(xml_node);
-    } else {
-        alert("ERROR: Extremely old browser");
-        return "";
-    }
 }
 
 function detect(xhr, type, s) {
@@ -233,7 +216,6 @@ function go(xml) {
     try {
         var t = new Date().getTime();
         // process the document
-        log('xml: ' + xml_to_string(xml));
         process(xml.childNodes);
         $.taconite.lastTime = (new Date().getTime()) - t;
         log('time to process response: ' + $.taconite.lastTime + 'ms');
@@ -252,13 +234,11 @@ function process(commands) {
     var trimHash = { wrap: 1 };
     var doPostProcess = 0;
     var a, n, v, i, j, js, els, raw, type, q, jq, cdataWrap, tmp;
-    
+
     for(i=0; i < commands.length; i++) {
-        log('commands node type: ' + commands[i].nodeType);
         if (commands[i].nodeType != 1)
             continue; // commands are elements
         var cmdNode = commands[i], cmd = cmdNode.tagName;
-        log('cmd: '+ cmd);
         if (cmd == 'eval') {
             js = (cmdNode.firstChild ? cmdNode.firstChild.nodeValue : null);
             log('invoking "eval" command: ', js);
@@ -292,53 +272,45 @@ function process(commands) {
             log('No matching targets for selector: ', q);
             continue;
         }
-        log('cmd node: '+ cmdNode.getAttribute('cdataWrap'));
         cdataWrap = cmdNode.getAttribute('cdataWrap') || $.taconite.defaults.cdataWrap;
-        
-        a = [];
-        log('cmdnode xml: '+ $(cmdNode).text());
-        if (browser.msie) {
-            jq[cmd].apply(jq, createNode(cmdNode, cdataWrap));
-        } else {
-            if (cmdNode.childNodes.length > 0) {
-                doPostProcess = 1;
-                for (j=0,els=[]; j < cmdNode.childNodes.length; j++) {
-                    els[j] = createNode(cmdNode.childNodes[j], cdataWrap);
-                    log('cdataWrap: '+ cdataWrap +' j: ' + j + ' nodeType: '+ cmdNode.childNodes[j].nodeType);
-                }
-                a.push(trimHash[cmd] ? cleanse(els) : els);
-            }
 
-            // remain backward compat with pre 2.0.9 versions
-            n = cmdNode.getAttribute('name');
-            v = cmdNode.getAttribute('value');
-            if (n !== null) 
-                a.push(n);
-            if (v !== null) {
+        a = [];
+        if (cmdNode.childNodes.length > 0) {
+            doPostProcess = 1;
+            for (j=0,els=[]; j < cmdNode.childNodes.length; j++)
+                els[j] = createNode(cmdNode.childNodes[j], cdataWrap);
+            a.push(trimHash[cmd] ? cleanse(els) : els);
+        }
+
+        // remain backward compat with pre 2.0.9 versions
+        n = cmdNode.getAttribute('name');
+        v = cmdNode.getAttribute('value');
+        if (n !== null) 
+            a.push(n);
+        if (v !== null) {
+            tmp = Number(v);
+            if (v == tmp)
+                v = tmp;
+            a.push(v);
+        }
+
+        // @since: 2.0.9: support arg1, arg2, arg3...
+        for (j=1; true; j++) {
+            v = cmdNode.getAttribute('arg'+j);
+            if (v === null)
+                break;
+            // support numeric primitives
+            if (v.length) {
                 tmp = Number(v);
                 if (v == tmp)
                     v = tmp;
-                a.push(v);
             }
-
-            // @since: 2.0.9: support arg1, arg2, arg3...
-            for (j=1; true; j++) {
-                v = cmdNode.getAttribute('arg'+j);
-                if (v === null)
-                    break;
-                // support numeric primitives
-                if (v.length) {
-                    tmp = Number(v);
-                    if (v == tmp)
-                        v = tmp;
-                }
-                a.push(v);
-            }
-
-            if ($.taconite.debug)
-                logCommand(q, cmd, a, els);
-            jq[cmd].apply(jq,a);
+            a.push(v);
         }
+
+        if ($.taconite.debug)
+            logCommand(q, cmd, a, els);
+        jq[cmd].apply(jq,a);
     }
 
     // apply dynamic fixes
@@ -389,12 +361,8 @@ function cleanse(els) {
 
 function createNode(node, cdataWrap) {
     var type = node.nodeType;
-    log('create node type: '+ type);
-    log('node xml: '+ xml_to_string(node));
     if (type == 1) return createElement(node, cdataWrap);
-    if (type == 3) {
-        return fixTextNode(node.nodeValue);
-    }
+    if (type == 3) return fixTextNode(node.nodeValue);
     if (type == 4) return handleCDATA(node.nodeValue, cdataWrap);
     return null;
 }
@@ -440,7 +408,6 @@ function createElement(node, cdataWrap) {
 
     // IE fix; script tag not allowed to have children
     if(browser.msie && !e.canHaveChildren) {
-        log('ie have children: '+ e.canHaveChildren);
         if(node.childNodes.length > 0)
             e.text = node.text;
     }
