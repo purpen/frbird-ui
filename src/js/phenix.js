@@ -170,6 +170,9 @@ phenix.initial = function(){
 	$('textarea.comment-textarea').maxlength({
       'feedback' : '.wordscount'
     });
+    
+    // 显示用户信息
+    phenix.show_user_idcard();
 };
 
 // 显示登录弹出框
@@ -672,6 +675,53 @@ phenix.ajax_render_result = function(eid, data){
     var template = $(eid).html(), rendered = Mustache.render(template, data);
     //console.log(template);
     return rendered;
+};
+
+// 显示用户信息
+phenix.show_user_idcard = function(){
+    var is_ajax = false, hoverTimer, outTimer;
+    
+    $('.ui.idcard').each(function(e){
+        $(this).hover(function(e){
+            var uid = $(this).data('uid'),pos = $(this).position(),h = $(this).height(),target = $(this);
+            clearTimeout(outTimer);
+        
+            hoverTimer = setTimeout(function(e){
+                if(!is_ajax){
+                    if(target.children('.user_card_box').length == 0){
+                        $.post(phenix.url.domain+'/user/ajax_fetch_profile', {id: uid}, function(rs){
+                            is_ajax = true;
+                            rs.data['phenix'] = phenix.url;
+                            var rendered = phenix.ajax_render_result('#user_card_tpl', rs.data);
+                            $('<div class="user_card_box"></div>')
+                                .html(rendered)
+                                .appendTo(target)
+                                .show(function(){
+                                    is_ajax = false;
+                                });
+                        }, 'json');
+                    }else{
+                        target.children('.user_card_box')
+                            .show();
+                    }
+                }
+            }, 200);
+        
+        },function(e){
+            var target = $(this);
+            clearTimeout(hoverTimer);
+    
+            outTimer = setTimeout(function(){
+                target.children('.user_card_box').hide();
+            }, 100);
+    
+            $('.user_card_box').hover(function(e){
+                clearTimeout(outTimer);
+            },function(e){
+                target.children('.user_card_box').hide();
+            });
+        });
+    });
 };
 
 // 每日签到点击
