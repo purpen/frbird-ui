@@ -749,18 +749,21 @@
             }
         }
     }
+}
+#product_guess_list {
+    margin-bottom: 50px;
     
-	#product_guess_list {
-        > .ui.responsive.grid{
-    		padding: 0 !important;
-    		margin: 0 !important;
-    		min-width: 0 !important;
-    	}
-	} 
-    .product.guess {
-        margin-bottom: 50px;
-        margin-left: 20px;
-    }
+    > .ui.responsive.grid {
+		padding: 0 !important;
+		min-width: 0 !important;
+        
+        > .row {
+            > .column {
+                padding-left: @twoPadding;
+                padding-right: @twoPadding;
+            }
+        }
+	}
 }
 
 .post.comment {
