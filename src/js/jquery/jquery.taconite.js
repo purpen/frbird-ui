@@ -97,18 +97,6 @@ function getResponse(xhr, type, s) {
     return xhr.responseXML || xhr.responseText;
 }
 
-function xml_to_string(xml_node) {
-    if (xml_node.xml){
-        return xml_node.xml;
-    } else if (XMLSerializer) {
-        var xml_serializer = new XMLSerializer();
-        return xml_serializer.serializeToString(xml_node);
-    } else {
-        alert("ERROR: Extremely old browser");
-        return "";
-    }
-}
-
 function detect(xhr, type, s) {
     var ct = xhr.getResponseHeader('content-type');
     if ($.taconite.debug) {
@@ -228,7 +216,6 @@ function go(xml) {
     try {
         var t = new Date().getTime();
         // process the document
-        log('xml: ' + xml_to_string(xml));
         process(xml.childNodes);
         $.taconite.lastTime = (new Date().getTime()) - t;
         log('time to process response: ' + $.taconite.lastTime + 'ms');
@@ -252,7 +239,6 @@ function process(commands) {
         if (commands[i].nodeType != 1)
             continue; // commands are elements
         var cmdNode = commands[i], cmd = cmdNode.tagName;
-        log('cmd: '+ cmd);
         if (cmd == 'eval') {
             js = (cmdNode.firstChild ? cmdNode.firstChild.nodeValue : null);
             log('invoking "eval" command: ', js);
@@ -286,16 +272,13 @@ function process(commands) {
             log('No matching targets for selector: ', q);
             continue;
         }
-        log('cmd node: '+ cmdNode.getAttribute('cdataWrap'));
         cdataWrap = cmdNode.getAttribute('cdataWrap') || $.taconite.defaults.cdataWrap;
-        
+
         a = [];
         if (cmdNode.childNodes.length > 0) {
             doPostProcess = 1;
-            for (j=0,els=[]; j < cmdNode.childNodes.length; j++) {
+            for (j=0,els=[]; j < cmdNode.childNodes.length; j++)
                 els[j] = createNode(cmdNode.childNodes[j], cdataWrap);
-                log('cdataWrap: '+ cdataWrap +' j: ' + j + ' nodeType: '+ cmdNode.childNodes[j].nodeType);
-            }
             a.push(trimHash[cmd] ? cleanse(els) : els);
         }
 
@@ -425,7 +408,6 @@ function createElement(node, cdataWrap) {
 
     // IE fix; script tag not allowed to have children
     if(browser.msie && !e.canHaveChildren) {
-        log('ie have children: '+ e.canHaveChildren);
         if(node.childNodes.length > 0)
             e.text = node.text;
     }

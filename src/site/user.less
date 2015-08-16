@@ -263,3 +263,67 @@
         }   
     }   
 }
+
+.ui.idcard {
+    position: relative;
+}
+.user_card_box {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(224, 224, 224, 0.46);
+    border-radius: @radius;
+    position: relative;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 300px;
+    text-align: center;
+    padding-bottom: 10px;
+    
+    > .image {
+        margin-bottom: 2.5em;
+        
+        .ui.avatar.image {
+            border: 3px solid rgb(255, 255, 255);
+            margin-bottom: -2em;
+        }
+    }
+    
+    .auth {
+        clear: both;
+        margin-bottom: 50px;
+        padding: @padding @padding 0;
+        text-align: left;
+        
+        label {
+            float: left;
+            color: #fff;
+            font-size: @textFontSize;
+        }
+        .action {
+            margin-left: 70px;
+            text-align: right;
+        }
+    }
+    .title {
+        color: @defaultColor;
+        font-size: @textFontSize;
+        margin-bottom: @margin;
+        margin-top: @margin;
+    }
+    
+    p {
+        color: @textColor;
+        padding: 0 @padding;
+    }
+    .ui.statistics .statistic {
+        > .value {
+            color: @magentaColor;
+        }
+        
+        > .label {
+            font-family: inherit;
+            font-weight: 400;
+            color: @defaultColor;
+        }
+    } 
+}
