@@ -170,6 +170,9 @@ phenix.initial = function(){
 	$('textarea.comment-textarea').maxlength({
       'feedback' : '.wordscount'
     });
+    
+    // 显示用户信息
+    phenix.show_user_idcard();
 };
 
 // 显示登录弹出框
@@ -600,8 +603,12 @@ phenix.hook_comment_page = function(){
             prompt : '评论内容不能为空'
           },
           {
-            type   : 'maxLength[140]',
-            prompt : '评论内容不超过140字符'
+            type   : 'length[5]',
+            prompt : '评论内容不能少于5个字符'
+          },
+          {
+            type   : 'maxLength[1000]',
+            prompt : '评论内容不超过1000个字符'
           }
         ]
       }
@@ -663,9 +670,66 @@ phenix.rebuild_batch_assets = function(id){
 	}
 };
 
+// Mustache render result
+phenix.ajax_render_result = function(eid, data){
+    var template = $(eid).html(), rendered = Mustache.render(template, data);
+    //console.log(template);
+    return rendered;
+};
+
+// 显示用户信息
+phenix.show_user_idcard = function(){
+    var is_ajax = false, hoverTimer, outTimer;
+    
+    $('.ui.idcard').each(function(e){
+        $(this).hover(function(e){
+            var uid = $(this).data('uid'),pos = $(this).position(),h = $(this).height(),target = $(this);
+            clearTimeout(outTimer);
+        
+            hoverTimer = setTimeout(function(e){
+                if(!is_ajax){
+                    if(target.children('.user_card_box').length == 0){
+                        $.post(phenix.url.domain+'/user/ajax_fetch_profile', {id: uid}, function(rs){
+                            is_ajax = true;
+                            rs.data['phenix'] = phenix.url;
+                            var rendered = phenix.ajax_render_result('#user_card_tpl', rs.data);
+                            $('<div class="user_card_box"></div>')
+                                .html(rendered)
+                                .appendTo(target)
+                                .show(function(){
+                                    is_ajax = false;
+                                });
+                        }, 'json');
+                    }else{
+                        target.children('.user_card_box')
+                            .show();
+                    }
+                }
+            }, 200);
+        
+        },function(e){
+            var target = $(this);
+            clearTimeout(hoverTimer);
+    
+            outTimer = setTimeout(function(){
+                target.children('.user_card_box').hide();
+            }, 100);
+    
+            $('.user_card_box').hover(function(e){
+                clearTimeout(outTimer);
+            },function(e){
+                target.children('.user_card_box').hide();
+            });
+        });
+    });
+};
+
 // 每日签到点击
 phenix.signin = function(){
-    $.get('/user/ajax_fetch_user_sign', {type: 1});
+    $.get('/user/ajax_fetch_user_sign', {type: 1}, function(result){
+        var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
+        $('#user-sign-box').html(html);
+    }, 'json');
     
     $('#sign-in-btn').livequery(function(){
         $(this).click(function(){
@@ -675,7 +739,10 @@ phenix.signin = function(){
                 return false;
             }
             // ajax加载签到事件
-            $.post('/user/ajax_sign_in', {type: 1});
+            $.post('/user/ajax_sign_in', {type: 1}, function(result){
+                var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
+                $('#user-sign-box').html(html);
+            }, 'json');
         });
     });
 };

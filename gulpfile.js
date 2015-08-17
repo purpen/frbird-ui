@@ -49,6 +49,7 @@ gulp.task('packagejs', function(){
 		paths.dist.minified + '/javascript/jquery/jquery.countdown.min.js',
 		paths.dist.minified + '/javascript/jquery/jquery.address.min.js',
 		paths.dist.minified + '/javascript/jquery/jquery.easing.1.3.min.js',
+        paths.dist.minified + '/javascript/jquery/mustache.min.js',
 		paths.dist.minified + '/javascript/jquery/sly.min.js',
         paths.dist.minified + '/javascript/jquery/jquery.flexslider.min.js',
 		paths.dist.minified + '/javascript/jquery/jquery.slides.min.js',
@@ -63,7 +64,6 @@ gulp.task('packagejs', function(){
 		paths.dist.minified + '/javascript/jquery/maxlength.min.js',
 		paths.dist.minified + '/javascript/jquery/jquery.arbitrary-anchor.min.js',
 		paths.dist.minified + '/javascript/jquery/jquery.gritter.min.js',
-        paths.dist.minified + '/javascript/jquery/mustache.min.js',
         ])
         .pipe(concat('jquery.plugins.js'))
         .pipe(rename({suffix: '.min'}))
