@@ -532,6 +532,10 @@ section.ui.block {
                 float: right;
                 text-align: right;
             }
+            .ui.button {
+                padding-left: 2.25em;
+                padding-right: 2.25em;
+            }
         }
         .user.avatars {
             border-top: 1px solid rgba(224, 224, 224, 0.46);
@@ -557,6 +561,16 @@ section.ui.block {
             p {
                 margin-top: 5px;
                 font-size: @smallFontSize;
+            }
+        }
+        
+        .user.share {
+            border-top: 1px solid rgba(224, 224, 224, 0.46);
+            margin-top: 10px;
+            padding-top: 10px;
+            
+            span {
+                line-height: 3;
             }
         }
         
@@ -2608,7 +2622,7 @@ img.image-WV{
 	top: 34px;
   right: -0.6rem;
   background: #f36;
-  z-index: 9999;
+  z-index: 9;
   display: block;
   height: 1.2rem !important;
   width: 1.2rem !important;
@@ -2620,7 +2634,7 @@ img.image-UV{
   left: 52%;
   margin-left: 5px;
   background: #f36;
-  z-index: 99;
+  z-index: 9;
   height: 1.5rem;
   width: 1.5rem;
   text-align: center;

@@ -75,6 +75,12 @@ h4.ui.header .sub.header {
 .ui.form .inline.fields > label {
     font-weight: 400;
 }
+.ui.form .upload.field {
+    margin-bottom: 40px;
+}
+.ui.form .fields {
+    margin-bottom: 1em;
+}
 .ui.tag.label {
     margin-bottom: @halfMargin;
 }
@@ -93,6 +99,18 @@ h4.ui.header .sub.header {
 
 .ui.rating .active.icon {
     color: rgb(255, 81, 68);
+}
+
+/*----------------------
+  Equal Height Columns
+-----------------------*/
+
+.ui.grid > .equal.height.row {
+    display: table;
+    width: 100%;
+}
+.ui.grid > .equal.height.row > .column {
+    display: table-cell;
 }
 
 // 下拉菜单子项
