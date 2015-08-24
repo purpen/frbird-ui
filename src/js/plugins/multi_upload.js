@@ -189,20 +189,29 @@
         
         // insert asset
         this.$asset_wrapper.on('click', 'div.ui.ok.button', $.proxy(function() {
-            if(that.$select_assets.length){
+            if(this.$select_assets.length){
                 var img_s = '';
                 for(var i=0,max=that.$select_assets.length; i<max; i++){
                     // that.writeImage(that.$select_assets[i]);
                     img_s += '<p><img class="fr-fin fr-dib" src="'+ that.$select_assets[i] +'" alt="'+ that.options.defaultImageTitle +'"></p>'
                 }
-                that.insertHTML(img_s);
+                this.insertHTML(img_s);
                 
-                that.cancelSelected();
+                this.cancelSelected();
                 
-                that.hideAssetWrapper();
+                this.$bttn_wrapper.show();
+                this.hideAssetWrapper();
                 
-                this.hidePopups();
-                
+                if (this.options.inlineMode && !this.imageMode && this.options.buttons.length === 0) {
+                    this.hide();
+                }
+
+                this.restoreSelection();
+                this.focus();
+
+                if (!this.options.inlineMode) {
+                    this.hide();
+                }
             }else{
                 phenix.show_error_note('请至少选择一个要插入的图片！');
             }
