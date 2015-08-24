@@ -987,7 +987,6 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
     formatSubmit: 'yyyy-mm-dd'
 });
 
-
 (function($){
 	$.fn.extend({
 		insertAtCaret: function(myValue){
