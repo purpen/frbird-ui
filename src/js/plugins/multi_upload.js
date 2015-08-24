@@ -9,21 +9,26 @@
     $.Editable.DEFAULTS = $.extend($.Editable.DEFAULTS, {
         allowedImageTypes: ['jpeg', 'jpg', 'png', 'gif'],
         customImageButtons: {},
+        
         defaultImageTitle: 'Image title',
         defaultImageWidth: 300,
         defaultImageDisplay: 'block',
         defaultImageAlignment: 'center',
+        
         imageDeleteConfirmation: true,
         imageDeleteURL: null,
         imageDeleteParams: {},
+        
         imageMove: true,
         imageResize: true,
         imageLink: true,
         imageTitle: true,
         imageUpload: true,
+        
         imageUploadParams: {},
         imageUploadParam: 'file',
         imageUploadURL: 'http://i.froala.com/upload',
+        
         maxImageSize: 1024 * 1024 * 5, // 10 Mb.,
         pasteImage: true,
         textNearImage: true,
@@ -77,23 +82,23 @@
     }
     
     $.Editable.prototype.assetUploadHTML = function () {
-      var html = '<div class="froala-popup froala-asset-popup" style="display: none;"><h4><span data-text="true">Multi Upload</span><small> (小于5M,jpg、jpeg的格式）</small><i title="Cancel" class="fa fa-times" id="f-asset-close-' + this._id + '"></i></h4>';
+        var html = '<div class="froala-popup froala-asset-popup" style="display: none;"><h4><span data-text="true">Multi Upload</span><small> (小于5M,jpg、jpeg的格式）</small><i title="Cancel" class="fa fa-times" id="f-asset-close-' + this._id + '"></i></h4>';
 
-      html += '<div id="f-asset-list-' + this._id + '" class="editor-assets">';
+        html += '<div id="f-asset-list-' + this._id + '" class="editor-assets">';
 
-      html += '<div id="multi-upload-' + this._id + '"></div>';
+        html += '<div id="multi-upload-' + this._id + '"></div>';
       
-      html += '<div id="multi-list-' + this._id + '" class="ui three blocks"></div>';
+        html += '<div id="multi-list-' + this._id + '" class="ui three blocks"></div>';
       
-      html += '</div>';
+        html += '</div>';
       
-      html += '<div class="select-result"><div class="ui ok active inverted magenta button">确定插入</div><div class="ui notok inverted grey button">取消</div><div class="ui remove inverted red button">删除所选</div></div>';
+        html += '<div class="select-result"><div class="ui ok active inverted magenta button">确定插入</div><div class="ui notok inverted grey button">取消</div><div class="ui remove inverted red button">删除所选</div></div>';
       
-      html += '</div>';
+        html += '</div>';
 
-      return html;
+        return html;
     }
-  
+    
     $.Editable.prototype.multiUploadAsset = function () {
         // Add file wrapper to editor.
         this.$asset_wrapper = $(this.assetUploadHTML());
@@ -111,7 +116,6 @@
         this.loadAssets();
         
         var uploader = new qq.FineUploader({
-            debug: true,
             element: $('#multi-upload-' + that._id)[0],
           	request: {
     			inputName: that.options.imageUploadParam,
@@ -126,6 +130,10 @@
     	        sizeLimit: 5245728
     	    },
             callbacks: {
+                onUpload: function(id, name){
+                    that.options.imageUploadParams['x:ord'] += id;
+                    uploader.setParams(that.options.imageUploadParams);
+                },
                 onComplete: function(id, name, result, maybeXhr){
             		console.log('id: ' + id + ' name: ' + name + 'result: ' + result);
                     if(!result.is_error){

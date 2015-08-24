@@ -2685,3 +2685,57 @@ img.image-V.blue,img.image-WV.blue,img.image-UV.blue,img.image-PV.blue,img.image
 img.image-V.yellow,img.image-WV.yellow,img.image-UV.yellow,img.image-PV.yellow,img.image-MV.yellow,img.image-HV.yellow{
     background:#d6c347 !important;
 }
+
+.editor-assets {
+    padding: 7px 7px 0;
+    width: 450px;
+    overflow: hidden;
+    
+    .ui.blocks {
+        height: 270px;
+        overflow-y: auto;
+        
+        > .block {
+            background-color: rgb(212, 212, 213);
+            
+            > .image {
+                cursor: pointer;
+                position: relative;
+                
+                > img {
+                    width: 100%;
+                }
+                
+                > .cover {
+                    background-color: rgba(0, 0, 0, 0.6);
+                    bottom: 0;
+                    border-radius: 0.285714rem !important;
+                    color: rgb(255, 255, 255);
+                    cursor: pointer;
+                    font-size: 22px;
+                    left: 0;
+                    padding: 10px 5px;
+                    position: absolute;
+                    right: 0;
+                    text-align: right;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+.qq-upload-list li {
+    border-radius: 4px;
+    font-size: 14px;
+}
+.select-result {
+    padding: 10px 7px;
+    position: relative;
+    
+    .ui.remove.button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
