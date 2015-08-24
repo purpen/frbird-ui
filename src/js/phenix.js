@@ -942,6 +942,89 @@ phenix.in_array = function(arr, val) {
     return -1;
 }; // 返回-1表示没找到，返回其他值表示找到的索引
 
+// 加载评论方法
+phenix.fetch_comment = function(param) {
+
+    // 初始化参数
+    var is_star = param.is_star != undefined ? param.is_star : 0;
+
+    // 添加loading 
+    $('.spinner.icon').ajaxStart(function(){
+        $(this).addClass('roundo');
+    }).ajaxStop(function(){
+        $(this).removeClass('roundo');
+    });
+    
+    $.get(url, {target_id: param.target_id, type: param.type, page: param.page, per_page: param.per_page, sort: param.sort, is_star: is_star, random:Math.random()}, function(rs){
+
+      var total_page = parseInt(rs.data.result.total_page);
+
+      var page = parseInt(rs.data.page);
+      var per_page = parseInt(rs.data.per_page);
+
+      if(page==1){
+        rs.data.page_first = true;
+      }else{
+        rs.data.page_first = false;
+      }
+
+      var rendered = phenix.ajax_render_result('#get_comments_tpl', rs.data);
+      if(rs.data.page==1){
+        $('.is-comment.comments').html(rendered);
+      }else{
+        $('.is-comment.comments').append(rendered);
+      }
+
+      // 第一页
+      if( page==1){
+        //存在下一页,添加查看更多按钮
+        if(rs.data.next_page != 'no'){
+          var html_more = '<a href="javascript:void(0);" class="fluid ui grey more inverted button" total-page="'+ rs.data.result.total_page +'" current-page="'+ rs.data.page +'"><i class="spinner icon"></i> 查看更多</a>';
+          // 添加点击事件,防止出现多次加载的bug,先unbind点击事件
+          $('#load-more-btn').html(html_more).unbind('click').bind('click', function(){
+            page++;
+            param.page = page;
+            phenix.fetch_comment(param);
+          });        
+        }
+      }else{ // 非第一页
+        // 最后一页
+        if(rs.data.next_page=='no'){
+          var html = '<a class="fluid ui grey more inverted disabled button" href="javascript:void(0);">没有更多~~</a>';
+          $('#load-more-btn')
+              .html(html)
+              .unbind('click');          
+        }
+      }
+
+      // 如果是最新,移除热门评论
+      if(rs.data.sort==1){
+        $('.ui.hotset.comments').remove();
+      }
+
+      // 查看大图
+      $('.comment-img-box').livequery(function(){
+        $(this).on('click', function(){
+            var evt = $(this).attr('show-type');
+            if(evt == 1){
+                $(this).find('img')
+                    .css({'max-width':'100%', 'cursor':'-webkit-zoom-out', 'cursor':'-moz-zoom-out', 'cursor':'-ms-zoom-out', 'cursor':'-o-zoom-out'});
+                $(this).attr('show-type', 2);
+            }else{
+                $(this).find('img').css({'max-width':'150px', 'cursor':'-webkit-zoom-in', 'cursor':'-moz-zoom-in', 'cursor':'-ms-zoom-in', 'cursor':'-o-zoom-in'});
+                $(this).attr('show-type', 1);
+            }
+        });
+      });
+      
+      $('.ui.sticky')
+        .sticky('refresh')
+      ;
+
+    }, 'json');
+
+}
+
 phenix.updateAreaSelect = function() {
 	// todo
 };
