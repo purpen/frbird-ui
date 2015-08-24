@@ -209,13 +209,13 @@
             if(that.$select_assets.length){
                 for(var i=0,max=that.$select_assets.length; i<max; i++){
                     var asset_id = that.$select_ids[i];
+                    // 删除
+                    $('#asset-' + asset_id).remove();
                     $.getJSON(this.options.imageDeleteURL, {asset_id: asset_id}, function(rs){
                         if(rs.is_error){
                             phenix.show_error_message(rs.message);
                             return;
                         }
-                        // 删除
-                        $('#asset-' + asset_id).remove();
                     });
                 }
             }else{
