@@ -126,7 +126,7 @@
                 uploadButton: '<a class="ui active grey labeled icon button" href="javascript:void(0);"><i class="cloud upload icon"></i>选择图片</a>'
     		},
     		validation: {
-    	        allowedExtensions: ['jpeg', 'jpg', 'png'],
+    	        allowedExtensions: ['jpeg', 'jpg', 'png', 'gif'],
     	        sizeLimit: 5245728
     	    },
             callbacks: {
