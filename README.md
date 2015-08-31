@@ -22,11 +22,13 @@ Browser prefixes are present for Internet Explorer 9, but the browser is not off
 NPM是基于命令行的node包管理工具，它可以将node的程序模块安装到项目中，在它的官网中可以查看和搜索所有可用的程序模块。
 
 在命令行中输入
+
 ```bash
 $ npm install --save-dev gulp 
 ```
 
 ####安装这些插件需要运行如下命令
+
 ```bash
 $ npm install gulp-less gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-copy gulp-livereload gulp-cache del --save-dev
 ```
@@ -42,11 +44,11 @@ $ npm install gulp-less gulp-autoprefixer gulp-minify-css gulp-jshint gulp-conca
 $ gulp -v
 ```
 
+#### 压缩命令
 
-### Usage questions
-
-
-
+```bash
+gulp comprass
+```
 
 
 
