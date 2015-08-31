@@ -28,6 +28,7 @@ $ npm install --save-dev gulp
 ```
 
 ####安装这些插件需要运行如下命令
+
 ```bash
 $ npm install gulp-less gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-copy gulp-livereload gulp-cache del --save-dev
 ```
@@ -43,7 +44,7 @@ $ npm install gulp-less gulp-autoprefixer gulp-minify-css gulp-jshint gulp-conca
 $ gulp -v
 ```
 
-### 压缩命令
+#### 压缩命令
 
 ```bash
 gulp comprass
