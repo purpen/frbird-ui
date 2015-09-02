@@ -72,7 +72,6 @@
         
         .ui.articles.list {
             padding-bottom: @padding;
-            margin-left: @margin;
             
             .item {
                 font-size: @textFontSize;
@@ -81,9 +80,35 @@
                 padding: @halfPadding 0px;
                 line-height: 20px;
                 color: @aLinkColor;
+                margin-bottom: @halfMargin;
                 
-                &:hover {
-                    color: @magentaColor;
+                .ui.link {
+                    display: block;
+                    
+                    &:hover {
+                        color: @magentaColor;
+                    }
+                }
+                .extra {
+                    font-size: 12px;
+                    position: relative;
+                    color: rgba(146, 147, 163, 0.9);
+                    
+                    .dotcount {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        z-index: 9;
+                        
+                        .statistic .value {
+                            font-size: 10px;
+                            margin-right: 10px;
+                            
+                            &:last-child {
+                                margin-right: 0px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -110,6 +135,10 @@
                     width: 40px;
                 }
             }   
+        }
+        
+        .product.aption {
+            text-align: center;
         }
     }
     
