@@ -726,7 +726,7 @@ phenix.show_user_idcard = function(){
 
 // 每日签到点击
 phenix.signin = function(){
-    $.get('/user/ajax_fetch_user_sign', {type: 1}, function(result){
+    $.get('/user/ajax_fetch_user_sign?r='+Math.random(), {type: 1}, function(result){
         var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
         $('#user-sign-box').html(html);
     }, 'json');
