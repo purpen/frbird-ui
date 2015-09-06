@@ -757,12 +757,12 @@ phenix.bind_share_list = function(pic_url) {
 		return ['toolbar=0,status=0,resizable=1,width=' + width + ',height=' + height + ',left=',(screen.width-width)/2,',top=',(screen.height-height)/2].join('');
 	}
 	
-	$('#wechat-share').click(function() {
+	$('#wechat-share,#wechat-share-1').click(function() {
 		$('.ui.qrcode.modal').modal('show');
 		return false;
 	});
 	
-	$('#sina-share').click(function() {
+	$('#sina-share,#sina-share-1').click(function() {
 		var url = 'http://v.t.sina.com.cn/share/share.php?url=' + link + '&title=' + title + '&pic=' + pic_url;
 		var params = getParamsOfShareWindow(607, 523);
 		window.open(url, windowName, params);
@@ -775,7 +775,7 @@ phenix.bind_share_list = function(pic_url) {
 		window.open(url, windowName, params);
 		return false;
 	});
-	$('#tencent-share').click(function() {
+	$('#tencent-share,#tencent-share-1').click(function() {
 		var url = 'http://v.t.qq.com/share/share.php?title=' + title + '&url=' + link + '&site=' + site + '&pic=' + pic_url;
 		var params = getParamsOfShareWindow(634, 668);
 		window.open(url, windowName, params);
@@ -787,7 +787,7 @@ phenix.bind_share_list = function(pic_url) {
 		window.open(url, windowName, params);
 		return false;
 	});
-	$('#renren-share').click(function() {
+	$('#renren-share,#renren-share-1').click(function() {
 		var url = 'http://share.renren.com/share/buttonshare?link=' + link + '&title=' + title + '&pic=' + pic_url;
 		var params = getParamsOfShareWindow(626, 436);
 		window.open(url, windowName, params);
