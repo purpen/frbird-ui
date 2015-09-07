@@ -739,7 +739,7 @@ phenix.signin = function(){
                 return false;
             }
             // ajax加载签到事件
-            $.post('/user/ajax_sign_in', {type: 1}, function(result){
+            $.post('/user/ajax_sign_in?rand='+Math.random(), {type: 1}, function(result){
                 var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
                 $('#user-sign-box').html(html);
             }, 'json');
