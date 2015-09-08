@@ -5,35 +5,34 @@
     background: @bodyBgWhite;
 	width: 100%;
 	padding: 0;
-	height: 70px !important;
     .transition;
     
-    .ui.mainnav {
-    	margin: 0 auto;
-    	float: left;
+    .nav-menu{
+        background: #f36;
+        line-height: normal;
         
-        > .item {
-        	border-top: 2px solid transparent;
-            margin: 0;
-        	padding: 0.5rem 1rem;
-        	color: @magentaColor;
-            display: block;
-        	font-weight: 400;
-        	opacity: 0.9;
-        	vertical-align: top;
-            .transition;
-            
-            &.active,
-            &:active,
-            &:hover {
-            	border-top: 2px solid @magentaColor;
-                color: @magentaColor;
+        .ui.mainnav {
+        	background: @magentaColor;
+        	padding:0.65rem 0;
+
+            .item {
+                margin: 0;
+            	padding: 0.65rem 1rem;
+            	color: #fff;
+            	font-weight: 400;
+            	opacity: 0.9;
+                .transition;
+
+                &.active,
+                &:active,
+                &:hover {
+                	//border-top: 2px solid @magentaColor;
+                    color: #fff;
+                    background: #000;
+                    opacity: 1;
+                }
             }
         }
-    }
-    
-    .ui.labeled.icon.menu:not(.vertical) .item {
-        padding: 0.85rem 1rem;
     }
     
     .ui.pointing.icon.menu {
@@ -44,6 +43,9 @@
 
 .header.main {
     
+    >.ui.responsive.grid{
+        height: 67px;
+    }
     .ui.grid > .row {
         padding: 0rem 0;
     }
@@ -68,16 +70,20 @@
     .search.item {
         font-size: 1rem;
         margin-top: 1rem;
-    	width:38%;
+    	width: 50%;
+    	margin-left: 10%;
     	float: left;
         
-        .ui.icon.input > input ~ .icon {
-        	border-left: 1px solid rgba(244, 33, 86, 0.9);
-        	color:rgba(255, 255, 255, 0.9);
-        	background-color:#ff3366;
-        	cursor: pointer;
-        	opacity: 1;
-        }
+        .ui.icon.input{
+            width: 100%;
+            > input ~ .icon {
+            	border-left: 1px solid rgba(244, 33, 86, 0.9);
+            	color:rgba(255, 255, 255, 0.9);
+            	background-color:#ff3366;
+            	cursor: pointer;
+            	opacity: 1;
+            }
+        } 
         
         .ui.input input:focus {
             border-color: rgba(244, 33, 86, 0.9);
