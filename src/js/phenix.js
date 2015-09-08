@@ -726,7 +726,7 @@ phenix.show_user_idcard = function(){
 
 // 每日签到点击
 phenix.signin = function(){
-    $.get('/user/ajax_fetch_user_sign', {type: 1}, function(result){
+    $.get('/user/ajax_fetch_user_sign?rand='+Math.random(), {type: 1, rand: Math.random()}, function(result){
         var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
         $('#user-sign-box').html(html);
     }, 'json');
@@ -739,7 +739,7 @@ phenix.signin = function(){
                 return false;
             }
             // ajax加载签到事件
-            $.post('/user/ajax_sign_in', {type: 1}, function(result){
+            $.post('/user/ajax_sign_in?rand='+Math.random(), {type: 1}, function(result){
                 var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
                 $('#user-sign-box').html(html);
             }, 'json');
@@ -757,12 +757,12 @@ phenix.bind_share_list = function(pic_url) {
 		return ['toolbar=0,status=0,resizable=1,width=' + width + ',height=' + height + ',left=',(screen.width-width)/2,',top=',(screen.height-height)/2].join('');
 	}
 	
-	$('#wechat-share').click(function() {
+	$('#wechat-share,#wechat-share-1').click(function() {
 		$('.ui.qrcode.modal').modal('show');
 		return false;
 	});
 	
-	$('#sina-share').click(function() {
+	$('#sina-share,#sina-share-1').click(function() {
 		var url = 'http://v.t.sina.com.cn/share/share.php?url=' + link + '&title=' + title + '&pic=' + pic_url;
 		var params = getParamsOfShareWindow(607, 523);
 		window.open(url, windowName, params);
@@ -775,7 +775,7 @@ phenix.bind_share_list = function(pic_url) {
 		window.open(url, windowName, params);
 		return false;
 	});
-	$('#tencent-share').click(function() {
+	$('#tencent-share,#tencent-share-1').click(function() {
 		var url = 'http://v.t.qq.com/share/share.php?title=' + title + '&url=' + link + '&site=' + site + '&pic=' + pic_url;
 		var params = getParamsOfShareWindow(634, 668);
 		window.open(url, windowName, params);
@@ -787,7 +787,7 @@ phenix.bind_share_list = function(pic_url) {
 		window.open(url, windowName, params);
 		return false;
 	});
-	$('#renren-share').click(function() {
+	$('#renren-share,#renren-share-1').click(function() {
 		var url = 'http://share.renren.com/share/buttonshare?link=' + link + '&title=' + title + '&pic=' + pic_url;
 		var params = getParamsOfShareWindow(626, 436);
 		window.open(url, windowName, params);
