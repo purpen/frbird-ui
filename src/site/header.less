@@ -13,17 +13,25 @@
         
         .ui.mainnav {
         	background: @magentaColor;
-        	padding:0.65rem 0;
-        	margin:0 20px;
-
+        	margin:0 10px;
+        	background: rgba(0,0,0,0);
+            border: none;
+            box-shadow: none;
+            
+            .item:first-child{
+                border-radius: 0 !important;
+            }
             .item {
                 margin: 0;
-            	padding: 0.65rem 2rem;
+            	padding: 0.9rem 2rem;
             	color: #fff;
             	font-weight: 400;
             	opacity: 0.9;
                 .transition;
-
+                
+                &:before{
+                    content: none !important;
+                }
                 &.active,
                 &:active,
                 &:hover {
