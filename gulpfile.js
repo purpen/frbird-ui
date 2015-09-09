@@ -164,5 +164,6 @@ gulp.task('default', ['clean'], function(){
 gulp.task('watch', function(){
     // 监听文件是否修改，以便执行相应的任务
     gulp.watch('src/site/*.less', ['minifycss']);
+    gulp.watch('src/js/*.js', ['minifyjs']);
     gulp.watch('src/js/*/*.js', ['minifyjs']);
 });
