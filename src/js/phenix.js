@@ -76,6 +76,9 @@ phenix.after_submit = function() {
  * 初始化,设置常用的ajax hook
  */
 phenix.initial = function(){
+
+  // 全局去掉ajax cache
+  $.ajaxSetup({cache:false});
 	
 	/* 此类为确认后执行的ajax操作 */
 	$('a.confirm-request').livequery(function(){
