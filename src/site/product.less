@@ -135,7 +135,23 @@
     > .card {
         background: none;
         box-shadow: none;
-        
+       
+	&:hover{
+	    transform: translateY(-2px);
+            -ms-transform: translateY(-2px);
+            -moz-transform: translateY(-2px);
+            -webkit-transform: translateY(-2px);
+            -o-transform: translateY(-2px);
+	}
+	
+	&.special.cat:hover{
+            transform: translateY(0px);
+            -ms-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -o-transform: translateY(0px);
+       }
+ 
         > .problock {
             background-color: #fff;
             border-bottom: 4px solid #f3f2f2;
@@ -229,10 +245,6 @@
                 width: 100%;
             }
             
-        }
-        
-        > .problock:hover {
-            margin-top: -2px;
         }
         
         > .speblock {
