@@ -135,7 +135,23 @@
     > .card {
         background: none;
         box-shadow: none;
-        
+       
+	&:hover{
+	    transform: translateY(-2px);
+            -ms-transform: translateY(-2px);
+            -moz-transform: translateY(-2px);
+            -webkit-transform: translateY(-2px);
+            -o-transform: translateY(-2px);
+	}
+	
+	&.special:hover,&.stick:hover,&.group:hover{
+            transform: translateY(0px);
+            -ms-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -o-transform: translateY(0px);
+       }
+ 
         > .problock {
             background-color: #fff;
             border-bottom: 4px solid #f3f2f2;
@@ -231,10 +247,6 @@
             
         }
         
-        > .problock:hover {
-            margin-top: -2px;
-        }
-        
         > .speblock {
             > a.thumb {
                 .thumb;
@@ -303,15 +315,15 @@
                 h2 {
                     color: #fff;
                     display: block;
-                    font-size: 45px;
+                    font-size: 36px;
                     font-weight: 400;
                     height: 70px;
-                    left: 10px;
+                    left: 20px;
                     line-height: 1;
                     margin-top: -65px;
                     overflow: hidden;
                     position: absolute;
-                    right: 10px;
+                    right: 20px;
                     text-align: center;
                     text-decoration: none;
                     text-overflow: ellipsis;
@@ -325,12 +337,12 @@
                     display: block;
                     font-size: 16px;
                     height: 20px;
-                    left: 10px;
+                    left: 20px;
                     line-height: 1;
                     margin-top: -10px;
                     overflow: hidden;
                     position: absolute;
-                    right: 10px;
+                    right: 20px;
                     text-align: center;
                     text-overflow: ellipsis;
                     text-shadow: 0 0 3px rgba(69, 69, 69, 0.38);
@@ -359,6 +371,69 @@
                         background-color: #fff;
                         color: rgba(0,0,0,0.8);
                     }
+                }
+            }
+            
+            > .adbox {
+                .catbox {
+                    background-position: 50% center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 4px;
+                    bottom: 0;
+                    display: block;
+                    left: 0px;
+                    padding: 0;
+                    position: absolute;
+                    right: 0px;
+                    text-decoration: none;
+                    top: 0;
+                    
+                    .content {
+                        margin: 80px 30px 0px;
+                    }
+                    
+                    .restime {
+                        color: rgb(255, 255, 255);
+                        
+                        .ui.timer.list {
+                            .item {
+                                .count {
+                                    font-size: 16px;
+                                    
+                                    span {
+                                        font-size: 10px;
+                                    }
+                                }
+                            }
+                        }
+                	}
+                    
+                    h2 {
+                        color: #fff;
+                        display: block;
+                        font-size: 36px;
+                        font-weight: 400;
+                        margin-top: 10px;
+                        height: 36px;
+                        line-height: 1;
+                        overflow: hidden;
+                        text-decoration: none;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    
+                    p {
+                        color: rgba(255, 255, 255, 0.9);
+                        display: block;
+                        font-size: 16px;
+                        height: 20px;
+                        line-height: 1;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    
                 }
             }
         }
