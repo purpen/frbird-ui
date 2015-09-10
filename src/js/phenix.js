@@ -641,7 +641,7 @@ phenix.hook_comment_page = function(){
             if (floor > max){
                 floor = max;
             }
-            window.location.href = url + '/' + floor + '#' + floor;
+            window.location.href = url + '/' + floor + '#f' + floor;
         }
     });
 };
