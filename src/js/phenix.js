@@ -968,19 +968,7 @@ phenix.fetch_comment = function(param) {
       }
       
       // 查看大图
-      $('.comment-img-box').livequery(function(){
-          $(this).on('click', function(){
-              var evt = $(this).attr('show-type');
-              if(evt == 1){
-                  $(this).find('img')
-                      .css({'max-width':'100%', 'cursor':'-webkit-zoom-out', 'cursor':'-moz-zoom-out', 'cursor':'-ms-zoom-out', 'cursor':'-o-zoom-out'});
-                  $(this).attr('show-type', 2);
-              }else{
-                  $(this).find('img').css({'max-width':'150px', 'cursor':'-webkit-zoom-in', 'cursor':'-moz-zoom-in', 'cursor':'-ms-zoom-in', 'cursor':'-o-zoom-in'});
-                  $(this).attr('show-type', 1);
-              }
-          });
-      });
+      phenix.comment_blow_up_img();
       
       $('.ui.sticky')
         .sticky('refresh')
@@ -989,6 +977,22 @@ phenix.fetch_comment = function(param) {
     }, 'json');
 
 }
+
+
+// 查看大图
+phenix.comment_blow_up_img = function() {
+    $('.comment-img-box').find('img').on('click', function(){
+        var evt = $(this).parent('.comment-img-box').attr('show-type');
+        if(evt == 1){
+            $(this).css({'max-width':'100%', 'cursor':'-moz-zoom-out', 'cursor':'-ms-zoom-out', 'cursor':'-o-zoom-out', 'cursor':'-webkit-zoom-out'});
+            $(this).parent('.comment-img-box').attr('show-type', 2);
+        }else{
+            $(this).css({'max-width':'150px', 'cursor':'-moz-zoom-in', 'cursor':'-ms-zoom-in', 'cursor':'-o-zoom-in', 'cursor':'-webkit-zoom-in'});
+            $(this).parent('.comment-img-box').attr('show-type', 1);
+        }
+    });
+
+};
 
 phenix.updateAreaSelect = function() {
 	// todo
