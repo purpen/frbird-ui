@@ -664,5 +664,64 @@
 #postpage .ui.timer.list > .item > .count > span {
 	font-size: 0.5em;
 	color: rgba(0,0,0,0.6);
-	margin-left: 0.15em;
+    margin-left: 0.15em;
+}
+
+/*****  投票   *****/
+#block_vote{
+    .post.vote{
+        margin: 20px 0;
+        > h3.ui.header {
+            color: #E40039;
+        }
+        .votep{
+            >i{
+                margin-top:6px;
+        		display: block;
+        		float: left;
+        	    margin: 0 1em 0 0;
+        	    padding: .1em 0 0;   
+            }
+            h4.ui.header {
+                margin-bottom: 1em;
+                margin-top: 6px;
+            }
+            .pro_block{
+                margin: 30px 0 20px;
+                padding: 25px 0;
+                border: 1px solid rgba(0,0,0,0.1);
+                .field {
+                    padding: 10px 0 10px 60px;
+                    .ui.checkbox label{
+                	    line-height: 20px;
+                	    &:before,&:after{
+                	        margin-top: 2px;
+                	    }
+                	}
+                	.tiny.progress{
+                        display: inline-block;
+                        width: 80%;
+                        font-size: 1.5rem;
+                        &:first-child{
+                            margin: 0 !important;
+                        }
+                        .bar{
+                            background:#f36;
+                    	    min-width:0;
+                    	}
+                	}
+                	.vote_num{
+                        display:inline-block;
+                	    width:14%;
+                	    margin-left:4%;
+                	    float: right;
+                	}
+                	.vote_bar{
+                        display:block;
+                	    margin:10px 0;
+                	}
+                }
+            }
+        }
+    }
 }
