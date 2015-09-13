@@ -218,7 +218,13 @@
 	color: #fff;
 }
 
-
+.ui.mentors.cards > .card:hover{
+	transform: translateY(-6px);
+        -ms-transform: translateY(-6px);
+        -moz-transform: translateY(-6px);
+        -webkit-transform: translateY(-6px);
+        -o-transform: translateY(-6px);
+}
 .ui.mentors.cards > .card,
 .ui.mentors.cards > .card:hover {
 	box-shadow: 0 0px 0px #c7c7c7 !important;
@@ -228,10 +234,10 @@
 	border: 1px solid #ebebeb;
 	border-radius: 0.2857rem !important;
 	height: 280px;
-    padding: 30px;
-    position: relative;
-    text-align: center;
-    vertical-align: top;
+        padding: 30px;
+        position: relative;
+        text-align: center;
+        vertical-align: top;
 	transition: margin .3s ease;
 	-moz-transition: margin .3s ease;
 	-webkit-transition: margin .3s ease;
@@ -243,9 +249,6 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-}
-.ui.mentors.cards > .card > .mentor:hover {
-    margin-top: -6px;
 }
 
 .ui.mentors.cards > .card > .mentor > img.avatar {
