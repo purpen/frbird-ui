@@ -974,10 +974,25 @@ phenix.fetch_comment = function(param) {
         .sticky('refresh')
       ;
       
+      phenix.scrollToHash();
+      
     }, 'json');
 
 }
 
+phenix.scrollToHash = function(){
+    var hash = location.hash.substring(1);
+    
+    var $el = $('#'+hash).first();
+    // Scroll to $el.
+    if ( $el && $el.length ) {
+      var top = $el.offset().top - 20;
+      var $body = $(document.body);
+      $body.stop(true, false)
+              .animate({ scrollTop: top },  parseInt(750), jQuery.easing.linear);
+
+    }
+};
 
 // 查看大图
 phenix.comment_blow_up_img = function() {
