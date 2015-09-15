@@ -595,7 +595,8 @@ phenix.hook_product_topic = function(){
 };
 
 // hook 评论行为
-phenix.hook_comment_page = function(){	
+phenix.hook_comment_page = function(){
+  var from_to = arguments[0] ? arguments[0] : 'site'; 
 	$('#comment-form').form({
     fields:{
       content: {
@@ -644,6 +645,29 @@ phenix.hook_comment_page = function(){
             window.location.href = url + '/' + floor + '#f' + floor;
         }
     });
+
+    if(from_to=='site'){
+        // @功能
+        $('#comment-area').atwho({
+        at: "@",
+        data: '/app/site/user/ajax_follow_list',
+        limit: 50,
+        //insertTpl: '[l:${url}::@${name}:]',
+        insertTpl: '@${name}',
+        callbacks: {
+          afterMatchFailed: function(at, el) {
+          if (at == '@') {
+            tags.push(el.text().trim().slice(1));
+            this.model.save(tags);
+            this.insert(el.text().trim());
+            return false;
+          }
+          }
+        }
+        });  
+    }
+
+
 };
 
 
