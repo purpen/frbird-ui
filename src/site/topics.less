@@ -245,6 +245,34 @@
     }
 }
 
+.start.banner{
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0% 40px;
+    position: relative;
+    h2.ui.header {
+    	font-weight: 400;
+    	.content {
+        	text-align:left;
+        }
+        span{
+            font-size:30px !important;
+        }
+    }
+    .row {
+    	padding-top: 248px !important;
+    	margin:0;
+    	&:first-child h2.ui.header{
+        	font-size:60px !important;
+        }
+    	&:nth-child(2) h2.ui.header{
+        	font-size:30px !important;
+        }
+    }
+}
+
+
+
 .activity.summary {
     background-color: #fff;
     line-height: 3.5;
@@ -256,6 +284,108 @@
 }
 
 #activitypage {
+    .mainwrap .mainleft .container {
+        margin-top: 0;
+    }
+    .mainwrap .mainright .user.noline.share {
+        border-top: none;
+    }
+    .rundown-timeline-container{
+        height: auto;
+    	margin: 0 auto;
+    	max-width: 1000px;
+    	position: relative;
+    	width: 100%;
+    	&:before{
+    	    background: none repeat scroll 0 0 #DCDEE1;
+        	content: "";
+        	height: 90px;
+        	left: 49%;
+        	position: absolute;
+        	top: 29px;
+        	width: 3px;
+    	}
+    	&.bottom:before{
+    	    height:0;
+    	}
+    	.timeline-block{
+    	    height: 100px;
+            margin: 0;
+            position: relative;
+            top: -5px;
+            .timeline-red-dot{
+                background-color: #00b6ae;
+            	border-radius: 14px 14px 14px 14px;
+            	height: 13px;
+            	left: 49%;
+            	margin-left: -5px;
+            	position: absolute;
+            	top: 23px;
+            	width: 13px;
+            	border: 7px solid #cdf5f3;
+            }
+            .timeline-content {
+                float: right;
+                width: 46%;
+                .time {
+                    font-size: 16px;
+                    font-weight: bold;
+                    left: 34%;
+                    line-height: 38px !important;
+                    position: absolute;
+                }
+                .name {
+                    font-size: 17px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    margin-top: 25px !important;
+                    margin-bottom: 0;
+                    color: #222;
+                    &.top{
+                    	margin-top: 25px !important;
+                    	font-size: 20px;
+                    }
+                }
+                .title {
+                    font-size: 14px;
+                    line-height: 16px;
+                    margin: 9px 0 5px !important;
+                    img {
+                    	display: block;
+                    	margin: 0 auto;
+                    	width: 3em;
+                    	height: 3em;
+                    	border-radius: 500px;
+                    	float: left;
+                    }
+                    .content {
+                    	padding-top: .25em;
+                    	margin-left: 3.5em;
+                    	font-size:14px;
+                    	color:#666;
+                    	.text {
+                            margin: .25em 0 .5em;
+                            word-wrap: break-word;
+                            line-height: 1.325em;
+                            font-size:14px;
+                        }
+                    }
+                }
+                &.right {
+                    float: right;
+                    text-align:left;
+                    .time {
+                        font-weight: normal;
+                        top: 14px;
+                        min-width: 90px;
+                        text-align: center;
+                    }
+                }
+            }
+    	}
+    	
+    }
+
     
     #signup-avatar {
     	padding: 12px;
@@ -418,7 +548,7 @@
         
         .ui.mini.images {
             display: inline-block;
-            width: 65%;
+            width: 100%;
         }
         
         .description {
