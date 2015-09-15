@@ -46,7 +46,10 @@
 }
 
 #trypage {
-    roala-element.product.content img {
+    .mainleft .container:first-child{
+	    margin-top:0;
+	}
+    .froala-element.product.content img {
         width: auto;
     }
     .product.reviews {
@@ -94,8 +97,36 @@
                 	left: 50px;
                 	top: 50%;
                 	margin-top: -10px;
+                	overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: 100px;
                 }
             }
+        }
+    }
+    
+    .product.report{
+        padding-bottom: 2rem;
+        > .social > .ui.topic.table{
+            border: none !important;
+        }
+        > .reportbtn{
+            padding-top: 20px;
+            border-top: 1px solid rgba(34,36,38,.1);
+            margin-top: 5px;
+        }
+    }
+    
+    .product.aption{
+        >img{
+            margin: 0 auto;
+            display: block;
+        }
+        >p{
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 1em;
         }
     }
 }
@@ -130,11 +161,18 @@
         	font-size: @hugeFontSize;
         	margin-bottom: @margin;
             color: #fff;
+            margin-top: 0.6em;
             
             .sub.header {
             	color: #fff;
             	margin-top: @margin;
+            	font-size: 1.5rem;
+                line-height: 46px;
             }
+        }
+        
+        .ui.button{
+            width: 180px;
         }
         
         p {
@@ -197,7 +235,8 @@
 
 .try {
     .apply {
-    	margin-top: 1.5em;
+    	margin-top: 1.3em;
+    	line-height: 28px;
         
         .big {
             margin-right: 0.15em;
@@ -205,6 +244,7 @@
         }
         .ui.timer.list {
             > .item {
+        		margin: 10px 0 10px 1em;
                 > .count {
                     margin-right: 0.15em;
                 	margin-left: 0.15em;
@@ -225,4 +265,17 @@
         
         
     }
+}
+/****  试用拉票  ****/
+.ui.lapiao{
+    border: 0px solid #fff !important;
+    width: 30% !important;
+    margin-left: -15% !important;
+    >.content{
+        background:url({{ app_url_packaged }}/images/trybox.jpg) no-repeat center center /cover;
+        #lapiao canvas{
+            width:100% !important;
+        }
+    }
+    
 }
