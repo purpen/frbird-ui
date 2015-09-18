@@ -64,6 +64,8 @@ gulp.task('packagejs', function(){
 		paths.dist.minified + '/javascript/jquery/maxlength.min.js',
 		paths.dist.minified + '/javascript/jquery/jquery.arbitrary-anchor.min.js',
 		paths.dist.minified + '/javascript/jquery/jquery.gritter.min.js',
+    paths.dist.minified + '/javascript/jquery/jquery.caret.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.atwho.min.js',
         ])
         .pipe(concat('jquery.plugins.js'))
         .pipe(rename({suffix: '.min'}))
@@ -164,5 +166,6 @@ gulp.task('default', ['clean'], function(){
 gulp.task('watch', function(){
     // 监听文件是否修改，以便执行相应的任务
     gulp.watch('src/site/*.less', ['minifycss']);
+    gulp.watch('src/js/*.js', ['minifyjs']);
     gulp.watch('src/js/*/*.js', ['minifyjs']);
 });

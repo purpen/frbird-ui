@@ -76,6 +76,9 @@ phenix.after_submit = function() {
  * 初始化,设置常用的ajax hook
  */
 phenix.initial = function(){
+
+  // 全局去掉ajax cache
+  $.ajaxSetup({cache:false});
 	
 	/* 此类为确认后执行的ajax操作 */
 	$('a.confirm-request').livequery(function(){
@@ -592,7 +595,8 @@ phenix.hook_product_topic = function(){
 };
 
 // hook 评论行为
-phenix.hook_comment_page = function(){	
+phenix.hook_comment_page = function(){
+  var from_to = arguments[0] ? arguments[0] : 'site'; 
 	$('#comment-form').form({
     fields:{
       content: {
@@ -626,32 +630,44 @@ phenix.hook_comment_page = function(){
 	.ajaxSuccess(function(){
 		$('.ui.submit.button').removeClass('loading');
 	});
-	
-  /**
-  $('.ui.reply.form').livequery(function(){
-    $(this).form({
-      content: {
-        identifier  : 'content',
-        rules: [
-          {
-            type   : 'empty',
-            prompt : '评论内容不能为空'
-          },
-          {
-            type   : 'maxLength[1400]',
-            prompt : '评论内容不超过1400字符'
-          }
-        ]
-      }
-    }, {
-      inline : true,
-      onSuccess: function(event){
-        event.preventDefault();
-        $(event.target).ajaxSubmit();
-      }
+    
+    // 绑定跳楼
+    $('.gotofloor').bind('keydown', function(e){
+        var floor = $(this).val(), max = parseInt($(this).data('max')), url = $(this).data('url');
+        if(e.keyCode == 13){
+            if (isNaN(floor)){
+                alert('必须输入一个数字！');
+                return false;
+            }
+            if (floor > max){
+                floor = max;
+            }
+            window.location.href = url + '/' + floor + '#f' + floor;
+        }
     });
-  });
-**/
+
+    if(from_to=='site'){
+        // @功能
+        $('#comment-area').atwho({
+        at: "@",
+        data: '/app/site/user/ajax_follow_list',
+        limit: 50,
+        //insertTpl: '[l:${url}::@${name}:]',
+        insertTpl: '@${name}',
+        callbacks: {
+          afterMatchFailed: function(at, el) {
+          if (at == '@') {
+            tags.push(el.text().trim().slice(1));
+            this.model.save(tags);
+            this.insert(el.text().trim());
+            return false;
+          }
+          }
+        }
+        });  
+    }
+
+
 };
 
 
@@ -726,7 +742,7 @@ phenix.show_user_idcard = function(){
 
 // 每日签到点击
 phenix.signin = function(){
-    $.get('/user/ajax_fetch_user_sign', {type: 1}, function(result){
+    $.get('/user/ajax_fetch_user_sign', {type: 1, rand: Math.random()}, function(result){
         var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
         $('#user-sign-box').html(html);
     }, 'json');
@@ -739,7 +755,7 @@ phenix.signin = function(){
                 return false;
             }
             // ajax加载签到事件
-            $.post('/user/ajax_sign_in', {type: 1}, function(result){
+            $.post('/user/ajax_sign_in?rand='+Math.random(), {type: 1}, function(result){
                 var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
                 $('#user-sign-box').html(html);
             }, 'json');
@@ -947,83 +963,75 @@ phenix.fetch_comment = function(param) {
 
     // 初始化参数
     var is_star = param.is_star != undefined ? param.is_star : 0;
-
-    // 添加loading 
-    $('.spinner.icon').ajaxStart(function(){
-        $(this).addClass('roundo');
-    }).ajaxStop(function(){
-        $(this).removeClass('roundo');
-    });
     
     $.get(url, {target_id: param.target_id, type: param.type, page: param.page, per_page: param.per_page, sort: param.sort, is_star: is_star, random:Math.random()}, function(rs){
-
+      rs.data['phenix'] = phenix.url;
+      
       var total_page = parseInt(rs.data.result.total_page);
-
       var page = parseInt(rs.data.page);
       var per_page = parseInt(rs.data.per_page);
 
-      if(page==1){
-        rs.data.page_first = true;
+      if(page == 1){
+          rs.data.page_first = true;
       }else{
-        rs.data.page_first = false;
+          rs.data.page_first = false;
       }
-
+      
       var rendered = phenix.ajax_render_result('#get_comments_tpl', rs.data);
-      if(rs.data.page==1){
-        $('.is-comment.comments').html(rendered);
-      }else{
-        $('.is-comment.comments').append(rendered);
-      }
-
-      // 第一页
-      if( page==1){
-        //存在下一页,添加查看更多按钮
-        if(rs.data.next_page != 'no'){
-          var html_more = '<a href="javascript:void(0);" class="fluid ui grey more inverted button" total-page="'+ rs.data.result.total_page +'" current-page="'+ rs.data.page +'"><i class="spinner icon"></i> 查看更多</a>';
-          // 添加点击事件,防止出现多次加载的bug,先unbind点击事件
-          $('#load-more-btn').html(html_more).unbind('click').bind('click', function(){
-            page++;
-            param.page = page;
-            phenix.fetch_comment(param);
-          });        
-        }
-      }else{ // 非第一页
-        // 最后一页
-        if(rs.data.next_page=='no'){
-          var html = '<a class="fluid ui grey more inverted disabled button" href="javascript:void(0);">没有更多~~</a>';
-          $('#load-more-btn')
-              .html(html)
-              .unbind('click');          
-        }
+      $('.is-comment.comments').html(rendered);
+      
+      // 大于1页
+      if( total_page > 1){
+          var pager = phenix.ajax_render_result('#pager_tpl', rs.data);
+          $('.ui.pagerbox').html(pager);
       }
 
       // 如果是最新,移除热门评论
-      if(rs.data.sort==1){
-        $('.ui.hotset.comments').remove();
+      if(rs.data.sort == 1){
+          $('.ui.hotset.comments').remove();
       }
-
+      
       // 查看大图
-      $('.comment-img-box').livequery(function(){
-        $(this).on('click', function(){
-            var evt = $(this).attr('show-type');
-            if(evt == 1){
-                $(this).find('img')
-                    .css({'max-width':'100%', 'cursor':'-webkit-zoom-out', 'cursor':'-moz-zoom-out', 'cursor':'-ms-zoom-out', 'cursor':'-o-zoom-out'});
-                $(this).attr('show-type', 2);
-            }else{
-                $(this).find('img').css({'max-width':'150px', 'cursor':'-webkit-zoom-in', 'cursor':'-moz-zoom-in', 'cursor':'-ms-zoom-in', 'cursor':'-o-zoom-in'});
-                $(this).attr('show-type', 1);
-            }
-        });
-      });
+      phenix.comment_blow_up_img();
       
       $('.ui.sticky')
         .sticky('refresh')
       ;
-
+      
+      phenix.scrollToHash();
+      
     }, 'json');
 
 }
+
+phenix.scrollToHash = function(){
+    var hash = location.hash.substring(1);
+    
+    var $el = $('#'+hash).first();
+    // Scroll to $el.
+    if ( $el && $el.length ) {
+      var top = $el.offset().top - 20;
+      var $body = $(document.body);
+      $body.stop(true, false)
+              .animate({ scrollTop: top },  parseInt(750), jQuery.easing.linear);
+
+    }
+};
+
+// 查看大图
+phenix.comment_blow_up_img = function() {
+    $('.comment-img-box').find('img').on('click', function(){
+        var evt = $(this).parent('.comment-img-box').attr('show-type');
+        if(evt == 1){
+            $(this).css({'max-width':'100%', 'cursor':'-moz-zoom-out', 'cursor':'-ms-zoom-out', 'cursor':'-o-zoom-out', 'cursor':'-webkit-zoom-out'});
+            $(this).parent('.comment-img-box').attr('show-type', 2);
+        }else{
+            $(this).css({'max-width':'150px', 'cursor':'-moz-zoom-in', 'cursor':'-ms-zoom-in', 'cursor':'-o-zoom-in', 'cursor':'-webkit-zoom-in'});
+            $(this).parent('.comment-img-box').attr('show-type', 1);
+        }
+    });
+
+};
 
 phenix.updateAreaSelect = function() {
 	// todo

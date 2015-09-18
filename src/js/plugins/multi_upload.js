@@ -296,7 +296,7 @@
     }
     
     $.Editable.prototype.renderAssets = function (result) {
-        var template = '{{#data}}<div class="block" id="asset-{{ id }}"><div class="image" data-id="{{ id }}" data-src="{{ thumbnails.hd.view_url }}"><img src="{{ thumbnails.mini.view_url }}" /></div></div>{{/data}}'
+        var template = '{{#data}}<div class="block" id="asset-{{ id }}"><div class="image" data-id="{{ id }}" data-src="{{ thumbnails.hd.view_url }}"><img src="{{ thumbnails.mini.view_url }}" /><p>{{ filename }}</p></div></div>{{/data}}'
         var rendered = Mustache.render(template, result);
         
         $('#multi-list-' + this._id )
