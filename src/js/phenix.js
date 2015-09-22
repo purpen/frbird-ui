@@ -620,16 +620,51 @@ phenix.hook_comment_page = function(){
 		inline : true,
 		onSuccess: function(event){
 			event.preventDefault();
-			$(event.target).ajaxSubmit();
+			$(this).ajaxSubmit({
+				dataType: 'json',
+				beforeSubmit: function(){
+					phenix.before_submit();
+				},
+				success: function(result){
+					if(result.is_error){
+						$(event.target).addClass('error');
+						phenix.show_error_note(result.message, event.target);
+					}else{
+            var rendered = phenix.ajax_render_result('#get_single_comment_tpl', result.data);
+            $('.ui.threaded.comments').append(rendered);
+
+            $('.comment-textarea').val('');
+
+            if(result.data.from_site=='site'){
+              $('.ui.sticky')
+                .sticky('refresh')
+              ;
+            }else{
+              if(result.data.rank_has_first_comment){
+                //神嘴争霸赛弹出分享事件
+                $('#mask').css('display','');
+              }
+            }
+
+            var is_reply = $(':input[name=is_reply]').val();
+            if(is_reply==1){
+              // 清空回复ID
+              $(':input[name=reply_id]').val('');
+              $(':input[name=is_reply]').val(0);
+              $(':input[name=reply_user_id]').val('');
+              var recover_comment_user_href = $('.cancel-reply-btn').attr('recover_comment_user_href');
+              var recover_comment_user_name = $('.cancel-reply-btn').attr('recover_comment_user_name');
+              var html = '<a href="'+ recover_comment_user_href +'" class="ui magenta link">'+ recover_comment_user_name +'</a> 发表评论';
+              $('#comment-box').find('.comment-title').html(html);            
+            }
+
+					}
+					phenix.after_submit();
+				}
+			});
 		}
 	})
-	.find('.submit.button')
-	.ajaxStart(function(){
-		$('.ui.submit.button').addClass('loading');
-	})
-	.ajaxSuccess(function(){
-		$('.ui.submit.button').removeClass('loading');
-	});
+
     
     // 绑定跳楼
     $('.gotofloor').bind('keydown', function(e){
