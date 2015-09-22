@@ -62,13 +62,13 @@ phenix.show_ok_message = function(msg, ele) {
 };
 
 phenix.before_submit = function() {
-	$('.ui.submit.button').addClass('loading');
+	$('.ui.submit.button').addClass('loading').addClass('submit_back').removeClass('submit');
 	$('.ui.error.message').remove();
 	return true;
 };
 
 phenix.after_submit = function() {
-	$('.ui.submit.button').removeClass('loading');
+	$('.ui.submit_back.button').removeClass('loading').removeClass('submit_back').addClass('submit');
 	return true;
 };
 
@@ -742,10 +742,17 @@ phenix.show_user_idcard = function(){
 
 // 每日签到点击
 phenix.signin = function(){
-    $.get('/user/ajax_fetch_user_sign', {type: 1, rand: Math.random()}, function(result){
+    $.ajax({
+      type: "POST",
+      url: "/user/ajax_fetch_user_sign",
+      data: {type: 1},
+      dataType: 'json',
+      cache: false,
+      success: function(result){
         var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
-        $('#user-sign-box').html(html);
-    }, 'json');
+        $('#user-sign-box').html(html);     
+      }
+    });
     
     $('#sign-in-btn').livequery(function(){
         $(this).click(function(){
@@ -755,10 +762,19 @@ phenix.signin = function(){
                 return false;
             }
             // ajax加载签到事件
-            $.post('/user/ajax_sign_in?rand='+Math.random(), {type: 1}, function(result){
+            $.ajax({
+              type: 'POST',
+              url: '/user/ajax_sign_in',
+              data: {type: 1},
+              dataType: 'json',
+              cache: false,
+              async: false,
+              success: function(result){
                 var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
-                $('#user-sign-box').html(html);
-            }, 'json');
+                $('#user-sign-box').html(html);             
+              }
+            });
+
         });
     });
 };
