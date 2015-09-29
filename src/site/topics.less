@@ -141,6 +141,59 @@
                 line-height: 20px;
                 color: @aLinkColor;
                 margin-bottom: @halfMargin;
+		&.topicbox{
+		    padding-bottom: @padding;
+		    position: relative;
+    		    width: 100%;
+		    border-bottom: 1px solid rgba(224,224,224,.46);
+		    box-sizing: border-box;
+		    -o-box-sizing: border-box;
+		    -ms-box-sizing: border-box;
+		    -moz-box-sizing: border-box;
+		    -webkit-box-sizing: border-box;
+		    &:last-child{
+			border:none;	
+		    }
+		    >.cover{
+		    	width: 90px;
+		        float: left;
+		        margin-right: @padding;
+		        padding: 0;
+			.ui.image {
+   			   height: 67px;
+  			   width: 100%;
+  			}
+		    }
+		    h2 {
+		        line-height: 24px;
+		        margin-bottom: 15px;
+		        text-overflow: ellipsis;
+		        margin-top: 0 !important;
+			a{
+			    color: rgba(112,123,135,.91);
+			    font-size: 14px;
+			    letter-spacing: .2px;
+			    text-decoration: none;
+			    max-height: 50px;
+			    overflow: hidden;
+			}
+		    }
+		    .author {
+		        font-size: 9pt;
+		        color: rgba(146,147,163,.9);
+		        text-align: right;
+		        position: absolute;
+		        bottom: 5px;
+		        right: 0;
+		        width: 100%;
+			.nickname{
+			    float:left;
+			}
+			span{
+			    margin-right: 15px;
+			}
+		    }
+		}
                 
                 .ui.link {
                     display: block;
