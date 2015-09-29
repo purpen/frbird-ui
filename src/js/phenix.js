@@ -631,7 +631,7 @@ phenix.hook_comment_page = function(){
 						phenix.show_error_note(result.message, event.target);
 					}else{
             var rendered = phenix.ajax_render_result('#get_single_comment_tpl', result.data);
-            $('.ui.threaded.comments').append(rendered);
+            $('.ui.threaded.comments.is-comment').append(rendered);
 
             $('.comment-textarea').val('');
 
@@ -1015,43 +1015,50 @@ phenix.fetch_comment = function(param) {
     // 初始化参数
     var is_star = param.is_star != undefined ? param.is_star : 0;
     
-    $.get(url, {target_id: param.target_id, type: param.type, page: param.page, per_page: param.per_page, sort: param.sort, is_star: is_star, random:Math.random()}, function(rs){
-      rs.data['phenix'] = phenix.url;
-      
-      var total_page = parseInt(rs.data.result.total_page);
-      var page = parseInt(rs.data.page);
-      var per_page = parseInt(rs.data.per_page);
+    $.ajax({
+      type: "GET",
+      url: url,
+      data: {target_id: param.target_id, type: param.type, page: param.page, per_page: param.per_page, sort: param.sort, is_star: is_star},
+      dataType: 'json',
+      cache: false,
+      async: false,
+      success: function(rs){
+        rs.data['phenix'] = phenix.url;
+        
+        var total_page = parseInt(rs.data.result.total_page);
+        var page = parseInt(rs.data.page);
+        var per_page = parseInt(rs.data.per_page);
 
-      if(page == 1){
-          rs.data.page_first = true;
-      }else{
-          rs.data.page_first = false;
-      }
-      
-      var rendered = phenix.ajax_render_result('#get_comments_tpl', rs.data);
-      $('.is-comment.comments').html(rendered);
-      
-      // 大于1页
-      if( total_page > 1){
-          var pager = phenix.ajax_render_result('#pager_tpl', rs.data);
-          $('.ui.pagerbox').html(pager);
-      }
+        if(page == 1){
+            rs.data.page_first = true;
+        }else{
+            rs.data.page_first = false;
+        }
+        
+        var rendered = phenix.ajax_render_result('#get_comments_tpl', rs.data);
+        $('.is-comment.comments').html(rendered);
+        
+        // 大于1页
+        if( total_page > 1){
+            var pager = phenix.ajax_render_result('#pager_tpl', rs.data);
+            $('.ui.pagerbox').html(pager);
+        }
 
-      // 如果是最新,移除热门评论
-      if(rs.data.sort == 1){
-          $('.ui.hotset.comments').remove();
+        // 如果是最新,移除热门评论
+        if(rs.data.sort == 1){
+            $('.ui.hotset.comments').remove();
+        }
+        
+        // 查看大图
+        phenix.comment_blow_up_img();
+        
+        $('.ui.sticky')
+          .sticky('refresh')
+        ;
+        
+        phenix.scrollToHash();
       }
-      
-      // 查看大图
-      phenix.comment_blow_up_img();
-      
-      $('.ui.sticky')
-        .sticky('refresh')
-      ;
-      
-      phenix.scrollToHash();
-      
-    }, 'json');
+    });
 
 }
 
