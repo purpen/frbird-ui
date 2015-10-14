@@ -24,13 +24,14 @@ NPM是基于命令行的node包管理工具，它可以将node的程序模块安
 在命令行中输入
 
 ```bash
-$ npm install --save-dev gulp 
+$ sudo npm install -g gulp (全局安装)
+$ npm install --save-dev gulp (局部安装)
 ```
 
 ####安装这些插件需要运行如下命令
 
 ```bash
-$ npm install gulp-less gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-copy gulp-livereload gulp-cache del --save-dev
+$ (sudo) npm install gulp-less gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-copy gulp-livereload gulp-cache del --save-dev
 ```
 
 备注
