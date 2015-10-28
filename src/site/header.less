@@ -32,7 +32,7 @@
                 &:before{
                     content: none !important;
                 }
-                &.active,
+                &.active,&.activet,
                 &:active,
                 &:hover {
                 	//border-top: 2px solid @magentaColor;
@@ -40,6 +40,26 @@
                     background: #000;
                     opacity: 1;
                 }
+		.menu{
+		    background: @magentaColor;
+		    border: 0 !important;
+		    border-radius: 0 !important;
+		    box-shadow: none !important;
+		    .item{
+			padding: .85rem 5rem .85rem 2.5rem!important;
+			border: 0 !important;
+			box-shadow: none !important;
+			color: #fff !important;
+			opacity: 0.9;
+                	.transition !important;
+			&:hover{
+			    background: #000 !important;
+			    border: 0 !important;
+                            box-shadow: none !important;
+			    opacity: 1;
+			}
+		    }
+		}
             }
         }
     }
