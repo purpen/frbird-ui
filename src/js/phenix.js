@@ -790,6 +790,7 @@ phenix.signin = function(){
     });
     
     $('#sign-in-btn').livequery(function(){
+
         $(this).click(function(){
             // 所有ajax请求，验证是否登录
             if (!phenix.visitor.is_login){
@@ -805,8 +806,21 @@ phenix.signin = function(){
               cache: false,
               async: false,
               success: function(result){
+                if(result.data.give_money==1){
+                  result.data.give_money = true;
+                }else{
+                  result.data.give_money = false;
+                }
+                if(result.data.is_true==1){
+                  result.data.is_true = true;
+                }else{
+                  result.data.is_true = false;
+                }
                 var html = phenix.ajax_render_result('#user_sign_box_tpl', result.data);
-                $('#user-sign-box').html(html);             
+                $('#user-sign-box').html(html);
+                if(result.data.is_doing){
+                  window.setTimeout(function(){ $('.add').addClass('add-active'); },500);
+                }
               }
             });
 
