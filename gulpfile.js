@@ -100,6 +100,12 @@ gulp.task('packagejs', function(){
         .pipe(concat('jquery.gsap.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+		
+    // gridste  拖拽插件  
+    gulp.src(paths.dist.minified + '/javascript/gridste/*.js')
+        .pipe(concat('gridste.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
 });
 
 // 预编译less,压缩css
@@ -136,6 +142,11 @@ gulp.task('packagecss', function(){
         
     gulp.src(paths.dist.minified + '/css/*.css')
         .pipe(concat('frbird.css'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/css'));
+		
+    gulp.src(paths.dist.minified + '/css/gridste/*.css')
+        .pipe(concat('gridste.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
 });
