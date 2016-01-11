@@ -191,7 +191,7 @@
         this.$asset_wrapper.on('click', 'div.ui.ok.button', $.proxy(function() {
             if(this.$select_assets.length){
                 var img_s = '';
-                for(var i=0,max=that.$select_assets.length; i<max+1; i++){
+                for(var i=0,max=that.$select_assets.length; i<max; i++){
                     // that.writeImage(that.$select_assets[i]);
                     img_s += '<p><img class="fr-fin fr-dib" src="'+ that.$select_assets[i] +'" alt="'+ that.options.defaultImageTitle +'"></p>'
                 }
