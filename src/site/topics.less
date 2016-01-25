@@ -95,8 +95,8 @@
     			text-align: center;
     			left: 0;
     			color: rgba(0,0,0,0);
-    			width: 128px;
-    			font-size: 14px;
+    			width: 140px;
+    			font-size: 16px;
     			opacity: 1;
     			z-index: -1;
                 .transition(all, 1.5s, ease, 0s);
@@ -104,7 +104,7 @@
     		.add-active{
     		    top: -10px;
     			z-index: 3;
-    			color: #222;
+    			color: #000;
     			transition-delay: 0.3s;
     			-webkit-animation: arrow 1.5s ease both;
     			-moz-animation: arrow 1.5s ease both;
@@ -166,7 +166,7 @@
 		    }
 		    h2 {
 		        line-height: 24px;
-		        margin-bottom: 15px;
+		        margin-bottom: 10px;
 		        text-overflow: ellipsis;
 		        margin-top: 0 !important;
 			a{
@@ -176,6 +176,8 @@
 			    text-decoration: none;
 			    max-height: 50px;
 			    overflow: hidden;
+			    text-overflow: ellipsis;
+    			    white-space: nowrap;
 			}
 		    }
 		    .author {
@@ -920,5 +922,31 @@
                 }
             }
         }
+    }
+}
+/**** 签到前三 ****/
+.ui.Ranking{
+    > .image{
+        position:relative;
+        text-align:center;
+        width:4pc !important;
+        > .besticon{
+	        width: 43px;
+    	    height: 43px;
+    	    text-align: center;
+    	    font-size: 12px;
+    	    background-repeat: no-repeat;
+    	    background-position: center center;
+    	    background-size: 25px 25px;
+    	    color: #fff;
+    	    line-height: 37px;
+    	    position: absolute;
+    	    bottom: -4px; 
+    	    right: -8px;
+    	    z-index: 10;
+	  }
+	  img{
+	        width:50px !important;
+	  }
     }
 }
