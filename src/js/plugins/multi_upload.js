@@ -36,6 +36,7 @@
         assetType: 2,
         assetDomain: 'asset',
         parent_id: 0,
+        is_string:0,
         fetchUploadURL: ''
     });
     
@@ -138,7 +139,7 @@
             		console.log('id: ' + id + ' name: ' + name + 'result: ' + result);
                     if(!result.is_error){
                         $('.qq-upload-list').children().eq(id).fadeOut();
-                        $.getJSON(that.options.fetchUploadURL, {'assets': result.data.ids, 'asset_type': that.options.assetType, 'asset_domain': that.options.assetDomain }, function(rs){
+                        $.getJSON(that.options.fetchUploadURL, {'assets': result.data.ids, 'is_string': that.options.is_string, 'asset_type': that.options.assetType, 'asset_domain': that.options.assetDomain }, function(rs){
                             if(rs.is_error){
                                 phenix.show_error_message(rs.message);
                                 return;
@@ -284,12 +285,12 @@
     $.Editable.prototype.loadAssets = function(){
         var that = this;
         if(this.options.parent_id){
-            $.getJSON(this.options.fetchUploadURL, { parent_id: this.options.parent_id, 'asset_type': this.options.assetType, 'asset_domain': this.options.assetDomain }, function(rs){
+            $.getJSON(this.options.fetchUploadURL, { 'parent_id': this.options.parent_id, 'is_string': this.options.is_string, 'asset_type': this.options.assetType, 'asset_domain': this.options.assetDomain }, function(rs){
                 if(rs.is_error){
                     phenix.show_error_message(rs.message);
                     return;
                 }
-            
+                console.log(rs);
                 that.renderAssets(rs);
             });
         }
