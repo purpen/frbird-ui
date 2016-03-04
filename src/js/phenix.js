@@ -12,7 +12,7 @@ var phenix = {
 			},delay);
 	    },
 	    show_error_note: function(msg,delay) {
-			msg = '<div class="content"><i class="remove icon"></i>'+ msg +'</div>';
+			msg = '<div class="content"><i class="warning sign icon"></i>'+ msg +'</div>';
 	    	phenix.show_notify_bar(msg,'error',delay);
 	    },
 	    show_ok_note:function(msg,delay) {
@@ -159,7 +159,7 @@ phenix.initial = function(){
 	
 	$.scrollUp({
         scrollText: '<i class="angle up icon"></i>',
-		className: 'ui circular topup icon button',
+		className: 'ui topup icon',
         scrollTitle: false
     });
 	

@@ -111,6 +111,19 @@ gulp.task('packagejs', function(){
         .pipe(concat('gridste.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+		
+	// H5 wechat
+    gulp.src([
+		paths.dist.minified + '/javascript/wechat/zepto/zepto.min.min.js', //   合并 dist/js/ 里 文件
+		paths.dist.minified + '/javascript/wechat/touch.min.js',
+		paths.dist.minified + '/javascript/wechat/PageSlider.min.js',
+		paths.dist.minified + '/javascript/wechat/PxLoader.min.js',
+		paths.dist.minified + '/javascript/wechat/PxLoaderImage.min.js',
+		//paths.dist.minified + '/js/index.min.js'
+        ])
+        .pipe(concat('wechat.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
 });
 
 // 预编译less,压缩css

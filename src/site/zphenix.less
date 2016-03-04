@@ -2731,15 +2731,15 @@ img.image-V.yellow,img.image-WV.yellow,img.image-UV.yellow,img.image-PV.yellow,i
                 
                 p {
                     color: rgb(51, 51, 51);
-                    height: 40px;
-                    margin: 0 5px;
+                    height: 29px;
+		    margin: 0 5px;
                     overflow: hidden;
-                    padding-bottom: 5px;
+                    line-height: 20px;
                 }
                 
                 > .cover {
                     background-color: rgba(0, 0, 0, 0.6);
-                    bottom: 50px;
+                    bottom: 35px;
                     border-radius: 0.285714rem 0.285714rem 0 0 !important;
                     color: rgb(255, 255, 255);
                     cursor: pointer;
@@ -2777,4 +2777,22 @@ img.image-V.yellow,img.image-WV.yellow,img.image-UV.yellow,img.image-PV.yellow,i
 }
 body.animating.in.dimmable, body.dimmed.dimmable,.scrolling.dimmable.dimmed {
     overflow: visible !important;
+}
+/**** 用户名隐藏 ****/
+.mx80{
+	max-width:80px;
+}
+.mx90{
+	max-width:90px;
+}
+.mx100{
+	max-width:100px;
+}
+.userhidden{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
 }

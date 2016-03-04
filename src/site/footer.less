@@ -46,9 +46,14 @@
 #scrollUp {
     background-color: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(112, 123, 135, 0.92);
-    bottom: 10%;
+    bottom: 16%;
     color: rgba(112, 123, 135, 0.92);
     right: 4%;
+	border-radius: 0;
+	width: 34px;
+    height: 34px;
+    padding: 0;
+	border-bottom: none;
     .transition;
     
     &:hover {
@@ -57,7 +62,65 @@
     	color: #fff;
     }
     
-    > .icon {
+    > .angle.up.icon {
         opacity: 1;
+		width: 14px;
+	    height: 14px;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-left: -7px;
+	    margin-top: -10px;
+	    font-size: 1.2em;
     }
+}
+.mb-wap{
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(112, 123, 135, 0.92);
+    bottom: 16%;
+    color: rgba(112, 123, 135, 0.92);
+    right: 4%;
+	border-radius: 0;
+	width: 34px;
+    height: 34px;
+    padding: 0;
+	margin-bottom: -34px;
+	position: fixed; 
+	z-index: 2147483647;
+	cursor: pointer;
+    .transition;
+    
+    &:hover {
+    	border-color: #ff3b6b;
+    	background-color: #ff3b6b;
+    	color: #fff;
+		> .sharewap{
+			display: block;
+		}
+    }
+	
+    > .mobile.icon {
+        opacity: 1;
+		width: 14px;
+	    height: 14px;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-left: -7px;
+	    margin-top: -10px;
+	    font-size: 1.2em;
+    }
+	
+	> .sharewap {
+	    background: url( http://frstatic.qiniudn.com/images%2Fsharewap.png ) center center no-repeat;
+	    background-size: 100%;
+	    width: 126px;
+	    height: 159px;
+	    position: absolute;
+	    z-index: 2147483647;
+	    left: -127px;
+	    top: -75px;
+	    display: none;
+	}
+
 }

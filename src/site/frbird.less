@@ -250,6 +250,10 @@ h4.ui.header .sub.header {
 .ui.mini.images img,
 .ui.mini.image {
   width: 80px;
+  max-height: 80px;
+}
+td .ui.mini.images .image{
+  overflow: hidden;
 }
 
 .ui.medium.images .image,
@@ -847,10 +851,10 @@ h4.ui.header .sub.header {
 .ui.message > .close.icon {
   cursor: pointer;
   position: absolute;
-  top: 1em;
-  right: 0.5em;
+  top: 0.95em;
+  right: 0.8em;
   opacity: 0.7;
-  font-size: 0.875em;
+  font-size: 1em;
   width: 1em;
   height: 1em;
   padding: 0;
@@ -1217,10 +1221,16 @@ h4.ui.header .sub.header {
             float: right;
         }
         .text {
-          margin: @margin 0em;
-          word-wrap: break-word;
-          line-height: 1.325;
-          color: @defaultColor;
+            margin: @margin 0em;
+            word-wrap: break-word;
+            line-height: 1.325;
+            color: @defaultColor;
+	    br {
+		line-height: 1.8;	
+	    }
+	    br + br{
+		display:none;
+	    }
         }
         
         .avatar {
