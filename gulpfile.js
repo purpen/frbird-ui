@@ -35,8 +35,8 @@ gulp.task('minifyjs', function(){
 // 合并,压缩js
 gulp.task('packagejs', function(){
     // semantic-2.1.5
-    gulp.src(paths.dist.minified + '/javascript/semantic-2.1.5.min.js')
-        .pipe(concat('semantic-2.1.5.min.js'))
+    gulp.src(paths.dist.minified + '/javascript/semantic.2.0.min.min.js')
+        .pipe(concat('semantic.2.0.min.js'))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
         
     // jquery
@@ -141,7 +141,8 @@ gulp.task('minifycss', function(){
 gulp.task('packagecss', function(){
     // 合并css
     
-    gulp.src(paths.dist.minified + '/css/semantic-2.1.5.min.css')
+    gulp.src(paths.dist.minified + '/css/semantic/semantic.min.2.0.0804.min.css')
+		.pipe(concat('semantic.min.2.0.0804.css'))
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
         
     gulp.src(paths.dist.minified + '/css/calendar/*.css')
