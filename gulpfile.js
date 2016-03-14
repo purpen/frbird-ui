@@ -141,8 +141,8 @@ gulp.task('minifycss', function(){
 gulp.task('packagecss', function(){
     // 合并css
     
-    gulp.src(paths.dist.minified + '/css/semantic/semantic.min.2.0.0804.min.css')
-		.pipe(concat('semantic.min.2.0.0804.css'))
+    gulp.src(paths.dist.minified + '/css/semantic/semantic.min.min.css')
+		.pipe(concat('semantic.min.css'))
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
         
     gulp.src(paths.dist.minified + '/css/calendar/*.css')
