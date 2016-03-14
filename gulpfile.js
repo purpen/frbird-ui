@@ -140,11 +140,6 @@ gulp.task('minifycss', function(){
 // 合并,压缩css
 gulp.task('packagecss', function(){
     // 合并css
-    
-    /*gulp.src(paths.dist.minified + '/css/semantic/semantic.min.css')
-		.pipe(concat('semantic.min.css'))
-        .pipe(gulp.dest(paths.dist.packaged + '/css'));*/
-        
     gulp.src(paths.dist.minified + '/css/calendar/*.css')
         .pipe(concat('calendar.css'))
         .pipe(rename({suffix: '.min'}))
@@ -173,7 +168,7 @@ gulp.task('packagecss', function(){
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
 });
-
+// copy 前端框架
 gulp.task('copy', function() {
   return gulp.src(['src/site/semantic/*.*'])
     // Pass in options to the task
