@@ -141,9 +141,9 @@ gulp.task('minifycss', function(){
 gulp.task('packagecss', function(){
     // 合并css
     
-    gulp.src(paths.dist.minified + '/css/semantic/semantic.min.min.css')
+    /*gulp.src(paths.dist.minified + '/css/semantic/semantic.min.css')
 		.pipe(concat('semantic.min.css'))
-        .pipe(gulp.dest(paths.dist.packaged + '/css'));
+        .pipe(gulp.dest(paths.dist.packaged + '/css'));*/
         
     gulp.src(paths.dist.minified + '/css/calendar/*.css')
         .pipe(concat('calendar.css'))
@@ -174,6 +174,18 @@ gulp.task('packagecss', function(){
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
 });
 
+gulp.task('copy', function() {
+  return gulp.src(['src/site/semantic/*.*'])
+    // Pass in options to the task
+    .pipe(gulp.dest(paths.dist.packaged + '/css'));
+});
+
+/*gulp.task('jade', function() {
+    return gulp.src('src/css/semantic/semantic.jade')
+    .pipe(jade())
+    .pipe(gulp.dest(paths.dist.packaged + '/css'));
+});*/
+
 // Copy all static images
 gulp.task('images', function() {
   return gulp.src(['src/images/*.*', 'src/images/**/*.*'])
@@ -183,7 +195,7 @@ gulp.task('images', function() {
 
 // 批量命令
 gulp.task('comprass', ['minifycss', 'minifyjs'], function(){
-    gulp.start('packagecss', 'packagejs', 'images');
+    gulp.start('packagecss', 'packagejs', 'images','copy');
 });
 
 // 清理旧文件
