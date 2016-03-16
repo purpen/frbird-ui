@@ -43,6 +43,12 @@ gulp.task('packagejs', function(){
     gulp.src(paths.dist.minified + '/javascript/jquery-2.1.0.min.js')
         .pipe(concat('jquery-2.min.js'))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+		
+    // mobile
+    gulp.src(paths.dist.minified + '/javascript/mobile/*.js')
+        .pipe(concat('mobile.js'))
+		.pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
     
     // jquery plugins
     gulp.src([
