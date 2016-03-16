@@ -955,25 +955,7 @@ var wps_width=0, wps_height=0, wps_ratio=1;
 var scale_width=480, scale_height=0;
 var crop_width=0, crop_height=0;
 
-/**
- * hook image area select
- */
-phenix.hook_imgarea_select = function(){
-	scale_height = parseInt(wps_height*scale_width/wps_width);
-	ias = $('img#avatar-photo').imgAreaSelect({
-		aspectRatio: '1:1',
-		x1: 0, 
-		y1: 0, 
-		x2: 300, 
-		y2: 300,
-		handles: true,
-		parent: '#select-area',
-		fadeSpeed: 200,
-		instance: true,
-		onSelectChange: phenix.preview,
-		onSelectEnd: phenix.updateAreaSelect
-	});
-};
+
 
 phenix.preview = function(img, selection) {
 	if (!selection.width || !selection.height){
@@ -1108,34 +1090,6 @@ phenix.comment_blow_up_img = function() {
 phenix.updateAreaSelect = function() {
 	// todo
 };
-/**
- * imgAreaSelect settings
- */
-$.extend($.imgAreaSelect.prototype, {
-    animateSelection: function (x1, y1, x2, y2, duration) {
-        var fx = $.extend($('<div/>')[0], {
-            ias: this,
-            start: this.getSelection(),
-            end: { x1: x1, y1: y1, x2: x2, y2: y2 }
-        });
-		
-        $(fx).animate({
-            cur: 1
-        },
-        {
-            duration: duration,
-            step: function (now, fx) {
-                var start = fx.elem.start, end = fx.elem.end,
-                    curX1 = Math.round(start.x1 + (end.x1 - start.x1) * now),
-                    curY1 = Math.round(start.y1 + (end.y1 - start.y1) * now),
-                    curX2 = Math.round(start.x2 + (end.x2 - start.x2) * now),
-                    curY2 = Math.round(start.y2 + (end.y2 - start.y2) * now);
-                fx.elem.ias.setSelection(curX1, curY1, curX2, curY2);
-                fx.elem.ias.update();
-            }
-        });
-    }
-});
 
 // Simplified Chinese
 jQuery.extend( jQuery.fn.pickadate.defaults, {
@@ -1148,6 +1102,12 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
     firstDay: 1,
     format: 'yyyy-mm-dd',
     formatSubmit: 'yyyy-mm-dd'
+});
+
+//懒加载
+$("img.lazy").lazyload({
+    effect : "fadeIn",
+  	threshold : -50
 });
 
 (function($){
