@@ -116,13 +116,22 @@
     background-color: @lightMagentaDown;
 }
 
-.ui.menu{
+.ui.wap .ui.menu{
     font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+.ui.wap .ui.left.sidebar{
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+body.menu-open .ui.left.sidebar{
+  visibility: visible;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 .ui.sidebar {
     width: 16rem !important;
     top:0 !important;
-    position: fixed !important;
+    position: absolute !important;
     font-size: @textFontSize !important;
 }
 .ui.vertical.inverted.menu .item:before {
@@ -1519,4 +1528,18 @@ img.fr-fil{
     border-radius: 0;
     border: 1px solid rgba(224,224,224,.46);
 }
-
+/****** 隐藏层  ******/
+#cover{
+	position: fixed; 
+	width: 100%; 
+	height: 100%; 
+	z-index: 100; 
+	top: 0px; 
+	opacity: 0.6; 
+	display: none; 
+	background: rgb(0, 0, 0);
+}
+body.menu-open{
+	height:100%;
+	overflow:hidden;
+}

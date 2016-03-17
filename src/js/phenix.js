@@ -1110,6 +1110,17 @@ $("img.lazy").lazyload({
   	threshold : -50
 });
 
+//手机端导航
+//sidebar menu
+$('.ui.wap a.launch').on('click',function(){
+	$('#cover').css('display','block');
+	$('body').addClass('menu-open');
+});
+$('.ui.wap #cover').click(function(){
+	$('#cover').css('display','none');
+	$('body').removeClass('menu-open');
+});
+
 (function($){
 	$.fn.extend({
 		insertAtCaret: function(myValue){
