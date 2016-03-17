@@ -1107,7 +1107,7 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
 //懒加载
 $("img.lazy").lazyload({
     effect : "fadeIn",
-  	threshold : -50
+  	threshold : -20
 });
 
 //手机端导航
@@ -1115,10 +1115,12 @@ $("img.lazy").lazyload({
 $('.ui.wap a.launch').on('click',function(){
 	$('#cover').css('display','block');
 	$('body').addClass('menu-open');
+	$('html').css('overflow','hidden');
 });
 $('.ui.wap #cover').click(function(){
 	$('#cover').css('display','none');
 	$('body').removeClass('menu-open');
+	$('html').css('overflow','');
 });
 
 (function($){
