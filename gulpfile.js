@@ -77,6 +77,7 @@ gulp.task('packagejs', function(){
 		paths.dist.minified + '/javascript/jquery/jquery.gritter.min.js',
         paths.dist.minified + '/javascript/jquery/jquery.caret.min.js',
 		paths.dist.minified + '/javascript/jquery/jquery.atwho.min.js',
+		paths.dist.minified + '/javascript/jquery/jquery.lazyload.min.js',
         ])
         .pipe(concat('jquery.plugins.js'))
         .pipe(rename({suffix: '.min'}))
