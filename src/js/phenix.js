@@ -1120,7 +1120,7 @@ $('.ui.wap a.launch').on('click',function(){
 $('.ui.wap #cover').click(function(){
 	$('#cover').css('display','none');
 	$('body').removeClass('menu-open');
-	$('html').css('overflow','');
+	$('html').removeAttr('style');
 });
 
 (function($){
