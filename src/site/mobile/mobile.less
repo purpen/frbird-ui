@@ -1700,6 +1700,9 @@ body.menu-open{
     font-size: 0;
 	position:relative;
 	padding-top: 4px;
+	.recom-item .recom-cell a{
+		padding-top:66%;
+	}
 }
 .recom-item{
 	width: 100%;
@@ -1712,7 +1715,8 @@ body.menu-open{
 	.recom-cell{
 		width:50%;
 		height: 100%;
-		display:inline-block;
+		display:block;
+		float: left;
 		padding-right: 4px;
 		margin: 4px 0;
 	    -webkit-box-sizing: border-box;
@@ -1723,16 +1727,18 @@ body.menu-open{
 			padding-right:0;
 		}
 		a{
-			text-decoration: none;
-			position:relative;
+			position: relative;
 			display: block;
-			clear: both;
+			width: 100%;
 			height: 100%;
+			background: #fff;
 			img{
 			    width: 100%;
-			    height: auto;
+			    height: 100%;
 			    overflow: hidden;
-			    vertical-align: bottom;
+				position: absolute;
+				bottom: 0;
+				left: 0;
 			}
 			.desc{
 			    background: -moz-linear-gradient(top,rgba(0,0,0,0.0),rgba(0,0,0,0.7));
@@ -1756,86 +1762,94 @@ body.menu-open{
 		}
 	}
 }
-/**** 首页试用 ****/
+/**** 首页试用 图373x298 ****/
 #triespage {
 	h4.ui.header{
 		margin-bottom:10px;
 	}
 	.recom-item .recom-cell{
-		a .desc{
-			position:relative;
-		    background: #fff;
-		    padding: 6px 5px 0;
-			height:auto;
-			h2{
-			    font-weight: 500;
-			    overflow: hidden;
-			    text-align: left;
-			    margin: 0;
-			    text-overflow: ellipsis;
-			    white-space: nowrap;
-				color: rgba(112,123,135,.91);
-			    font-size: 13px;
-			}
-			.excerpt{
-			    color: rgba(146,147,163,.9);
-			    font-size: 12px;
-			    letter-spacing: .1px;
-			    overflow: hidden;
-			    text-align: left;
-				padding: 4px 0 5px;
-				.count{
-					margin-right:3px;
+		a {
+			padding-top: 80%;
+			.desc{
+				position:relative;
+			    background: #fff;
+			    padding: 6px 5px 0;
+				height:auto;
+				h2{
+				    font-weight: 500;
+				    overflow: hidden;
+				    text-align: left;
+				    margin: 0;
+				    text-overflow: ellipsis;
+				    white-space: nowrap;
+					color: rgba(112,123,135,.91);
+				    font-size: 13px;
+				}
+				.excerpt{
+				    color: rgba(146,147,163,.9);
+				    font-size: 12px;
+				    letter-spacing: .1px;
+				    overflow: hidden;
+				    text-align: left;
+					padding: 4px 0 5px;
+					.count{
+						margin-right:3px;
+					}
 				}
 			}			
 		}
 	}	
 }
-/**** 商品列表 ****/
+/**** 商品列表 图500x500****/
 #mpresale{
 	h4.ui.header{
 		margin-bottom:10px;
 	}
 	.recom-item .recom-cell{
-		a .desc{
-	        padding: 5px 5px 0;
-	    	line-height: inherit;
-	    	background: -moz-linear-gradient(top,rgba(255,255,255,0.5),rgba(255,255,255,1));
-	        background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(rgba(255,255,255,0.5)), to(rgba(255,255,255,1)));
-	        background: -webkit-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,1));
-	        background: -o-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,1));
-			height: 50px;
-			h2{
-				line-height: 22px;
-		      	height: 22px;
-			    font-weight: 700;
-			    overflow: hidden;
-			    text-align: left;
-			    margin: 0;
-			    text-overflow: ellipsis;
-			    white-space: nowrap;
-			    color: rgba(0,0,0,0.6);
-				font-size: 13px;
+		a {
+			padding-top: 100%;
+			.desc{
+		        padding: 5px 5px 0;
+		    	line-height: inherit;
+		    	background: -moz-linear-gradient(top,rgba(255,255,255,0.5),rgba(255,255,255,1));
+		        background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(rgba(255,255,255,0.5)), to(rgba(255,255,255,1)));
+		        background: -webkit-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,1));
+		        background: -o-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,1));
+				height: 50px;
+				h2{
+					line-height: 22px;
+			      	height: 22px;
+				    font-weight: 700;
+				    overflow: hidden;
+				    text-align: left;
+				    margin: 0;
+				    text-overflow: ellipsis;
+				    white-space: nowrap;
+				    color: rgba(0,0,0,0.6);
+					font-size: 13px;
+				}
+				.cats{
+			    	font-size:12px;
+			        font-weight: 400;
+			        overflow: hidden;
+			        padding: 0;
+			        text-align: left;
+			        text-overflow: ellipsis;
+			        text-transform: uppercase;
+			        white-space: nowrap;
+			        color: #f36;
+				}
+				.counter {
+				    font-size: 12px;
+				    position: absolute;
+				    right: 10px;
+				    bottom: 3px;
+				    color: #5d6266;
+				}
 			}
-			.cats{
-		    	font-size:12px;
-		        font-weight: 400;
-		        overflow: hidden;
-		        padding: 0;
-		        text-align: left;
-		        text-overflow: ellipsis;
-		        text-transform: uppercase;
-		        white-space: nowrap;
-		        color: #f36;
-			}
-			.counter {
-			    font-size: 12px;
-			    position: absolute;
-			    right: 10px;
-			    bottom: 3px;
-			    color: #5d6266;
-			}
+			
 		}
+		
 	}
 	
 }
