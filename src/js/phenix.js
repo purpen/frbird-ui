@@ -1123,6 +1123,22 @@ $('.ui.wap #cover').click(function(){
 	$('html').removeAttr('style');
 });
 
+//appstore 下载
+$('.appstore .appclose').on('click',function(){
+	$('.appstore').remove();
+});
+	$('.appstore .white.inverted.button').click(function(){
+    var ua = navigator.userAgent.toLowerCase();  
+    if(ua.match(/MicroMessenger/i)=="micromessenger"){
+		$('#appload').css('display','block');
+	}else{
+		window.location='https://itunes.apple.com/cn/app/tai-huo-niao-huo-bao-zhi-neng/id946737402?mt=8';
+	}
+	});
+$('.appstore #appload').click(function(){
+    $('.appstore #appload').removeAttr('style');
+});
+
 (function($){
 	$.fn.extend({
 		insertAtCaret: function(myValue){
