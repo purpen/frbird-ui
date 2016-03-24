@@ -1124,10 +1124,15 @@ $('.ui.wap #cover').click(function(){
 });
 
 //appstore 下载
-$('.appstore .appclose').on('click',function(){
-	$('.appstore').remove();
+$('.apploadclose').on('click',function(){
+	$('.appiosload').remove();
 });
-	$('.appstore .white.inverted.button').click(function(){
+$('#appload,#apploadand').click(function(){
+    $('#appload,#apploadand').removeAttr('style');
+});
+if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
+	 window.setTimeout(function() { $('.appiosload').fadeIn(1000);},2000);
+	$('.appiosload .magenta.inverted.button').click(function(){
     var ua = navigator.userAgent.toLowerCase();  
     if(ua.match(/MicroMessenger/i)=="micromessenger"){
 		$('#appload').css('display','block');
@@ -1135,9 +1140,9 @@ $('.appstore .appclose').on('click',function(){
 		window.location='https://itunes.apple.com/cn/app/tai-huo-niao-huo-bao-zhi-neng/id946737402?mt=8';
 	}
 	});
-$('.appstore #appload').click(function(){
-    $('.appstore #appload').removeAttr('style');
-});
+}else if (navigator.userAgent.match(/android/i)){
+	$('.appiosload').remove();
+}
 
 (function($){
 	$.fn.extend({
