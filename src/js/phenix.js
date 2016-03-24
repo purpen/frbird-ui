@@ -915,6 +915,7 @@ phenix.bind_share_list = function(pic_url) {
  * 设置cookie，用于区别PC与Mobile。
  */
 phenix.create_cookie = function(name, value, days, domain, path){
+	var appload = '';
 	var expires = '';
 	if (days) {
 		var d = new Date();
@@ -923,7 +924,7 @@ phenix.create_cookie = function(name, value, days, domain, path){
 	}
 	domain = domain ? '; domain=' + domain : '';
 	path = '; path=' + (path ? path : '/');
-	document.cookie = name + '=' + value + expires + path + domain;
+	document.cookie = name + '=' + value + expires + path + domain + appload;
 }
 
 /**
@@ -1142,7 +1143,19 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
 	});
 }else if (navigator.userAgent.match(/android/i)){
 	$('.appiosload').remove();
-}
+};
+//app下载设置cookie为一天
+$(function(){
+	if(phenix.read_cookie("closeload") == 0){
+		$('.appiosload').remove();
+	}else{
+		window.setTimeout(function() { $('.appiosload').fadeIn(1000);},2000);
+	}
+	$('.apploadclose').on('click',function(){
+		phenix.create_cookie("closeload","0",{ expires:1 });
+	})
+});
+
 //web 下载二维码
 $(window).scroll(function(){
 	var scrollTop = $(window).scrollTop();
