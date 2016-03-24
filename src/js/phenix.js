@@ -1143,6 +1143,16 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
 }else if (navigator.userAgent.match(/android/i)){
 	$('.appiosload').remove();
 }
+//web 下载二维码
+$(window).scroll(function(){
+	var scrollTop = $(window).scrollTop();
+	if ( scrollTop < 200 ){
+		$('.iosewm img').fadeOut(800);
+	}
+	if ( scrollTop > 200 ){
+		$('.iosewm img').fadeIn(800);
+	}
+});
 
 (function($){
 	$.fn.extend({
