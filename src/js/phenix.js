@@ -1156,36 +1156,6 @@ $(function(){
 	})
 });
 
-function IsPC() {
-    var userAgentInfo = navigator.userAgent;
-    var Agents = ["Android", "iPhone",
-                "SymbianOS", "Windows Phone",
-                "iPad", "iPod"];
-    var flag = true;
-    for (var v = 0; v < Agents.length; v++) {
-        if (userAgentInfo.indexOf(Agents[v]) > 0) {
-            flag = false;
-            break;
-        }
-    }
-    return flag;
-	if (flag == false ){
-		//web 下载二维码
-		$(window).scroll(function(){
-			var scrollTop = $(this).scrollTop();
-			var fttop = $('#ft').offset().top;
-			if ( scrollTop < 200 || scrollTop > fttop-650 ){
-				$('.iosewm img').fadeOut(800);
-			}
-			if( scrollTop > 200 && scrollTop < fttop-650 ){
-				$('.iosewm img').fadeIn(800);
-			}
-		});
-	}
-}
-IsPC();
-
-
 (function($){
 	$.fn.extend({
 		insertAtCaret: function(myValue){
