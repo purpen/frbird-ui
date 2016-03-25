@@ -7,16 +7,41 @@
     padding: 20px 0;
     
     .ui.list {
-        .item {
-            font-size: @textFontSize;
-            color: @aLinkColor;
-            padding: 5px 0;
-        }
+		.menuitem{
+			padding:5px 0;
+			line-height: 1.14285714em;
+			.item{
+	            font-size: @textFontSize;
+	            color: @aLinkColor;
+				padding:0;
+				&:hover,&.active{
+					color:#f36;
+				}
+				
+			}
+		}
         .cte.item {
             
             .ui.button {
-                width: 2.5em;
-                height: 2.5em;
+				margin: 0 0.5em;
+			    border: 1px solid rgba(112,123,135,.5);
+			    background: rgba(0,0,0,0);
+			    color: rgba(112,123,135,.5);
+				&.red:hover{
+					background-color: #d01919;
+				    color: #fff;
+				    border: 1px solid #d01919;
+				}
+				&.blue:hover{
+					background-color: #2185d0;
+				    color: #fff;
+				    border: 1px solid #2185d0;
+				}
+				&.green:hover{
+					background-color: #21ba45;
+				    color: #fff;
+				    border: 1px solid #21ba45;
+				}
                 
                 > i.icon {
                    line-height: 1em;

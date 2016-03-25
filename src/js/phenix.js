@@ -1158,11 +1158,12 @@ $(function(){
 
 //web 下载二维码
 $(window).scroll(function(){
-	var scrollTop = $(window).scrollTop();
-	if ( scrollTop < 200 ){
+	var scrollTop = $(this).scrollTop();
+	var fttop = $('#ft').offset().top;
+	if ( scrollTop < 200 || scrollTop > fttop-650 ){
 		$('.iosewm img').fadeOut(800);
 	}
-	if ( scrollTop > 200 ){
+	if( scrollTop > 200 && scrollTop < fttop-650 ){
 		$('.iosewm img').fadeIn(800);
 	}
 });
