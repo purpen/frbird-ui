@@ -84,17 +84,8 @@ gulp.task('packagejs', function(){
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
     
     // frbird web
-    gulp.src([
-		paths.dist.minified + '/javascript/phenix.min.js',
-		paths.dist.minified + '/javascript/phenixweb.min.js'
-	])
-        .pipe(concat('frbird.js'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
-		
-    // frbird 手机端 wap
     gulp.src(paths.dist.minified + '/javascript/phenix.min.js')
-        .pipe(concat('frbird.wap.js'))
+        .pipe(concat('frbird.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
 
