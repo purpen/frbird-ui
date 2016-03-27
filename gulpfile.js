@@ -84,10 +84,20 @@ gulp.task('packagejs', function(){
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
     
     // frbird web
-    gulp.src(paths.dist.minified + '/javascript/phenix.min.js')
+    gulp.src([
+		paths.dist.minified + '/javascript/phenix.min.js',
+		paths.dist.minified + '/javascript/jquery/phenix.web.min.js',
+	])
         .pipe(concat('frbird.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+		
+	// frbird wap
+    gulp.src(paths.dist.minified + '/javascript/phenix.min.js')
+        .pipe(concat('frbird.wap.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));	
+		
 
     // froala editor
     gulp.src([
