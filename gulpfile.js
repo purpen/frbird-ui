@@ -86,7 +86,7 @@ gulp.task('packagejs', function(){
     // frbird web
     gulp.src([
 		paths.dist.minified + '/javascript/phenix.min.js',
-		paths.dist.minified + '/javascript/jquery/phenix.web.min.js',
+		paths.dist.minified + '/javascript/phenix.web.min.js',
 	])
         .pipe(concat('frbird.js'))
         .pipe(rename({suffix: '.min'}))

@@ -1847,6 +1847,11 @@ body.menu-open{
 	.recom-item .recom-cell{
 		a {
 			padding-top: 100%;
+			img{
+			    height: auto;
+			    top: 0;
+			    bottom: auto;
+			}
 			.desc{
 		        padding: 5px 5px 0;
 		    	line-height: inherit;
@@ -1854,10 +1859,11 @@ body.menu-open{
 		        background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(rgba(255,255,255,0.6)), to(rgba(255,255,255,0.9)));
 		        background: -webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
 		        background: -o-linear-gradient(top, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
-				height: 50px;
+			    height: 60px;
+			    position: relative;
 				h2{
-					line-height: 22px;
-			      	height: 22px;
+				    height: 25px;
+				    line-height: 30px;
 				    font-weight: 700;
 				    overflow: hidden;
 				    text-align: left;
@@ -1868,7 +1874,9 @@ body.menu-open{
 					font-size: 13px;
 				}
 				.cats{
-			    	font-size:12px;
+			    	font-size: 14px;
+				    height: 30px;
+				    line-height: 25px;
 			        font-weight: 400;
 			        overflow: hidden;
 			        padding: 0;
