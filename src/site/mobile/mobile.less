@@ -20,6 +20,9 @@
 .pb-0{
 	padding-bottom:0 !important;
 }
+.pt-15{
+	padding-top:15px !important;
+}
 .ui {
     &.responsive.grid {
 	    padding: 0;
@@ -1756,7 +1759,11 @@ body.menu-open{
 		margin: 4px 0;
 	    -webkit-box-sizing: border-box;
 	    -moz-box-sizing: border-box;
-	    box-sizing: border-box; 
+	    box-sizing: border-box;
+		&.one{
+		    width: 100%;
+		    padding: 0 !important;
+		} 
 		&:nth-child(2n){
 			padding-left:4px;
 			padding-right:0;
@@ -1789,7 +1796,7 @@ body.menu-open{
 			    font-size: 12px;
 			    color: #fff;
 			    text-align: center;
-			    padding: 0 5px;
+			    padding: 0 10px;
 				white-space: nowrap;
 			    text-overflow: ellipsis;
 			    overflow: hidden;
@@ -1812,10 +1819,10 @@ body.menu-open{
 			.desc{
 				position:relative;
 			    background: #fff;
-			    padding: 6px 5px 0;
+			    padding: 6px 10px 0;
 				height:auto;
 				h2{
-				    font-weight: 500;
+				    font-weight: 400;
 				    overflow: hidden;
 				    text-align: left;
 				    margin: 0;
@@ -1853,7 +1860,7 @@ body.menu-open{
 			    bottom: auto;
 			}
 			.desc{
-		        padding: 5px 5px 0;
+		        padding: 5px 10px 0;
 		    	line-height: inherit;
 		    	background: -moz-linear-gradient(top,rgba(255,255,255,0.6),rgba(255,255,255,0.9));
 		        background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(rgba(255,255,255,0.6)), to(rgba(255,255,255,0.9)));
@@ -1864,7 +1871,7 @@ body.menu-open{
 				h2{
 				    height: 25px;
 				    line-height: 30px;
-				    font-weight: 700;
+				    font-weight: 400;
 				    overflow: hidden;
 				    text-align: left;
 				    margin: 0;
@@ -1900,6 +1907,181 @@ body.menu-open{
 	}
 	
 }
+/******  商城主页  ******/
+.shopbanner {
+    padding-top: 56%;
+    position: relative;
+	a img {
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	}
+}
+#shop-special{
+	.recommend-topic {
+	    padding: 0;
+		.recom-item{
+			.recom-cell.one{
+		    	width: 100%;
+		    	padding: 0 !important;
+				&:first-child{
+				    margin-top: 0;
+				}
+				a {
+				    padding-top: 56%;
+					img {
+					    top: 0;
+					    bottom: auto;
+					    height: auto;
+					}
+					.desc {
+					    position: relative;
+					    background: #fff;
+					    padding: 5px 10px 0;
+						h2 {
+						    height: 25px;
+						    line-height: 25px;
+						    font-weight: 400;
+						    overflow: hidden;
+						    text-align: left;
+						    margin: 0;
+						    text-overflow: ellipsis;
+						    white-space: nowrap;
+						    color: rgba(112,123,135,.91);
+						    font-size: 14px;
+						}
+						.cats {
+						    font-size: 14px;
+						    height: 30px;
+						    line-height: 25px;
+						    font-weight: 400;
+						    overflow: hidden;
+						    padding: 0;
+						    text-align: left;
+						    text-overflow: ellipsis;
+						    text-transform: uppercase;
+						    white-space: nowrap;
+						    color: #f36;
+						}
+					}
+				}
+				.fuhua.icon {
+				    position: absolute;
+				    top: 10px;
+				    left: 10px;
+				    width: 20px;
+				    height: 21px;
+				    background: rgba(255,51,102,0.5);
+				    border-radius: 3px;
+					img {
+					    width: 11px;
+					    height: 12px;
+					    margin: 4px;
+					}
+				}
+			}
+		}
+	}
+	
+}
+#mpresale{
+	&.shopindex{
+		margin-top: 6px;
+		h4.ui.title.header{
+			display: inline-block;
+		    padding-bottom: 5px;
+		    border-bottom: 2px solid #5d6266;
+		}
+		.shop-fotter{
+			.nav-menu{
+				.navfelx{
+					.childcell{
+						&:nth-child(2),&:nth-child(3){
+							margin-left: -5px;
+						}
+						&:last-child .menuicon::after{
+							content:none;
+						}
+						
+						.menuicon{
+							text-align:left;
+							position:relative;
+							overflow: hidden;
+							padding-left:0;
+							padding-right:0;
+							img{
+								margin:0;
+								width:30px;
+								height:30px;
+							}
+							&::after{
+		    					content: " ";
+				   			 	display: block;
+							    height: 30px;
+							    clear: both;
+								position:absolute;
+								width:1px;
+								background:rgba(0,0,0,0.1);
+								top:50%;
+								margin-top:-15px;
+								right:5px;
+							}
+							.content{
+								width:90px;
+								height:30px;
+								position:absolute;
+								top:6px;
+								left:35px;
+								&.huan{
+									line-height: 15px;
+									color:#55C4B1;
+								}
+								&.baoyou{
+									line-height: 30px;
+									color:#FC6B68;
+								}
+								&.fuwu{
+									line-height: 15px;
+									color:#3E98BE;
+								}
+							}
+						}
+					}
+				}
+			}  
+		}
+	}
+}
+@media only screen and (max-width: 320px){
+	#mpresale{
+		&.shop-fotter .nav-menu .navfelx .childcell{
+			&:nth-child(2),&:nth-child(3){
+				margin-left: -27px;
+			}
+			.menuicon{
+				&::after{
+					right: 23px;
+				}
+				img {
+				    width: 28px;
+				    height: 28px;
+				}
+				.content{
+					height: 28px;
+				    left: 30px;
+					&.baoyou{
+						line-height: 28px;
+					}
+				}
+			}
+		}	
+	}
+}
+
+
+
 /******  App下载   ******/
 .appiosload{
 	width:100%;
