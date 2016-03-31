@@ -1151,7 +1151,15 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
 	}
 	});
 }else if (navigator.userAgent.match(/android/i)){
-	$('.appiosload').remove();
+ 	window.setTimeout(function() { $('.appiosload').fadeIn(1000);},2000);
+	$('.appiosload .magenta.inverted.button').click(function(){
+    var ua = navigator.userAgent.toLowerCase();  
+    if(ua.match(/MicroMessenger/i)=="micromessenger"){
+		$('#appload').css('display','block');
+	}else{
+		window.location='http://m.taihuoniao.com/promo/android_download';
+	}
+	});
 };
 //app下载设置cookie为一天
 $(function(){
