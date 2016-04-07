@@ -116,6 +116,14 @@ gulp.task('packagejs', function(){
         .pipe(concat('calendar.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+
+    // datetimepicker    
+    gulp.src([
+            paths.dist.minified + '/javascript/jquery/jquery.datetimepicker.min.js',
+        ])
+        .pipe(concat('jquery.datetimepicker.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
         
     // gsap    
     gulp.src(paths.dist.minified + '/javascript/gsap/*.js')
@@ -159,6 +167,11 @@ gulp.task('packagecss', function(){
     // 合并css
     gulp.src(paths.dist.minified + '/css/calendar/*.css')
         .pipe(concat('calendar.css'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/css'));
+
+    gulp.src(paths.dist.minified + '/css/*.css')
+        .pipe(concat('jquery.datetimepicker.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
         
