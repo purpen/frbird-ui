@@ -38,69 +38,116 @@
     }
     &.wap {
     	border-bottom: @borderWidth @borderStyle @borderColor;
-        line-height: 30px;
-    	margin: 0 auto;
     	background:#fff;
+		height:61px;
 		max-width:767px;
-		.four.wide.column .ui.tiny.image{
-			margin:0 auto;
-			width:45px;
-		}
-		.six.wide.column{
-			.launch.item{
-				padding: 15px 10px 15px 0;
-				i.slidebar.icon{
-					font-size: 1.6em !important;
-					vertical-align: bottom !important;
+		.caput{
+			width: 100%;
+		    height: 100%;
+			display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+		    -webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+			.headitem{
+				-webkit-box-flex: 1;
+			    -webkit-flex: 1;
+			    -ms-flex: 1;
+			    flex: 1;
+			    -webkit-flex-basis: 0;
+			    -ms-flex-preferred-size: 0;
+			    flex-basis: 0;
+				position:relative;
+				.launch.item{
+					width: 40px;
+					height: 58px;
+				    position: absolute;
+				    top: 50%;
+				    transform: translateY(-50%);
+				    left: 10px;
+					.bgnav{
+						background:url(http://frstatic.qiniudn.com/images/icon/caputnav.png);
+						width: 22px;
+					    height: 20px;
+					    background-size: cover;
+					    margin: 19px 0;
+					}
 				}
-			}
-			&.right.aligned{
-				height:33px;
-				float: right;
-				width: 37% !important;
-				a.ui.small.icon{
-					padding: 10px 0;	
+				&.center a{
+					position:absolute;
+					left:50%;
+					top:50%;
+					transform: translate(-50%,-50%);
+					background:url(http://frstatic.qiniudn.com/images/icon/caputlogo.png);
+					background-size:cover;
+					width: 63px;
+					height: 50px;
 				}
-				i.cart.icon{
-					font-size: 1.6em !important;
-					margin-right: 8px;
-					margin-bottom: 1px;
-				}
-				.userauth{
-					display: inline-block;
-					position:relative;
-					a.ui.avatar.button{
-						width:33px;
-			            border: 0 none;
-			            border-radius: 50%;
-			            overflow: hidden;
-			            padding: 0;
-			            vertical-align: bottom;
+				&.right {
+	   				.acacart{
+	   					position: absolute;
+	   				    right: 40px;
+	   				    top: 50%;
+	   				    transform: translateY(-50%);
+	   				    width: 34px;
+	   				    height: 58px;
+	   					.caputcart{
+	   						background:url(http://frstatic.qiniudn.com/images/icon/caputcart.png);
+	   						width: 26px;
+	   					    height: 20px;
+	   					    background-size: cover;
+	   					    margin: 19px 4px;
+						}
+	   				}
+					.acacartlogin{
+						position: absolute;
+					    right: 48px;
+					    top: 50%;
+					    transform: translateY(-50%);
+					    width: 34px;
+					    height: 58px;
+						.caputcart{
+							background:url(http://frstatic.qiniudn.com/images/icon/caputcart.png);
+							width: 26px;
+						    height: 20px;
+						    background-size: cover;
+						    margin: 19px 4px;
+						}
+					}
+					.acauser{
+					    position: absolute;
+					    right: 0;
+					    top: 50%;
+					    transform: translateY(-50%);
+					    width: 32px;
+					    height: 58px;
+						.caputuser{
+							background:url(http://frstatic.qiniudn.com/images/icon/caputuser.png);
+							width: 18px;
+						    height: 20px;
+						    background-size: cover;
+						    margin: 20px 0;
+						}
+					}
+					.acauserlogin{
+					    position: absolute;
+					    right: 10px;
+					    top: 50%;
+					    transform: translateY(-50%);
+					    width: 32px;
+					    height: 58px;
 						img{
-							border-radius: 50%;
+						    width: 32px;
+						    height: 32px;
+						    border-radius: 50%;
+						    margin: 13px 0;
 						}
 					}
 				}
-				i.user.icon{
-					font-size: 1.6em !important;
-					height:auto !important;
-					vertical-align: bottom !important;
-				}
 			}
 		}
-        
-        a {
-            &.ui.small.icon.gray.button {
-            	padding: 0.715em;
-            	width: 36px;
-            }
-        }
-        .ui.small.icon i.icon {
-            font-size: 1.6rem !important;
-            color: #f36 !important;
-            vertical-align: middle;
-            height:1.4em !important;
-        }
     }
     &.green.message {
         border: @borderWidth @borderStyle @greenColor;
@@ -194,7 +241,7 @@ body.menu-open .ui.left.sidebar{
     border-left: 0 solid rgba(0,0,0,0);
     border-right: 0;
     color:rgba(255,255,255,0.9) !important;
-    padding:0.8em 1.33333333em;
+    padding:15px 1.33333333em;
 }
 .ui.sidebar.vertical.menu .item:last-child:before{
     background: rgba(255,255,255,0);
@@ -273,13 +320,6 @@ body.menu-open .ui.left.sidebar{
         }
         
     }
-}
-#gritter-notice-wrapper {
-    padding-top: 80px;
-    position: fixed;
-    right: 4.5%;
-    top: 0;
-    width: 65%;
 }
 /*******************************
              Link
@@ -1359,7 +1399,7 @@ body.menu-open .ui.left.sidebar{
 #gritter-notice-wrapper{
     width:100%;
     right:0;
-    padding-top:50px;
+    padding-top:61px;
     .content .remove.icon{
 	    display:none;
 	}
@@ -2771,5 +2811,5 @@ body.menu-open{
     transform-origin: 50%;
     -webkit-animation: swiper-preloader-spin 1s steps(12,end)infinite;
     -moz-animation: swiper-preloader-spin 1s steps(12,end)infinite;
-    animation: swiper-preloader-spin 1s steps(12,end)infinite
+    animation: swiper-preloader-spin 1s steps(12,end)infinite;
 }
