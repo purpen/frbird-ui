@@ -129,6 +129,19 @@
 						    background-size: cover;
 						    margin: 19px 4px;
 						}
+						.cartnumber{
+							position: absolute;
+						    top: 11px;
+						    right: 0px;
+						    width: 18px;
+						    height: 18px;
+						    background: #f36;
+						    border-radius: 50%;
+						    color: #fff;
+						    text-align: center;
+						    font-size: 12px;
+						    line-height: 18px;
+						}
 					}
 					.acauser{
 					    position: absolute;
@@ -1419,6 +1432,9 @@ body.menu-open .ui.left.sidebar{
     width:100%;
     right:0;
     padding-top:61px;
+    position: fixed;
+    top: 0;
+    left: 0;
     .content .remove.icon{
 	    display:none;
 	}
@@ -2146,6 +2162,8 @@ body.menu-open{
 	position:relative;
 	display:none;
 	background:rgba(0,0,0,0.75);
+	max-width:767px;
+	margin:0 auto;
 	.logo{
 	    width: 46px;
 	    height: 46px;
