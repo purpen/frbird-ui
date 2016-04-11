@@ -109,7 +109,7 @@ phenix.initial = function(){
 	// 消息框
 	$('.ui.message .close').livequery(function(){
 		$(this).on('click', function() {
-			$(this).closest('.ui.message').fadeOut('slow');
+			$(this).closest('.ui.message').fadeOut('slow').css('z-index','-1');
 		});
 	});
 	
