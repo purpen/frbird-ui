@@ -1132,6 +1132,13 @@ $('.ui.wap #cover').click(function(){
 	$('body').removeClass('menu-open');
 	$('html').removeAttr('style');
 });
+//底部微信二维码 是否是微信打开
+var ua = navigator.userAgent.toLowerCase();  
+if(ua.match(/MicroMessenger/i)=="micromessenger"){
+	$('.ui.small.wechat.mmfootewm.modal p').html('长按图片，点击识别图片中二维码，关注太火鸟公众号');
+}else{
+	$('.ui.small.wechat.mmfootewm.modal p').html('保存图片，打开微信扫描二维码，关注太火鸟公众号');
+};
 
 //appstore 下载
 $('.apploadclose').on('click',function(){
