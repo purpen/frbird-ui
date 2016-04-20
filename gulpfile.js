@@ -124,6 +124,14 @@ gulp.task('packagejs', function(){
         .pipe(concat('jquery.datetimepicker.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+		
+    // lightbox    
+    gulp.src([
+            paths.dist.minified + '/javascript/jquery/lightbox.min.js',
+        ])
+        .pipe(concat('lightbox.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
         
     // gsap    
     gulp.src(paths.dist.minified + '/javascript/gsap/*.js')
