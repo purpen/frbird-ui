@@ -1986,6 +1986,13 @@ body.menu-open{
 			    text-align: center;
 			    margin: 4px;
 				padding:0 6px 4px;
+				&.shop{
+					padding:0 4px 4px;
+					img{
+						width:40px;
+						height:40px;
+					}
+				}
 				img{
 					width:50px;
 					height:50px;
@@ -2334,14 +2341,14 @@ body.menu-open{
 				    position: absolute;
 				    top: 10px;
 				    left: 10px;
-				    width: 20px;
-				    height: 21px;
-				    background: rgba(255,51,102,0.5);
+				    width: 22px;
+				    height: 23px;
+				    background: rgba(255,51,102,0.9);
 				    border-radius: 3px;
 					img {
-					    width: 11px;
-					    height: 12px;
-					    margin: 4px;
+					    width: 12px;
+					    height: 13px;
+					    margin: 5px;
 					}
 				}
 			}
@@ -2357,63 +2364,39 @@ body.menu-open{
 		    padding-bottom: 5px;
 		    border-bottom: 2px solid #5d6266;
 		}
-		.shop-fotter{
-			.nav-menu{
-				.navfelx{
-					.childcell{
-						&:nth-child(2),&:nth-child(3){
-							margin-left: -5px;
-						}
-						&:last-child .menuicon::after{
-							content:none;
-						}
-						
-						.menuicon{
-							text-align:left;
-							position:relative;
-							overflow: hidden;
-							padding-left:0;
-							padding-right:0;
-							img{
-								margin:0;
-								width:30px;
-								height:30px;
-							}
-							&::after{
-		    					content: " ";
-				   			 	display: block;
-							    height: 30px;
-							    clear: both;
-								position:absolute;
-								width:1px;
-								background:rgba(0,0,0,0.1);
-								top:50%;
-								margin-top:-15px;
-								right:5px;
-							}
-							.content{
-								width:90px;
-								height:30px;
-								position:absolute;
-								top:6px;
-								left:35px;
-								&.huan{
-									line-height: 15px;
-									color:#55C4B1;
-								}
-								&.baoyou{
-									line-height: 30px;
-									color:#FC6B68;
-								}
-								&.fuwu{
-									line-height: 15px;
-									color:#3E98BE;
-								}
-							}
-						}
-					}
-				}
-			}  
+		.shopbiao{
+			position:absolute;
+			width:32px;
+			height:32px;
+			top:15px;
+			left:10px;
+		}
+		.qbfl{
+		    padding-top: 33.3333%;
+		    position: relative;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+			img {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: auto;
+			}
+			h3.ui.header {
+			    text-align: center;
+			    color: #fff !important;
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate3d(-50%,-50%,0);
+			    margin: 0;
+			    padding: 0;
+			    font-weight: 400;
+			    border-bottom: 2px solid #fff;
+			    padding-bottom: 10px;
+			}
 		}
 	}
 }

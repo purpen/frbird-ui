@@ -2,7 +2,7 @@
 
 /* 商店列表 */
 #shoplist {
-	margin: 1rem auto 4rem;
+	margin: 1rem auto 0rem;
     background-color: @bodyBgColor; 
 }
 .ui.groom.blocks {
@@ -12,11 +12,14 @@
 .nav-categories {
     box-sizing: border-box;
     height: auto;
-    margin: 30px auto 0px;
+    margin: 10px auto 0px;
     padding-left: 0;
     position: static;
     display: block;
     font-size: 0;
+	padding-top: 30px;
+	background:#fff;
+	width:1180px;
     
     &.list {
         background-color: #fff;
@@ -1107,6 +1110,9 @@
 	background-color: #fff;
 }
 
+#shoppage .newest{
+	padding-top:10px;
+}
 #shoppage .quickly i.icon {
 	opacity: 1;
 }
@@ -1446,7 +1452,89 @@
     font-weight: 400;
     margin-left: 0.5em;
 }
-
+/**** 孵化产品 ****/
+#shoplist{
+	.newest{
+		padding-top:10px;
+		h2.ui.header{
+			font-size:20px;
+		}
+		.ui.four.cards{
+			.card.special{
+				.speblock{
+					-webkit-transition: all .5s ease 0s;
+				    -moz-transition: all .5s ease 0s;
+				    -o-transition: all .5s ease 0s;
+				    -ms-transition: all .5s ease 0s;
+				    transition: all .5s ease 0s;
+					background-size: 100%;
+					padding-top:71.38%;
+					overflow: hidden;
+					&:hover{
+						background-size:103%;
+						a.thumb{
+							background-color: rgba(0,0,0,0.15);
+						}
+					}
+					a.thumb{
+					    position: absolute;
+					    top: 0;
+					    left: 0;
+					    width: 100%;
+					    height: 100%;
+					    padding-top: 71.38%;
+					    border-radius: 8px;
+						background-color: rgba(0,0,0,0.05);
+						.content{
+						    position: absolute;
+						    top: 0;
+						    left: 0;
+						    padding: 31.15% 0;
+						    text-align: center;
+						    width: 100%;
+						    color: #fff;
+							h2.ui.header{
+								color: #fff;
+							    font-size: 24px;
+								.sub.header{
+									color: #fff;
+								    margin-top: 10px;
+								    font-size: 14px;
+								}
+							}
+							
+						}
+					}
+				}
+			}
+		}
+	}
+	.incub{
+		padding-top:10px;
+		h2.ui.header{
+			font-size:20px;
+		}
+		.ui.products.cards>.card{
+			&:hover{
+			    transform: translateY(0);
+			    -ms-transform: translateY(0);
+			    -moz-transform: translateY(0);
+			    -webkit-transform: translateY(0);
+			    -o-transform: translateY(0);
+			}
+			>.problock{
+				>.cats{
+					font-size: 15px;
+					padding:8px 54px 34px 20px;
+					i.yen.icon{
+						font-size: 13px;
+					}
+				}
+			}
+		}
+		
+	}
+}
 .ui.share.modal {
 	text-align: center;
 }

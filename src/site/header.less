@@ -40,26 +40,32 @@
                     background: #000;
                     opacity: 1;
                 }
-		.menu{
-		    background: @magentaColor;
-		    border: 0 !important;
-		    border-radius: 0 !important;
-		    box-shadow: none !important;
-		    .item{
-			padding: .85rem 5rem .85rem 2.5rem!important;
-			border: 0 !important;
-			box-shadow: none !important;
-			color: #fff !important;
-			opacity: 1;
-                	.transition !important;
-			&:hover{
-			    background: #000 !important;
-			    border: 0 !important;
-                box-shadow: none !important;
-			    opacity: 1;
-			}
-		    }
-		}
+				i.dropdown.icon{
+					position: absolute;
+				    top: 50%;
+				    margin-top: -7px;
+				    right: 10px;
+				}
+				.menu{
+				    background: @magentaColor;
+				    border: 0 !important;
+				    border-radius: 0 !important;
+				    box-shadow: none !important;
+				    .item{
+					padding: .85rem 5rem .85rem 2.5rem!important;
+					border: 0 !important;
+					box-shadow: none !important;
+					color: #fff !important;
+					opacity: 1;
+		                .transition !important;
+						&:hover{
+						    background: #000 !important;
+						    border: 0 !important;
+			                box-shadow: none !important;
+						    opacity: 1;
+						}
+		    		}
+				}
             }
         }
     }
