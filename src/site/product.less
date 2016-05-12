@@ -101,7 +101,27 @@
 .adstick.shop.list {
     margin-top: 0px;
 }
-
+#triespage .ui.products.cards>.card>.problock>.ribbons{
+	left:10px;
+	position:absolute;
+	text-align:left;
+	top:10px;
+	z-index:1;
+	cursor:pointer;
+	width: auto;
+	height: auto;
+}
+#triespage .ui.products.cards>.card>.problock>.ribbons span{
+	border-radius:.285714rem;
+	color:#fff;
+	display:inline-block;
+	font-size:12px;
+	margin:5px;
+	opacity:.8;
+	padding:5px 13px;
+	text-transform:uppercase;
+	vertical-align:top;
+}
 .ui.products.cards {
     .thumb(){
         background-position: 50% 50%;
@@ -243,9 +263,12 @@
 			    height: 45px;
 				
                 .ribbon;
-                > a , > span{
+                > a {
                     .ribspan;
                 }
+				> span {
+					
+				}
             }
             
             .videomark {
