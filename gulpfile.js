@@ -35,8 +35,25 @@ gulp.task('minifyjs', function(){
 // 合并,压缩js
 gulp.task('packagejs', function(){
     // semantic-2.1.5
-    gulp.src(paths.dist.minified + '/javascript/semantic.2.0.min.min.js')
+    /*gulp.src(paths.dist.minified + '/javascript/semantic.2.0.min.min.js')
         .pipe(concat('semantic.2.0.min.js'))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));*/
+
+    gulp.src(paths.dist.minified + '/javascript/semantic.2.17.min.js')
+        .pipe(concat('semantic.2.17.min.js'))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+
+    //ueditor
+    gulp.src(paths.dist.minified + '/javascript/ueditor/ueditor.config.min.js')
+        .pipe(concat('ueditor.config.min.js'))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+
+    gulp.src(paths.dist.minified + '/javascript/ueditor/ueditor.all.min.js')
+        .pipe(concat('ueditor.all.min.js'))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+
+    gulp.src(paths.dist.minified + '/javascript/ueditor/zh-cn.min.js')
+        .pipe(concat('zh-cn.min.js'))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
         
     // jquery
@@ -173,6 +190,13 @@ gulp.task('minifycss', function(){
 // 合并,压缩css
 gulp.task('packagecss', function(){
     // 合并css
+
+     //ueditor
+    gulp.src(paths.dist.minified + '/css/ueditor/ueditor.min.css')
+        .pipe(concat('ueditor.css'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/css'));
+
     gulp.src(paths.dist.minified + '/css/calendar/*.css')
         .pipe(concat('calendar.css'))
         .pipe(rename({suffix: '.min'}))
