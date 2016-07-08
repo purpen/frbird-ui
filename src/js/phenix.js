@@ -1152,7 +1152,8 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
 	$('.appiosload .magenta.inverted.button').click(function(){
     var ua = navigator.userAgent.toLowerCase();  
     if(ua.match(/MicroMessenger/i)=="micromessenger"){
-		$('#appload').css('display','block');
+		//$('#appload').css('display','block');
+		window.location='http://a.app.qq.com/o/simple.jsp?pkgname=com.xf.taihuoniao.app.mytaihuoniao';
 	}else{
 		window.location='https://itunes.apple.com/cn/app/tai-huo-niao-huo-bao-zhi-neng/id946737402?mt=8';
 	}
@@ -1163,6 +1164,7 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
     var ua = navigator.userAgent.toLowerCase();  
     if(ua.match(/MicroMessenger/i)=="micromessenger"){
 		$('#appload').css('display','block');
+		//window.location='http://m.taihuoniao.com/promo/android_download';
 	}else{
 		window.location='http://m.taihuoniao.com/promo/android_download';
 	}
@@ -1179,6 +1181,10 @@ $(function(){
 		phenix.create_cookie("closeload","0",{ expires:1 });
 	})
 });
+//关闭弹出层
+$('.header .close.icon').click(function(){
+     $('.ui.modal').modal('hide');
+  });
 
 (function($){
 	$.fn.extend({

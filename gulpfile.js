@@ -44,7 +44,7 @@ gulp.task('packagejs', function(){
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
 
     //ueditor
-    gulp.src(paths.dist.minified + '/javascript/ueditor/ueditor.config.min.js')
+    /*gulp.src(paths.dist.minified + '/javascript/ueditor/ueditor.config.min.js')
         .pipe(concat('ueditor.config.min.js'))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
 
@@ -54,7 +54,7 @@ gulp.task('packagejs', function(){
 
     gulp.src(paths.dist.minified + '/javascript/ueditor/zh-cn.min.js')
         .pipe(concat('zh-cn.min.js'))
-        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));*/
         
     // jquery
     gulp.src(paths.dist.minified + '/javascript/jquery-2.1.0.min.js')
@@ -193,7 +193,7 @@ gulp.task('packagecss', function(){
     // 合并css
 
      //ueditor
-    gulp.src(paths.dist.minified + '/css/ueditor/ueditor.min.css')
+  /*  gulp.src(paths.dist.minified + '/css/ueditor/ueditor.min.css')
         .pipe(concat('ueditor.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
@@ -206,7 +206,7 @@ gulp.task('packagecss', function(){
     gulp.src(paths.dist.minified + '/css/*.css')
         .pipe(concat('jquery.datetimepicker.css'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(paths.dist.packaged + '/css'));
+        .pipe(gulp.dest(paths.dist.packaged + '/css'));*/
         
     gulp.src(paths.dist.minified + '/css/froala_editor/*.css')
         .pipe(concat('froala_editor.css'))
