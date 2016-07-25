@@ -1163,7 +1163,7 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
 	$('.appiosload .magenta.inverted.button').click(function(){
     var ua = navigator.userAgent.toLowerCase();  
     if(ua.match(/MicroMessenger/i)=="micromessenger"){
-		$('#appload').css('display','block');
+		$('#apploadand').css('display','block');
 		//window.location='http://m.taihuoniao.com/promo/android_download';
 	}else{
 		window.location='http://m.taihuoniao.com/promo/android_download';
