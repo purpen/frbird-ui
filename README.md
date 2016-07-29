@@ -45,6 +45,11 @@ $ (sudo) npm install gulp-less gulp-autoprefixer gulp-minify-css gulp-jshint gul
 $ gulp -v
 ```
 
+#### 清除命令
+``` bash
+gulp clean
+```
+
 #### 压缩命令
 
 ```bash
