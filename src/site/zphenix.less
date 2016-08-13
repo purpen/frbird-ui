@@ -10,6 +10,9 @@
  */
 
 @import "base";
+body,html{
+    height:auto;
+}
 
 /*******************************
     Phenix Custom Stylesheet
@@ -1796,7 +1799,7 @@ ul.sidemenu li a:hover span {
 
 @media only screen and (min-width : 992px) and (max-width : 1024px) {
 	.ui.responsive.grid {
-		padding: 0 3.5%;
+		padding: 0;
 	}
 	.hero-main h1 {
 	    font-size: 70px;
@@ -1824,7 +1827,8 @@ ul.sidemenu li a:hover span {
 /* Tablet Only */
 @media only screen and (min-width : 768px) and (max-width : 991px) {
 	.ui.responsive.grid {
-		padding: 0 1.5%;
+		padding: 0;
+        width: 660px;
 	}
 	
 	.header.main .ui.main-nav > .item {
