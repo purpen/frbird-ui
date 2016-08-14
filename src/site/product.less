@@ -124,13 +124,10 @@
 }
 .ui.products.cards {
     .thumb(){
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-top-left-radius: @radius;
-        border-top-right-radius: @radius;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         display: block;
-        padding-top: 80%;
+        padding-top: 100%;
         width: 100%;
     }
     
@@ -160,18 +157,25 @@
     > .card {
         background: none;
         box-shadow: none;
+        border-radius: 0;
         transform: translateY(0px);
         -ms-transform: translateY(0px);
         -moz-transform: translateY(0px);
         -webkit-transform: translateY(0px);
         -o-transform: translateY(0px);
+
+    >:only-child{
+        border-radius: 0 !important;
+    }
  
 	&:hover{
-	    transform: translateY(-3px);
-            -ms-transform: translateY(-3px);
-            -moz-transform: translateY(-3px);
-            -webkit-transform: translateY(-3px);
-            -o-transform: translateY(-3px);
+	    -webkit-box-shadow: 0 12px 24px rgba(10,10,10,0.15);
+        box-shadow: 0 12px 24px rgba(10,10,10,0.15);
+        -webkit-transform: translate3d(0, -2px, 0);
+        -moz-transform: translate3d(0, -2px, 0);
+        -o-transform: translate3d(0, -2px, 0);
+        -ms-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
 	}
 	
 	&.special:hover,&.stick:hover,&.group:hover{
@@ -184,16 +188,25 @@
  
         > .problock {
             background-color: #fff;
-            border-bottom: 4px solid #f3f2f2;
             position: relative;
+            border-radius: 0 !important;
             
             > a.thumb {
                 .thumb;
+                position:relative;
+                img{
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    overflow: hidden;
+                }
             }
             
             > h2 {
                 bottom: 0;
-                color: #797979;
+                color: #000;
                 font-weight: 400;
                 letter-spacing: 0.15px;
                 overflow: hidden;
@@ -204,7 +217,7 @@
                 white-space: nowrap;
                 
                 > a {
-                    color: rgba(112, 123, 135, 0.91);
+                    color: #000;
                     letter-spacing: 0.2px;
                     text-decoration: none;
                     font-size: 16px;
@@ -212,7 +225,6 @@
             }
             
             > .excerpt {
-                color: rgba(146, 147, 163, 0.9);
                 font-size: 14px;
                 height: 46px;
                 letter-spacing: 0.1px;
@@ -224,6 +236,7 @@
                 > p {
                     margin: 0px;
                     line-height: 1.6;
+                    color: #999;
                 }
                 
                 .count {
@@ -233,7 +246,7 @@
             
             > .cats {
                 color: rgba(146, 147, 163, 0.71);
-                font-size: 12px;
+                font-size: 16px;
                 font-weight: 400;
                 height: 15px;
                 overflow: hidden;
@@ -245,7 +258,7 @@
                 color: #ff3366;
                 
                 i.yen.icon {
-                    font-size: 10px;
+                    font-size: 16px;
                     margin-right: 0;
                 }
             }
@@ -254,8 +267,11 @@
                 bottom: 16px;
                 font-size: 12px;
                 position: absolute;
-                right: 20px;
+                right: 65px;
                 color: @textColor;
+                &+.counter{
+                   right: 20px; 
+                }
             }
             
             > .ribbons {
