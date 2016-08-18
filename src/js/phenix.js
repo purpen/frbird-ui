@@ -159,7 +159,7 @@ phenix.initial = function(){
 	
 	$.scrollUp({
         scrollText: '<i class="angle up icon"></i>',
-		className: 'ui topup icon',
+		className: 'ui topup icon scrollright',
         scrollTitle: false
     });
 	
