@@ -1119,6 +1119,10 @@ $("img.lazy").lazyload({
     effect : "fadeIn",
   	threshold : -20
 });
+$("a.bglazy").lazyload({
+   effect : "fadeIn",
+   threshold : -20
+});
 
 //手机端导航
 //sidebar menu
