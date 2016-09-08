@@ -124,13 +124,10 @@
 }
 .ui.products.cards {
     .thumb(){
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-top-left-radius: @radius;
-        border-top-right-radius: @radius;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         display: block;
-        padding-top: 80%;
+        padding-top: 100%;
         width: 100%;
     }
     
@@ -160,6 +157,7 @@
     > .card {
         background: none;
         box-shadow: none;
+        border-radius: 0;
         transform: translateY(0px);
         -ms-transform: translateY(0px);
         -moz-transform: translateY(0px);
@@ -167,14 +165,16 @@
         -o-transform: translateY(0px);
  
 	&:hover{
-	    transform: translateY(-3px);
-            -ms-transform: translateY(-3px);
-            -moz-transform: translateY(-3px);
-            -webkit-transform: translateY(-3px);
-            -o-transform: translateY(-3px);
+	    -webkit-box-shadow: 0 12px 24px rgba(10,10,10,0.15);
+        box-shadow: 0 12px 24px rgba(10,10,10,0.15);
+        -webkit-transform: translate3d(0, -2px, 0);
+        -moz-transform: translate3d(0, -2px, 0);
+        -o-transform: translate3d(0, -2px, 0);
+        -ms-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
 	}
 	
-	&.special:hover,&.stick:hover,&.group:hover{
+	&.stick:hover,&.group:hover{
             transform: translateY(0px);
             -ms-transform: translateY(0px);
             -moz-transform: translateY(0px);
@@ -184,16 +184,25 @@
  
         > .problock {
             background-color: #fff;
-            border-bottom: 4px solid #f3f2f2;
             position: relative;
+            border-radius: 0 !important;
             
             > a.thumb {
                 .thumb;
+                position:relative;
+                img{
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    overflow: hidden;
+                }
             }
             
             > h2 {
                 bottom: 0;
-                color: #797979;
+                color: #000;
                 font-weight: 400;
                 letter-spacing: 0.15px;
                 overflow: hidden;
@@ -204,7 +213,7 @@
                 white-space: nowrap;
                 
                 > a {
-                    color: rgba(112, 123, 135, 0.91);
+                    color: #000;
                     letter-spacing: 0.2px;
                     text-decoration: none;
                     font-size: 16px;
@@ -212,7 +221,6 @@
             }
             
             > .excerpt {
-                color: rgba(146, 147, 163, 0.9);
                 font-size: 14px;
                 height: 46px;
                 letter-spacing: 0.1px;
@@ -224,6 +232,7 @@
                 > p {
                     margin: 0px;
                     line-height: 1.6;
+                    color: #999;
                 }
                 
                 .count {
@@ -233,7 +242,7 @@
             
             > .cats {
                 color: rgba(146, 147, 163, 0.71);
-                font-size: 12px;
+                font-size: 16px;
                 font-weight: 400;
                 height: 15px;
                 overflow: hidden;
@@ -245,7 +254,7 @@
                 color: #ff3366;
                 
                 i.yen.icon {
-                    font-size: 10px;
+                    font-size: 16px;
                     margin-right: 0;
                 }
             }
@@ -254,8 +263,11 @@
                 bottom: 16px;
                 font-size: 12px;
                 position: absolute;
-                right: 20px;
+                right: 65px;
                 color: @textColor;
+                &+.counter{
+                   right: 20px; 
+                }
             }
             
             > .ribbons {
@@ -263,6 +275,27 @@
 			    height: 45px;
 				
                 .ribbon;
+                .ribbon.remai{
+                    border-radius: 50%;
+                    background: rgba(255,204,0,.9);
+                }
+                .ribbon.xinpin{
+                    border-radius: 50%;
+                    background: rgba(255,51,102,.9);
+                }
+                
+                p.ribbonp{
+                    font-size: 12px;
+                    color: #fff;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 45px;
+                    height: 45px;
+                    line-height: 45px;
+                    z-index: 3;
+                    text-align: center;
+                }
                 > a {
                     .ribspan;
                 }
@@ -479,208 +512,47 @@
             margin-left: 10px;
             margin-right: 10px;
             width: ~"calc(50% - 20px)";
-            
-            > .problock {
-                margin: 0 20px;
-                position: relative;
-                visibility: hidden;
-                z-index: -1;
-                
-                > a.thumb {
-                    padding-top: 40%;
+            overflow: hidden;
+
+            &.special:hover{
+                -webkit-transform: translate3d(0,0,0);
+                -moz-transform: translate3d(0,0,0);
+                -o-transform: translate3d(0,0,0);
+                -ms-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+                .problock{
+                    -webkit-transform: scale(1.01);
+                    -moz-transform: scale(1.01);
+                    -o-transform: scale(1.01);
+                    -ms-transform: scale(1.01);
+                    transform: scale(1.01);
                 }
             }
-            
-            > .speblock {
-                background-color: #fff;
-                border-radius: @radius;
-                bottom: 3px;
-                left: 0px;
-                position: absolute;
-                right: 0px;
-                top: 0;
-                
-                > a.spethumb {
-                    border-radius: @radius;
-                    float: left;
-                    height: 100%;
-                    padding: 0;
-                    position: relative;
-                    width: 100%;
-                    
-                    > .shadow {
-                        background-color: rgba(0, 0, 0, 0.2);
-                        border-radius: @radius;
-                        bottom: 0;
-                        left: 0;
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        z-index: 0;
-                    }
-                }
-                
-                .ribbon.featured {
-                    background-color: #f16252;
-                    margin-left: 17px;
-                    margin-top: 10px;
-                    z-index: 200;
-                }
+            .problock{
+                -webkit-transition: all 0.2s ease;
+                -moz-transition: all 0.2s ease;
+                -o-transition: all 0.2s ease;
+                -ms-transition: all 0.2s ease;
+                transition: all 0.2s ease;
             }
-        }
-        
-        &.special.cat {
-            width: ~"calc(100% - 20px)";
             
             > .problock {
-                > a.thumb {
-                    padding-top: 25%;
-                }
-            }
-        }
-        
-        &.widepin {
-            margin-left: 10px;
-            margin-right: 10px;
-            width: ~"calc(50% - 20px)";
-            
-            > .problock {
-                margin: 0px;
                 position: relative;
                 
                 > a.thumb {
-                    padding-top: 38.5%;
+                    padding-top: 68.966%;
                 }
             }
-        }
-        
-        .ribbon.remai {
-			width: 45px;
-		    height: 45px;
-		    border-radius: 50%;
-		    background: rgba(255,204,0,0.9);
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    opacity: 0.9;
-        }
-		p.ribbonp{
-			font-size: 12px;
-		    color: #fff;
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    width: 45px;
-		    height: 45px;
-		    line-height: 45px;
-		    z-index: 3;
-		    text-align: center;
-		}
-        .ribbon.xinpin {
-			width: 45px;
-		    height: 45px;
-		    border-radius: 50%;
-		    background: rgba(255,51,102,0.9);
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    opacity: 0.9;
-        }
-        .ribbon.hot {
-            background-color: #ff9900;
-        }
-        .ribbon.stick {
-            background-color: #1b87be;
-        }
-        .ribbon.snatched {
-            background-color: #d01919;
-        } 
-        .ribbon.presale {
-            background-color: #fbbd08;
-        }
-        .ribbon.exchange {
-            background-color: #a5673f;
-        }
-        .ribbon.featured {
-            background-color: #21ba45;
-        }
-        
-        .ribbon.apply {
-            background-color: rgb(255,51,102);
-        }
-        .ribbon.callback {
-            background-color: rgb(0,111,188);
-        }
-        .ribbon.recoe {
-            background-color: rgb(0,188,156);
-        }
-        .ribbon.end {
-            background-color: rgb(102,102,102);
-        }
-        
-        .ribbon.season {
-            background-color: rgb(0, 0, 0);
         }
     }
     
     > *:only-child,
     > .card > *:only-child {
-        border-radius: 8px !important;
+        border-radius: 0 !important;
     }
     
 }
 
-.ui.topics.cards {
-    > .card {
-        
-        &.group {
-            margin-left: 10px;
-            margin-right: 10px;
-            width: ~"calc(75% - 20px)";
-            
-            > .problock {
-                padding: 0 20px;
-                
-                > a.thumb {
-                    padding-top: 25%;
-                }
-                
-                &:hover {
-                    margin-top: 0px;
-                }
-            }
-        }
-        
-    }
-}
-
-.ui.brands.grid {
-    .ui.adverts.cards > .card > .advblock .desc {
-        top: 28%;
-        h2 {
-            text-align: center;
-        }
-    }
-}
-
-.sortby {
-    .ui.item.menu {
-        box-shadow: none;
-        border-radius: 0;
-        border: none;
-        
-        .item {
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-            
-            &.active,
-            &:hover {
-                background: rgba(34, 36, 38, 0.1) none repeat scroll 0 0;
-            }
-        }
-        
-    }
-}
 
 
 /* 商店详情 */
@@ -1519,37 +1391,34 @@
 		.ui.four.cards{
 			.card.special{
 				.speblock{
-					-webkit-transition: all .5s ease 0s;
-				    -moz-transition: all .5s ease 0s;
-				    -o-transition: all .5s ease 0s;
-				    -ms-transition: all .5s ease 0s;
-				    transition: all .5s ease 0s;
-					background-size: 100%;
-					padding-top:71.38%;
-					overflow: hidden;
-					&:hover{
-						background-size:103%;
-						a.thumb{
-							background-color: rgba(0,0,0,0.15);
-						}
-					}
 					a.thumb{
-					    position: absolute;
-					    top: 0;
-					    left: 0;
-					    width: 100%;
-					    height: 100%;
-					    padding-top: 71.38%;
-					    border-radius: 8px;
+					    display: block;
+                        width: 100%;
+                        position: relative;
+					    padding-top: 71.897%;
+					    border-radius: 0;
 						background-color: rgba(0,0,0,0.05);
+                        > img{
+                            width: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            overflow: hidden;
+                            .transition(all, 1s, ease, 0s);
+                        }
 						.content{
 						    position: absolute;
-						    top: 0;
+						    top: 50%;
 						    left: 0;
-						    padding: 31.15% 0;
 						    text-align: center;
 						    width: 100%;
 						    color: #fff;
+                            -webkit-transform: translate3d(0, -50%, 0);
+                            -moz-transform: translate3d(0, -50%, 0);
+                            -o-transform: translate3d(0, -50%, 0);
+                            -ms-transform: translate3d(0, -50%, 0);
+                            transform: translate3d(0, -50%, 0);
 							h2.ui.header{
 								color: #fff;
 							    font-size: 24px;
@@ -1562,8 +1431,16 @@
 							
 						}
 					}
+                    &:hover a.thumb > img{
+                        -webkit-transform: scale(1.1);
+                        -moz-transform: scale(1.1);
+                        -o-transform: scale(1.1);
+                        -ms-transform: scale(1.1);
+                        transform: scale(1.1);
+                    }
 				}
 			}
+            
 		}
 	}
 	.incub{

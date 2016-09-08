@@ -159,7 +159,7 @@ phenix.initial = function(){
 	
 	$.scrollUp({
         scrollText: '<i class="angle up icon"></i>',
-		className: 'ui topup icon',
+		className: 'ui topup icon scrollright',
         scrollTitle: false
     });
 	
@@ -1118,6 +1118,14 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
 $("img.lazy").lazyload({
     effect : "fadeIn",
   	threshold : -20
+});
+$("a.bglazy").lazyload({
+   effect : "fadeIn",
+   threshold : -20
+});
+$("div.bglazy").lazyload({
+   effect : "fadeIn",
+   threshold : -20
 });
 
 //手机端导航

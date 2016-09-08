@@ -47,8 +47,16 @@
 		}
 	}
 }
-
-@media only screen and (min-width : 992px) and (max-width : 1500px) {
+@media only screen and (min-width : 992px) and (max-width : 1200px) {
+	.ui.responsive.grid,
+    .nav-categories{
+        width:1024px;
+    }
+    .mainwrap {
+		width: 1024px;
+	}
+}
+@media only screen and (min-width : 1201px) and (max-width : 1500px) {
 	.header.main .ui.main-nav > .item {
 		padding-left: 1em;
 		padding-right: 1em;
@@ -71,9 +79,10 @@
 }
 
 /* Tablet Only */
-@media only screen and (min-width : 768px) and (max-width : 991px) {
+@media only screen and (min-width : 600px) and (max-width : 991px) {
 	.ui.responsive.grid {
-		padding: 0 2.5%;
+		padding: 0;
+		width:840px;
 	}
     .ui.wideping.grid {
         padding: 0px 35px !important;
@@ -123,6 +132,9 @@
 
 /* Mobile Only */
 @media only screen and (max-width: 767px) {
+	.header.main>.ui.newnav.responsive.grid .right.floated{
+		display:none;
+	}
     .computer.only {
         display: none;
     }
