@@ -1,0 +1,440 @@
+/** 底部导航 **/
+.sfooter{
+	&.nav-menu{
+		background: #000;
+	    padding-top: 1px;
+	    color: #fff;
+	    position: fixed;
+	    width: 100%;
+	    left: 50%;
+	    bottom: 0;
+	    max-width: 767px;
+	    -webkit-transform: translateX(-50%);
+	    transform: translateX(-50%);
+	    .navfelx .childcell .menuicon{
+	    	color: #fff;
+	    	padding: 2px 6px 5px;
+	    	margin-bottom: 0;
+	    	.img {
+			    display: block;
+			    margin: 0 auto 4px;
+			    vertical-align: middle;
+			    background-image: url(/images/fiushop/sfooter.png);
+			    background-repeat: no-repeat;
+			    background-size: 88px 18px;
+			    &.choice{
+			    	height: 18px;
+					width: 20px;
+				    background-position: 0 0;
+			    }
+			    &.find{
+			    	height: 18px;
+					width: 26px;
+				    background-position: -63px 3px;
+			    }
+			    &.cart{
+			    	height: 18px;
+					width: 22px;
+				    background-position: -20px 0;
+			    }
+			    &.owner{
+			    	height: 18px;
+					width: 21px;
+				    background-position: -42px 0;
+			    }
+			}
+	    }
+	}
+}
+.ui.fiushop{
+	padding-bottom: 50px;
+	.ui.sheader{
+		background:#000;
+		p{
+			font-size: 17px;
+			line-height: 50px;
+			color: #fff;
+			text-align: center;
+		}
+	}
+	.hotshop{
+		background: #fff;
+		p{
+			padding: 4px 5px;
+		    font-size: 12px;
+		    color: #BE8914;
+		    a{
+		    	color: #797979;
+				margin: 0 5px;
+		    }
+		}
+	}
+	.fiulist{ 
+		.recom-cell a{
+			background-size: 100% 100%;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-color: #f5f5f5;
+			.uidesc{
+				width: 100%;
+				height:60px;
+				font-size: 17px;
+				color: #fff;
+				position:absolute;
+				top:50%;
+				margin-top: -30px;
+				line-height: 60px;
+				left: 0;
+				text-align: center;
+			}
+		}
+	}
+	.haohuo{
+		h4.ui.header{
+			font-size: 14px;
+			color: #222 !important;
+			font-weight: 400;
+			img{
+				width: 20px;
+				vertical-align: bottom;
+				margin-right: 5px;
+			}
+		}
+		.banner{
+			position: relative;
+			padding-top: 56.26667%; 
+			display: block;
+			&::after{
+				width: 25px;
+				height: 16px;
+				background-size: 25px 16px;
+				content: "";
+				background: url(/images/fiushop/shape.png); 
+				bottom:-1px;
+				left: 50%;
+				margin-left: -12.5px;
+				position: absolute;
+			}
+			img{
+				width: 100%;
+				height:100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.content{
+				position: absolute;
+				letter-spacing: 2px;
+			    color: #fff !important;
+			    text-align: center;
+			    left: 50%;
+			    top: 50%;
+			    max-width: 100%;
+			    transform: translate3d(-50%,-50%,0);
+			    -webkit-transform: translate3d(-50%,-50%,0);
+			    h3 {
+				    height: 48px;
+				    line-height: 45px;
+				    letter-spacing: 2px;
+				    color: #fff !important;
+				    text-align: center;
+				    margin: 0 0 5px;
+				    font-size: 17px;
+				    background: #000;
+				    padding: 0 20px;
+				    white-space: nowrap;
+				    max-width: 100%;
+				    overflow: hidden;
+				    text-overflow: ellipsis;
+				    border-bottom: 3px solid #BE8914;
+				    font-weight: 400;
+				}
+				p {
+					font-size: 17px;
+				}
+			}
+		}
+	}
+	.overhidden{
+		overflow: hidden;
+		height: 181px;
+		.shopitem{
+			margin-top: 15px;
+			white-space: nowrap;
+		    width: 100%;
+		    overflow: scroll;
+		    -webkit-overflow-scrolling: touch;
+		    padding: 0;
+		    height: 180px;
+		    &::-webkit-scrollbar {
+			    display: none;
+			}
+			li{
+				display: inline-block;
+			    width: 110px;
+			    margin-right: 10px;
+			    background-color: #fff;
+			    white-space: normal;
+			    overflow: hidden;
+			    a{
+					padding-top: 100%;
+					display: block;
+					position: relative;
+					background-color: #fff;
+					img{
+						width: 100%;
+						height: auto;
+						position: absolute;
+						top: 0;
+						left: 0;
+					} 
+					.desc {
+				    	padding: 5px 5px 0;
+				    	text-align: center;
+				    	border-top: 1px solid rgba(0,0,0,0.05); 
+				    	font-size: 12px;
+					    color: #222;
+					    white-space: nowrap;
+					    text-overflow: ellipsis;
+					    overflow: hidden;
+					    h2{
+					    	font-size: 12px;
+					    	font-weight: 400;
+						    overflow: hidden;
+						    margin: 0;
+						    text-overflow: ellipsis;
+						    white-space: nowrap;
+						    height: 20px;
+						    line-height: 20px;
+					    }
+					    .cats{
+					    	color: #BE8914;
+					    	font-size: 13px;
+						    height: 30px;
+						    padding: 0;
+						    text-transform: uppercase;
+						    line-height: 25px;
+					    }
+				    }
+				}
+			}
+		}
+	}
+}
+/*** 顶部菜单 ***/
+.ui.catemenu{
+	background:#000;
+	height: 50px;
+	text-align: center;
+	a{
+		font-size: 17px;
+	    color: #fff;
+	    margin: 0 15px;
+	    line-height: 49px;
+	    height: 49px;
+	    padding: 12px 0 14px;
+	    &.active{
+			color: #BE8914;
+			border-bottom: 2px solid #BE8914;
+		}
+	}
+}
+/*** 品牌 ***/
+.ui.brand{
+	padding-bottom: 50px;
+	#mpresale .recom-item .recom-cell{
+		padding-left: 0;
+		padding-right: 6px;
+		&:nth-child(2n){
+			padding-left: 6px;
+			padding-right: 0;
+		}
+		.desc{
+			height: 35px;
+			padding: 0 10px;
+			color: #666;
+			font-size: 14px;
+			line-height: 35px;
+			text-align: left;
+			img{
+				width: 22px;
+			    height: 22px;
+			    border-radius: 50%;
+			    vertical-align: middle;
+			    position: relative;
+			    margin-right: 5px;
+			}
+		}
+	}
+	&.list{
+		#mpresale .recom-item .recom-cell .desc{
+			height: 60px;
+			padding: 5px 10px 0;
+			h2{
+				color: #222;
+				text-align: center;
+			}
+			.cats{
+				color: #BE8914;
+				text-align: center;
+			}
+		}
+	} 
+	.brandlg{
+		padding-top: 56.267%;
+		background-size: 100% 100%;
+		background-color: #eee;
+		position: relative;
+		margin-bottom: 35px;
+		p{
+			height: 50px;
+			color: #fff;
+			font-size: 17px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			line-height: 50px;
+			margin:0;
+		}
+		img{
+			width: 74px;
+			height: 74px;
+			position: absolute;
+			bottom: -30px;
+			left: 50%;
+			margin-left: -37px;
+			border-radius: 37px;
+		}
+	}
+	.masx p{
+		font-size: 12px;
+		color: #222;
+	}
+	#mpresale .recom-item .recom-cell .desc.shoplist{
+		height: 55px;
+		padding: 5px 5px 0;
+	    text-align: center;
+	    font-size: 12px;
+	    color: #222;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    h2{
+			font-size: 12px;
+		    font-weight: 400;
+		    overflow: hidden;
+		    margin: 0;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    height: 20px;
+		    line-height: 20px;
+		    text-align: center;
+		}
+		.cats {
+		    color: #BE8914;
+		    font-size: 13px;
+		    height: 30px;
+		    padding: 0;
+		    text-transform: uppercase;
+		    line-height: 25px;
+		    text-align: center;
+		}
+	}
+}
+/*** 品类 ***/
+.ui.category{
+	padding-bottom: 65px;
+	a.catelist{
+		padding-top: 33.803%;
+	    display: block;
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+	    background-size: 100% 100%;
+	}
+	/*** 列表页 ***/
+	.fmenulist{
+		height: 60px;
+		background:#fff;
+		overflow: hidden;
+		box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+        -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+		.menuitem{
+			padding: 0;
+		    margin: 0;
+		    height: 68px;
+		    white-space: nowrap;
+		    width: 100%;
+		    overflow-x: scroll;
+	    	overflow-y: hidden;
+	    	-webkit-overflow-scrolling: touch;
+	    	&::-webkit-scrollbar {
+			    display: none;
+			}
+			li{
+				width: 65px;
+			    display: inline-block;
+			    text-align: center;
+			    padding: 10px 0;
+			    height: 60px;
+			    p{
+					font-size: 12px;
+					color: #666;
+				}
+				.catename{
+					width: 24px;
+			    	height: 24px;
+					margin:-1px auto 2px;
+					background-size: 48px 24px;
+				}
+				&.active,a.active{
+					.catename{
+						background-position: 24px 0;
+					}
+					p{
+						color: #BE8914;
+					}
+				}
+			}
+		}
+	}
+	/*** 推荐按钮 ***/
+	.groom-btn{
+		margin-top: 2px;
+		background:#fff;
+		height: 45px;
+		border-bottom: 1px solid rgba(151,151,151,0.1);
+		padding: 10px 0;
+		overflow: hidden;
+		.groom-list{
+			height: 44px;
+		    overflow: scroll;
+		    white-space: nowrap;
+		    padding: 0 10px;
+		    margin: 0;
+		    -webkit-overflow-scrolling: touch;
+		    &::-webkit-scrollbar {
+			    display: none;
+			}
+		    .ui.becolor.basic.button{
+				color: #666 !important;
+				border: 1px solid #666;
+			    box-shadow: none;
+				padding:5px 12px;
+				font-size: 12px;
+				&.active{
+					color: #BE8914 !important;
+				    border: 1px solid #BE8914;
+				    box-shadow: none;
+				    background: rgba(0,0,0,0) !important;
+				}
+			}
+		}
+	}
+}
+
+
+
+

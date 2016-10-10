@@ -220,6 +220,12 @@ gulp.task('packagecss', function(){
         .pipe(concat('mobile.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.dist.packaged + '/css'));
+
+    //fiu店
+    gulp.src(paths.dist.minified + '/css/mobile/shop.min.css')
+        .pipe(concat('shop.css'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(paths.dist.packaged + '/css'));
         
     gulp.src(paths.dist.minified + '/css/*.css')
         .pipe(concat('frbird.css'))
