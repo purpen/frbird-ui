@@ -55,7 +55,12 @@ gulp.task('packagejs', function(){
     gulp.src(paths.dist.minified + '/javascript/ueditor/zh-cn.min.js')
         .pipe(concat('zh-cn.min.js'))
         .pipe(gulp.dest(paths.dist.packaged + '/javascript'));*/
-        
+
+    //flexible 手机端自适应
+    gulp.src(paths.dist.minified + '/javascript/flexible/flexible.min.min.js')
+        .pipe(concat('flexible.min.js'))
+        .pipe(gulp.dest(paths.dist.packaged + '/javascript'));
+
     // jquery
     gulp.src(paths.dist.minified + '/javascript/jquery-2.1.0.min.js')
         .pipe(concat('jquery-2.min.js'))

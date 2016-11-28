@@ -105,6 +105,9 @@
 .pt-r{
 	padding-top:0.35725rem !important; //5px
 }
+.pt-7{
+	padding-top: 0.5rem !important;
+}
 .pt-2r{
 	padding-top:0.7145rem !important; //10px
 }
@@ -236,6 +239,10 @@
 .plr-0{
 	padding-left:0 !important;
 	padding-right:0 !important;
+}
+.plr-14{
+	padding-left: 1.0rem !important;
+	padding-right: 1.0rem !important;
 }
 .plr-r{
 	padding-left:0.35725rem !important;
@@ -1723,14 +1730,31 @@ body.menu-open .ui.left.sidebar{
 }
 /**** msg ****/
 #gritter-notice-wrapper{
-    width:100%;
+    width:0;
     right:0;
     padding-top:0;
     position: fixed;
-    top: 61px;
-    left: 0;
+    display: inline-table;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    -webkit-transform: translate3d(-50%,-50%,0);
     .content .remove.icon{
 	    display:none;
+	}
+	.close.icon{
+		display: none;
+		visibility: hidden;
+	}
+	.ui.message{
+		background: rgba(0,0,0,0.9) !important;
+		color: #fff !important;
+		box-shadow: 0 0 0 1px #000 inset,0 0 0 0 transparent !important;
+		padding: 10px 15px !important;
+		.content{
+			color: #fff;
+			text-align: center;
+		}
 	}
 }
 /**** 评论 ****/
@@ -2374,9 +2398,9 @@ body.menu-open{
 		}
 		.shopbiao{
 			position:absolute;
-			width:32px;
-			height:32px;
-			top:15px;
+			width:29px;
+			height:20px;
+			top:10px;
 			left:10px;
 		}
 		.qbfl{
@@ -3391,7 +3415,7 @@ h4 a.seemore{
 	position:absolute;
 	width:32px;
 	height:32px;
-	top:15px;
+	top:10px;
 	left:10px;
 }
 .fiupage{

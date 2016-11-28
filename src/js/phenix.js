@@ -12,11 +12,11 @@ var phenix = {
 			},delay);
 	    },
 	    show_error_note: function(msg,delay) {
-			msg = '<div class="content"><i class="warning sign icon"></i>'+ msg +'</div>';
+			msg = '<div class="content">'+ msg +'</div>';
 	    	phenix.show_notify_bar(msg,'error',delay);
 	    },
 	    show_ok_note:function(msg,delay) {
-			msg = '<div class="content"><i class="checkmark icon"></i>'+ msg +'</div>';
+			msg = '<div class="content">'+ msg +'</div>';
 	    	phenix.show_notify_bar(msg,'ok', delay);
 	    },
 	    show_notify_bar: function(msg,type,delay) {
