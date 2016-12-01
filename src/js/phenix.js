@@ -12,11 +12,11 @@ var phenix = {
 			},delay);
 	    },
 	    show_error_note: function(msg,delay) {
-			msg = '<div class="content"><i class="warning sign icon"></i>'+ msg +'</div>';
+			msg = '<div class="content">'+ msg +'</div>';
 	    	phenix.show_notify_bar(msg,'error',delay);
 	    },
 	    show_ok_note:function(msg,delay) {
-			msg = '<div class="content"><i class="checkmark icon"></i>'+ msg +'</div>';
+			msg = '<div class="content">'+ msg +'</div>';
 	    	phenix.show_notify_bar(msg,'ok', delay);
 	    },
 	    show_notify_bar: function(msg,type,delay) {
@@ -1119,6 +1119,14 @@ $("img.lazy").lazyload({
     effect : "fadeIn",
   	threshold : -20
 });
+$("a.bglazy").lazyload({
+   effect : "fadeIn",
+   threshold : -20
+});
+$("div.bglazy").lazyload({
+   effect : "fadeIn",
+   threshold : -20
+});
 
 //手机端导航
 //sidebar menu
@@ -1153,9 +1161,9 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
     var ua = navigator.userAgent.toLowerCase();  
     if(ua.match(/MicroMessenger/i)=="micromessenger"){
 		//$('#appload').css('display','block');
-		window.location='http://a.app.qq.com/o/simple.jsp?pkgname=com.xf.taihuoniao.app.mytaihuoniao';
+		window.location='http://a.app.qq.com/o/simple.jsp?pkgname=com.taihuoniao.fineix';
 	}else{
-		window.location='https://itunes.apple.com/cn/app/tai-huo-niao-huo-bao-zhi-neng/id946737402?mt=8';
+		window.location='https://itunes.apple.com/us/app/fiu-fu-you-ke-ji-mei-xue-qing/id1089442815?mt=8';
 	}
 	});
 }else if (navigator.userAgent.match(/android/i)){
@@ -1163,10 +1171,11 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
 	$('.appiosload .magenta.inverted.button').click(function(){
     var ua = navigator.userAgent.toLowerCase();  
     if(ua.match(/MicroMessenger/i)=="micromessenger"){
-		$('#apploadand').css('display','block');
-		//window.location='http://m.taihuoniao.com/promo/android_download';
+		//$('#apploadand').css('display','block');
+		window.location='http://a.app.qq.com/o/simple.jsp?pkgname=com.taihuoniao.fineix';
 	}else{
-		window.location='http://m.taihuoniao.com/promo/android_download';
+		//window.location='http://m.taihuoniao.com/promo/android_download';
+		window.location='http://a.app.qq.com/o/simple.jsp?pkgname=com.taihuoniao.fineix';
 	}
 	});
 };
