@@ -13,7 +13,7 @@
             width: 54px;
             float: left;
             padding:0;
-            background-image:url(https://en.taihuoniao.com/images/logo.png);
+            background-image:url(/images/logo.png);
             background-repeat:no-repeat;
             background-position:0 4px;
             background-size:54px 42px;
@@ -39,7 +39,7 @@
                         display: block;
                         font-size: 16px;
                         color: #222;
-                        width: 72px;
+                        margin: 0 20px;
                         height: 50px;
                         line-height: 50px;
                         text-align: center;
@@ -188,6 +188,30 @@
                 background: none;
                 border-color: none;
                 color: #FF3b6b;
+            }
+        }
+        .nav-item.server {
+            background: transparent;
+            position: relative;
+            vertical-align: top;
+            &:hover,
+            &.active {
+                color: #FF3b6b;
+            }
+            .menu {
+                margin: -5px 0 0;
+                .item{
+                    background:#fff;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.2;
+                    width: 180px;
+                    font-size: 14px;
+                    text-align: left;
+                    &:hover{
+                        background: rgba(0,0,0,.05);
+                    }
+                }
             }
         }
         .ui.basket.button {
