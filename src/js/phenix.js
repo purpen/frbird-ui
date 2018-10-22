@@ -1148,6 +1148,7 @@ if(ua.match(/MicroMessenger/i)=="micromessenger"){
 	$('.ui.small.wechat.mmfootewm.modal p').html('保存图片，打开微信扫描二维码，关注太火鸟公众号');
 };
 
+/**
 //appstore 下载
 $('.apploadclose').on('click',function(){
 	$('.appiosload').remove();
@@ -1190,6 +1191,10 @@ $(function(){
 		phenix.create_cookie("closeload","0",{ expires:1 });
 	})
 });
+
+*/
+
+
 //关闭弹出层
 $('.header .close.icon').click(function(){
      $('.ui.modal').modal('hide');
