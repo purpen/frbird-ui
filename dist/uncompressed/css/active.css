@@ -1,0 +1,145 @@
+.ui.activepage.grid {
+  padding-top: 20px;
+}
+.ui.activepage.grid .ui.containermain .conleft {
+  padding: 0;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0);
+}
+.ui.activepage.grid .ui.containermain .conleft .product.overview {
+  padding: 9pt 31px;
+  text-align: left;
+  background: #fff;
+  border: none;
+}
+.ui.activepage.grid .ui.containermain .conleft .product.overview p {
+  word-break: break-all;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+.ui.activepage.grid .ui.containermain .conleft .product.overview p br {
+  content: '';
+  display: block;
+  padding: 5px;
+  margin-top: -10px;
+}
+.ui.activepage.grid .ui.containermain .conleft .product.overview p img.fr-fin.fr-dib {
+  max-width: 100%;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.people,
+.ui.activepage.grid .ui.containermain .conleft .activity.pictures {
+  background: #fff;
+  margin-top: 20px;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.people .block.title,
+.ui.activepage.grid .ui.containermain .conleft .activity.pictures .block.title {
+  background-color: #f8f8f8;
+  padding: 18px 30px 12px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.46);
+  text-align: left;
+  font-size: 18px;
+  position: relative;
+  color: #000;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.people .flexslider .slides > li,
+.ui.activepage.grid .ui.containermain .conleft .activity.pictures .flexslider .slides > li,
+.ui.activepage.grid .ui.containermain .conleft .activity.people .flexslider .slides > li img,
+.ui.activepage.grid .ui.containermain .conleft .activity.pictures .flexslider .slides > li img {
+  border-radius: 0;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.report {
+  background: #fff;
+  margin-top: 20px;
+  text-align: center;
+  padding: 0 0 25px;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.report .block.title {
+  background-color: #f8f8f8;
+  padding: 18px 30px 12px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.46);
+  text-align: left;
+  font-size: 18px;
+  position: relative;
+  color: #000;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.report #signup-avatar {
+  text-align: center;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.report #signup-avatar .image {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  padding: 6px 4px;
+  vertical-align: middle;
+  margin: 2px;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.report .aettend-box {
+  margin: 20px 0 5px !important;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.reviews {
+  background: #fff;
+  margin-top: 20px;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.reviews .block.title {
+  background-color: #f8f8f8;
+  padding: 18px 30px 12px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.46);
+  text-align: left;
+  font-size: 18px;
+  position: relative;
+  color: #000;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.reviews .block.title > small {
+  font-size: 9pt;
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: .6em;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.reviews .block.title .quick.goto {
+  position: absolute;
+  font-size: 14px;
+  line-height: 20px;
+  right: 30px;
+  top: 12px;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.reviews .block.title .quick.goto input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 3px 10px;
+  width: 48px;
+}
+.ui.activepage.grid .ui.containermain .conleft .activity.reviews .ui.comments {
+  max-width: 100%;
+}
+.ui.activepage.grid .ui.containermain .conright .sellwrap {
+  background: #fff;
+  margin: 0 0 20px;
+  border-radius: 4px;
+  text-align: left;
+  padding: 0 20px 20px;
+}
+.ui.activepage.grid .ui.containermain .conright .sellwrap .block.title {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.46);
+  padding: 18px 30px 9pt;
+  text-align: left;
+  font-size: 18px;
+  position: relative;
+  color: #000;
+  margin: 0 -20px;
+}
+.ui.activepage.grid .ui.containermain .conright .sellwrap .tryfirm img {
+  margin: 12px 5px 5px 0;
+  width: 110px;
+}
+.ui.activepage.grid .ui.containermain .conright .sellwrap .user.noline.share {
+  border-top: none;
+  padding-top: 20px;
+}
+.ui.activepage.grid .ui.containermain .conright .sellwrap .user.noline.share span {
+  line-height: 2.4;
+}
+.ui.activepage.grid .ui.containermain .conright .sellwrap .user.noline.share i.large.icon {
+  font-size: 1.2em;
+}

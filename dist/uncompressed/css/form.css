@@ -1,0 +1,60 @@
+/* 提交创意 */
+.ui.segment > .submit-help {
+  margin-bottom: 2em;
+}
+.ui.segment > .submit-help > .ui.header {
+  margin: 1em 0 2rem;
+}
+.ui.social .ui.grid > .nopad.row {
+  padding: 0;
+}
+.new.topic a.icon-link {
+  text-decoration: none;
+}
+.new.topic a.icon-link:hover .help.icon {
+  color: #ff3b6b;
+}
+.new.topic a.icon-link .help.icon {
+  font-size: 0.725em;
+  color: #5c6166;
+}
+/* Auth Login/Signup */
+.ui.log-in {
+  max-width: 680px;
+  margin: 70px auto 0;
+  background-color: #F5F5F5;
+}
+.ui.log-in.segment:first-child {
+  margin: 80px auto 0;
+}
+.ui.log-in.signup {
+  max-width: 680px;
+  margin: 50px auto 0;
+}
+.ui.log-in.signup.segment:first-child {
+  margin: 50px auto 0;
+}
+.ui.log-in > .ui.header.logo {
+  padding: 0;
+  text-align: center;
+}
+.ui.log-in .ui.checkbox {
+  font-size: 0.825rem;
+}
+.ui.log-in .field {
+  margin: 0 0 1.5rem;
+}
+.ui.log-in .thirdlogin {
+  margin: 1.5rem 0 0.5rem;
+}
+.sign-up {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+.sign-up a {
+  color: rgba(255, 255, 255, 0.9);
+}
+.sign-up a:hover {
+  color: #ffffff;
+}
